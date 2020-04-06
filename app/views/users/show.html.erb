@@ -2,7 +2,7 @@
   What UP <%=@user.username%><br><br>
   <%if !@user.location%>
     Where are you today?
-    <%=form_for @user.location do |f|%>
+    <%=form_for @location do |f|%>
       <%=f.label :city%>
       <%=f.text_field :city%>
       <%=f.label :state%>
