@@ -2,7 +2,8 @@
   What UP <%=@user.username%><br><br>
   <%if !@user.location%>
     Where are you today?
-    <%=form_for @location do |f|%>
+    <%=form_for @location, method: 'post' do |f|%>
+      <%= f.hidden_field :user_id, value: current_user.id %>
       <%=f.label :city%>
       <%=f.text_field :city%>
       <%=f.label :state%>

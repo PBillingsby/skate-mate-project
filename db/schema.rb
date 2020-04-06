@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_04_06_054618) do
     t.string "email"
     t.string "password_digest"
     t.string "password_confirmation"
+    t.integer "location_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
