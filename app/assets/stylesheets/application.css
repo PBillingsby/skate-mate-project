@@ -17,3 +17,7 @@
  .flash-alert {
    color: red;
  }
+ .nav-bar li {
+   text-align: center;
+   list-style: none;
+ }
