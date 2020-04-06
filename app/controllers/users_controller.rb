@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @location = Location.new
     @user = User.find(params[:id])
   end
 end

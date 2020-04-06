@@ -1,1 +1,17 @@
-What UP <%=@user.username%>
+<div class="container">
+  What UP <%=@user.username%><br><br>
+  <%if !@user.location%>
+    Where are you today?
+    <%=form_for @user.location do |f|%>
+      <%=f.label :city%>
+      <%=f.text_field :city%>
+      <%=f.label :state%>
+      <%=f.text_field :state%>
+      <%=f.label :country%>
+      <%=f.text_field :country%>
+      <%=f.submit "Add Your Location"%>
+    <%end%>
+  <%else%>
+    <p>You're  currently in <%= @user.location.city%>, <%=@user.location.country%>
+  <%end%>
+</div>
