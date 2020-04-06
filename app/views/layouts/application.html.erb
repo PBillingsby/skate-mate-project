@@ -10,13 +10,11 @@
   </head>
 
   <body>
+    <div class="flash-alert">
+      <%flash.each do |type, msg|%>
+        <%=msg%>
+      <%end%>
+    </div>
     <%= yield %>
-    <% if @user.errors.any? %>
-    <ul>
-    <% for message_error in @user.errors.full_messages %>
-      <li>* <%= message_error %></li>
-    <% end %>
-    </ul>
-    <% end %>
   </body>
 </html>

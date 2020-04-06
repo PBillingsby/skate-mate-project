@@ -1,6 +1,6 @@
-Welcome back! Log in below!
+Log In Below
 <%= form_for(:user, :url => {:controller => 'sessions', :action => 'create'}) do |f| %>
   <%=f.text_field :email, placeholder: :email%>
   <%=f.password_field :password, placeholder: :password%>
-  <%=f.submit%>
+  <%=f.submit "Log In"%>
 <%end%>
