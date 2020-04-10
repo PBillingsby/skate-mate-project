@@ -1,4 +1,13 @@
 <%=simple_form_for(@user) do |f|%>
+  <% if @user.errors.any? %>
+    <h4><%= pluralize(@user.errors.count, "error") %>
+      prohibited this profile from being saved:</h4>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
   <h3>Sign Up</h3>
   <%=f.text_field :username, placeholder: :username%>
   <%=f.text_field :email, placeholder: :email%>
