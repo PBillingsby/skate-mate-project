@@ -5,7 +5,7 @@
     <h3>Where are you today?</h3>
     <%=simple_form_for Location.new do |f|%>
       <%=f.text_field :address, placeholder: :address%>
-      <%=f.submit%>
+      <%=f.submit "Add location"%>
     <%end%>
   </div>
   <div class="spot-side">

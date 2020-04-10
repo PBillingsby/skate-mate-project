@@ -1,14 +1,19 @@
 class LocationsController < ApplicationController
   def create
-    byebug
-    @location = Location.find_or_create_by(city: location_params[:city], state: location_params[:state], country: location_params[:country])
-    if location_params[:user_id]
-      current_user.location = @location
-      redirect_to user_path(current_user)
+    @location = Location.new(location_params)
+    if @location.save
+      flash[:success] = "location added!"
+      redirect_to location_path(@location)
+    else
+      render 'new'
     end
   end
 
+  def show
+    @location = Location.find(params[:id])
+  end
+
   def location_params
-    params.require(:location).permit(:city, :state, :country, :user_id)
+    params.require(:location).permit(:address)
   end
 end

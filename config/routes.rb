@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :sessions
   resources :users, only: [:new, :create, :show]
   resources :locations, only: [:create, :show]
+  resources :spots
   root 'users#index'
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'

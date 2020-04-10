@@ -3,7 +3,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
   validates_confirmation_of :password
-  has_one :location
-  geocoded_by :ip_address, :latitude => :lat, :longitude => :lon
+  belongs_to :location
   accepts_nested_attributes_for :location
 end
