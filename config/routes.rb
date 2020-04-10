@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   root 'users#index'
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'
-  post '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 end

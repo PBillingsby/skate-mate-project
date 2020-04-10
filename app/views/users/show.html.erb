@@ -1,4 +1,18 @@
 <div class="container">
-  What UP <%=@user.username%><br><br>
-  
+  <div class="main">
+    <h1>SKATE-MATE</h1>
+    <h3>What UP <%=@user.username%></h3><br><br>
+    <h3>Where are you today?</h3>
+    <%=simple_form_for Location.new do |f|%>
+      <%=f.text_field :address, placeholder: :address%>
+      <%=f.submit%>
+    <%end%>
+  </div>
+  <div class="spot-side">
+    <ul>
+      <li><%=link_to "SPOTS"%></li>
+      <li><%=link_to "CITIES"%></li>
+    </ul>
+    <%=link_to "ADD A SPOT"%>
+  </div>
 </div>

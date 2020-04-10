@@ -1,4 +1,4 @@
-<%=form_for @user do |f|%>
+<%=simple_form_for @user do |f|%>
   <h3>Sign Up</h3>
   <%=f.text_field :username, placeholder: :username%>
   <%=f.text_field :email, placeholder: :email%>

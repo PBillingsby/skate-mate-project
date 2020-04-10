@@ -4,5 +4,6 @@ class User < ApplicationRecord
   validates :password, presence: true
   validates_confirmation_of :password
   has_one :location
+  geocoded_by :ip_address, :latitude => :lat, :longitude => :lon
   accepts_nested_attributes_for :location
 end

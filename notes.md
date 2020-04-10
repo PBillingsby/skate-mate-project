@@ -25,3 +25,6 @@ USER SHOW
   <%else%>
     <p>You're  currently in <%= @user.location.city%>, <%=@user.location.country%>
   <%end%>
+
+  SPOT RATINGS
+    <%= f.input :rating, collection: 1..10 %>
