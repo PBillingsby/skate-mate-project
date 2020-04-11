@@ -29,12 +29,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if params[:location]
-      @user.location.update(address: "Sydney, NSW")
+    if params[:user][:location]
+      byebug # FIX TO UPDATE ALL ATTRIBUTES OF LOCATION
+      redirect_to user_path(@user)
     end
   end
 
-  def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, :location, location_attributes: [:address])
-  end
 end
