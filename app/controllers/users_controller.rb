@@ -27,6 +27,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def update
+    byebug
+  end
+
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation, location_attributes: [:address, :city, :country])
   end
