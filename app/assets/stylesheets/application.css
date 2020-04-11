@@ -20,6 +20,13 @@
   padding: 10px;
   border: 1px solid rgb(115, 255, 0);
 }
+.nav-links {
+  text-align: center;
+}
+.nav-links li {
+  padding: 20px;
+  display: inline;
+}
 .flash-alert {
   color: red;
 }
