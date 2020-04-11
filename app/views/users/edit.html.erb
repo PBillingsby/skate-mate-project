@@ -1,9 +1,9 @@
 <%=simple_form_for @user do |f|%>
   <%=f.label :username%>
   <%=f.text_field :username, placeholder: :username%>
-  <%=f.fields_for @user.location do |location|%>
+  <%=f.fields_for @user.location do |location_attributes|%>
     <%=label_tag :location%>
-    <%=location.text_field :address, value: @user.location.address%>
+    <%=location_attributes.text_field :address, value: @user.location.address%>
   <%end%>
   <%=f.submit%>
 <%end%>

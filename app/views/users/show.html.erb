@@ -6,10 +6,7 @@
   </div>
   <div class="spot-side">
     <h3>Where do you want to skate today?</h3>
-    <%=simple_form_for Location.new do |f|%>
-     <%=f.text_field :address, placeholder: :address%>
-     <%=f.submit "Add location"%>
-    <%end%>
+    <%=render "locations/form"%>
     <ul>
       <li><%=link_to "SPOTS"%></li>
       <li><%=link_to "CITIES"%></li>

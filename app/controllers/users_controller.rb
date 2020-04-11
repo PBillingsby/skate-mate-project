@@ -28,10 +28,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    byebug
+    @user = User.find(params[:id])
+    if params[:location]
+      @user.location.update(address: "Sydney, NSW")
+    end
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, location_attributes: [:address, :city, :country])
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :location, location_attributes: [:address])
   end
 end
