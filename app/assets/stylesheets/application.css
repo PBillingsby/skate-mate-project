@@ -14,12 +14,23 @@
  *= require_self
  */
 .container {
-  border: 1px solid black;
+  width: 75vw;
+  margin: 0 auto;
+  height: auto;
+  padding: 10px;
+  border: 1px solid rgb(115, 255, 0);
 }
- .flash-alert {
-   color: red;
- }
- .nav-bar li {
-   text-align: center;
-   list-style: none;
- }
+.flash-alert {
+  color: red;
+}
+.nav-bar li {
+  text-align: center;
+  list-style: none;
+}
+.main {
+  display: inline-block;
+}
+.spot-side {
+  float: right;
+  display: inline-block;
+}

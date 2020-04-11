@@ -1,16 +1,15 @@
 <div class="container">
   <div class="main">
     <h1>SKATE-MATE</h1>
-    <h3>Hey, <%=@user.username%>.</h3><br>
+    <h3>Hey, <%=@user.username%>.</h3>
     <p>You are currently located in <%=user_location%>.</p>
+  </div>
+  <div class="spot-side">
     <h3>Where do you want to skate today?</h3>
-    
     <%=simple_form_for Location.new do |f|%>
      <%=f.text_field :address, placeholder: :address%>
      <%=f.submit "Add location"%>
     <%end%>
-  </div>
-  <div class="spot-side">
     <ul>
       <li><%=link_to "SPOTS"%></li>
       <li><%=link_to "CITIES"%></li>

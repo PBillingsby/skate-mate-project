@@ -15,7 +15,9 @@
         <%=msg%>
       <%end%>
     </div>
-    
+    <%if current_user%>
+      <%=render partial 'user_nav'%>
+    <%end%>
     <%= yield %>
   </body>
 </html>
