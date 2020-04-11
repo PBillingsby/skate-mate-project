@@ -5,7 +5,7 @@ class LocationsController < ApplicationController
       redirect_to user_path(current_user)
     else
       location_search = Geocoder.search(location_params[:address]).first
-      @location = Location.new(address: location_params[:address], city: location_search.city, country: location_search.country)
+      @location = Location.new(address: location_params[:address], city: location_search.city, country: location_search.country) #Will keep original search query for address
       if @location.save
         flash[:success] = "location added!"
         current_user.update(location_id: @location.id)
