@@ -13,31 +13,4 @@
  *= require_tree .
  *= require_self
  */
-.container {
-  width: 75vw;
-  margin: 0 auto;
-  height: auto;
-  padding: 10px;
-  border: 1px solid rgb(115, 255, 0);
-}
-.nav-links {
-  text-align: center;
-}
-.nav-links li {
-  padding: 20px;
-  display: inline;
-}
-.flash-alert {
-  color: red;
-}
-.nav-bar li {
-  text-align: center;
-  list-style: none;
-}
-.main {
-  display: inline-block;
-}
-.spot-side {
-  float: right;
-  display: inline-block;
-}
+

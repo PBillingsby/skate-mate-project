@@ -2,7 +2,7 @@
   <div class="main">
     <h1>SKATE-MATE</h1>
     <h3>Hey, <%=@user.username%>.</h3>
-    <p>You are currently located in <%=user_location%>.</p>
+    <p>You are currently located in <%=user_location%>. <%=link_to "Edit", edit_user_path(current_user)%></p>
   </div>
   <div class="spot-side">
     <h3>Where do you want to skate today?</h3>

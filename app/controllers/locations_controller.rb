@@ -6,8 +6,6 @@ class LocationsController < ApplicationController
     else
       location_search = Geocoder.search(location_params[:address]).first
       @location = Location.new(address: location_params[:address], city: location_search.city, country: location_search.country)
-      byebug
-
       if @location.save
         flash[:success] = "location added!"
         current_user.update(location_id: @location.id)
