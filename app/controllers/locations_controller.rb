@@ -1,10 +1,13 @@
 class LocationsController < ApplicationController
   def create
-    @location = Location.new(location_params)
+    location_search = Geocoder.search(location_params[:address]).first
+    @location = Location.new(address: location_params[:address], city: location_search.city, country: location_search.country)
     if @location.save
       flash[:success] = "location added!"
-      redirect_to location_path(@location)
+      byebug
+      redirect_to user_path(current_user)
     else
+      flash[:error] = "No search results. Try again"
       render 'new'
     end
   end
@@ -14,6 +17,6 @@ class LocationsController < ApplicationController
   end
 
   def location_params
-    params.require(:location).permit(:address)
+    params.require(:location).permit(:address, :user_id)
   end
 end
