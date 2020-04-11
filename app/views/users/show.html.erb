@@ -4,7 +4,10 @@
     <h3>What UP <%=@user.username%></h3><br>
     <%=user_location%>
     <h3>Where do you want to skate today?</h3>
-    <%=render "locations/form"%>
+    <%=simple_form_for Location.new do |f|%>
+     <%=f.text_field :address, placeholder: :address%>
+     <%=f.submit "Add location"%>
+    <%end%>
   </div>
   <div class="spot-side">
     <ul>

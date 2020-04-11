@@ -1,3 +1,4 @@
+
 <%=simple_form_for(@user) do |f|%>
   <% if @user.errors.any? %>
     <h4><%= pluralize(@user.errors.count, "error") %>
@@ -13,6 +14,11 @@
   <%=f.text_field :email, placeholder: :email%>
   <%=f.password_field :password, placeholder: :password%>
   <%=f.password_field :password_confirmation, placeholder: :password_confirmation%>
+  <h3>Where do you want to skate today?</h3>
+  <%=simple_form_for @user.location.build do |f|%>
+    <%=f.text_field :address, placeholder: :address%>
+    <%=f.submit "Add location"%>
+  <%end%>
   <%=f.submit%>
 <%end%>
 

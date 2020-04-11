@@ -4,12 +4,13 @@ class LocationsController < ApplicationController
       flash[:error] = "Search can't be empty. Try again"
       redirect_to user_path(current_user)
     else
-      user = User.find(params[:id])
       location_search = Geocoder.search(location_params[:address]).first
       @location = Location.new(address: location_params[:address], city: location_search.city, country: location_search.country)
+      byebug
+
       if @location.save
         flash[:success] = "location added!"
-        user.location = @location
+        current_user.update(location_id: @location.id)
         redirect_to user_path(current_user)
       end
     end
