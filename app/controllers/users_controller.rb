@@ -30,9 +30,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if params[:user][:location]
-      byebug # FIX TO UPDATE ALL ATTRIBUTES OF LOCATION
+       # FIX TO UPDATE ALL ATTRIBUTES OF LOCATION
       redirect_to user_path(@user)
     end
   end
-
 end

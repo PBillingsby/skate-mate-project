@@ -9,12 +9,10 @@ class ApplicationController < ActionController::Base
   end
 
   def logged_in
-    byebug
     session[:current_user]
   end
 
   def user_auth
-    byebug
     if !params[:id].nil?
       if params[:id].to_i != current_user.id
         flash[:error] = "Not authorized to view this profile."
