@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
     @user = User.new
   end
   def create
-    byebug
     user = User.find_by(email: user_params[:email])
     if user && user.authenticate(user_params[:password])
       session[:user_id] = user.id
@@ -18,5 +17,19 @@ class SessionsController < ApplicationController
     session.delete :user_id
     current_user = nil
     redirect_to root_url
+  end
+
+  def omniauth
+    @user = User.find_or_create_by(email: auth[:info][:email]) do |u|
+      u.password = SecureRandom.hex
+      u.username = ""
+    end
+    session[:user_id] = @user.id
+    redirect_to user_path(@user)
+  end
+
+  private
+  def auth
+    request.env['omniauth.auth']
   end
 end

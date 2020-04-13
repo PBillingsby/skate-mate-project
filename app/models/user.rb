@@ -1,9 +1,9 @@
 class User < ApplicationRecord
   has_secure_password
-  # belongs_to :location, optional: true
+  has_many :location
   validates :email, presence: true, uniqueness: true
-  validates :password, presence: true, :on => :create, confirmation: true
-  validates_confirmation_of :password
+  validates :password, presence: true, :on => :create, confirmation: true, if: -> { password.present? }
+  validates_confirmation_of :password, if: -> { password.present? }
   # accepts_nested_attributes_for :location
 
   def self.find_or_create_from_auth_hash(auth)
