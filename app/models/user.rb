@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, :on => :create, confirmation: true
   validates_confirmation_of :password
-  accepts_nested_attributes_for :location
+  # accepts_nested_attributes_for :location
 
   def self.find_or_create_from_auth_hash(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
