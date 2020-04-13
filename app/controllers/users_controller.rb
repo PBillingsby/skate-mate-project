@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
+      user.location = Location.new
       redirect_to user_path(user)
     else
       flash.alert = "Sign up details incorrect. Try again."
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user.update(user_params)
     if params[:user][:location]
        # FIX TO UPDATE ALL ATTRIBUTES OF LOCATION
       redirect_to user_path(@user)
