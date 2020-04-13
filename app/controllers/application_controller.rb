@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def logged_in
     session[:current_user]
   end
-
+  # FIND A NEW PLACE TO PUT HELPERS
   def user_auth
     if !params[:id].nil?
       if params[:id].to_i != current_user.id

@@ -14,4 +14,6 @@ module UsersHelper
       "Well, nowhere! Head over to add your location.."
     end
   end
+
+  
 end
