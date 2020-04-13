@@ -27,7 +27,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'geocoder'
 gem 'simple_form'
 gem 'omniauth'
-gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+
 gem 'dotenv-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

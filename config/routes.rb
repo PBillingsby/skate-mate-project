@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :spots
   root 'users#index'
   get '/signup', to: 'users#new'
+  get '/auth/:provider/callback' => 'sessions#create'
   get '/login', to: 'sessions#new'
-  get '/auth/:provider/callback', to: 'sessions#omniauth'
   get '/logout', to: 'sessions#destroy'
 end
