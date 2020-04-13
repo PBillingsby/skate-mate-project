@@ -11,7 +11,7 @@ module UsersHelper
     if @user.location_id
       link_to "#{@user.location.city}, #{@user.location.country}", location_path(@user.location)
     else
-      "Well, nowhere! Head over to add your location.."
+      "Well, nowhere! Head over to add your location..."
     end
   end
 
