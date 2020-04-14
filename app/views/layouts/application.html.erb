@@ -17,10 +17,13 @@
       <%end%>
     </div>
     <%if current_user%>
+    <header>
       <ul class="nav-links">
         <li><%=link_to "Home", user_path(current_user)%></li>
+        <li><%=link_to "Spots", spots_path%>
         <li><%=link_to "Logout", logout_path%></li>
       </ul>
+    </header>
     <%end%>
     <%= yield %>
   </body>

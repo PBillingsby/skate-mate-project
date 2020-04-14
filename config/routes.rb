@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy, :omniauth]
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :locations, only: [:create, :show]
-  resources :spots, only: [:new, :create, :show]
+  resources :spots, only: [:new, :create, :index, :show]
   root 'users#index'
   get '/signup', to: 'users#new'
   get '/auth/:provider/callback' => 'sessions#create'
