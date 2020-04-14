@@ -6,6 +6,7 @@ class CreateSpots < ActiveRecord::Migration[6.0]
       t.text :description
       t.integer :rating
       t.integer :location_id
+      t.integer :user_id
     end
   end
 end

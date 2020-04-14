@@ -1,11 +1,6 @@
 <%=user_auth%>
-<%byebug%>
 <%=simple_form_for @user do |f|%>
   <%=f.label :username%>
   <%=f.text_field :username, placeholder: :username%>
-  <%=f.fields_for @user.location do |location_attributes|%>
-    <%=label_tag :location%>
-    <%=location_attributes.text_field :address, value: @user.location.address%>
-  <%end%>
   <%=f.submit%>
 <%end%>
