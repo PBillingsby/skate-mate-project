@@ -3,6 +3,6 @@ New Spot
   <%=f.text_field :name, placeholder: :name%><br>
   <%=f.text_field :address, placeholder: :address%><br>
   <%=f.text_area :description, placeholder: :description%><br>
-  <%=collection_select :location, :location_id, Location.all, :id%>
+  <%=collection_select :location, :location_id, Location.all, :id, :address%>
   <%=f.submit%>
 <%end%>
