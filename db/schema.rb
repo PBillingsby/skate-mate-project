@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_10_163920) do
+ActiveRecord::Schema.define(version: 2020_04_06_054618) do
 
   create_table "locations", force: :cascade do |t|
     t.string "address"
@@ -18,14 +18,6 @@ ActiveRecord::Schema.define(version: 2020_04_10_163920) do
     t.string "country"
     t.float "longitude"
     t.float "latitude"
-  end
-
-  create_table "spots", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.text "description"
-    t.integer "rating"
-    t.integer "location_id"
   end
 
   create_table "users", force: :cascade do |t|
