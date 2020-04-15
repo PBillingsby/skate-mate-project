@@ -1,12 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway&display=swap');
+
+body {
+  font-family: Raleway;
+}
 header {
   background-color: #eee;
 }
+h1, h2, h3 {
+  font-family: 'Open Sans';
+}
 .container {
-  width: 75vw;
+  width: 80vw;
   margin: 0 auto;
   height: auto;
   padding: 10px;
   border: 1px solid rgb(115, 255, 0);
+}
+
+.centered {
+  text-align: center;
+}
+.login-form {
+  list-style-type: none;
 }
 .nav-links {
   text-align: center;
