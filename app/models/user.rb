@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :locations
+  has_one :check_in
+  has_many :locations, through: :check_ins
   # has_many :spots, through: :locations
   # has_many :comments, through: :spots
 

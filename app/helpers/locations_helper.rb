@@ -10,10 +10,11 @@ module LocationsHelper
       redirect_to user_path(user)
     else
       location_search = Geocoder.search(location_params[:address]).first
-      @location = Location.new(address: location_params[:address], city: location_search.city, country: location_search.country) #Will keep original search query for address
-      if @location.save
+      @location = Location.find_or_create_by(address: location_params[:address], city: location_search.city, country: location_search.country)
+      if @location
+        check_in = @location.check_ins.create(user_id: user.id)
         flash[:success] = "location added!"
-        user.update(location_id: @location.id).save
+        user.update(location_id: @location.id)
         redirect_to user_path(user)
       end
     end
