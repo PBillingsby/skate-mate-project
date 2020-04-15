@@ -1,0 +1,3 @@
+class CheckIn < ApplicationRecord
+  
+end

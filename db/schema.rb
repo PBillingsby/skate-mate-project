@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_10_163920) do
+ActiveRecord::Schema.define(version: 2020_04_15_154908) do
+
+  create_table "check_ins", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "location_id"
+  end
 
   create_table "locations", force: :cascade do |t|
     t.string "address"

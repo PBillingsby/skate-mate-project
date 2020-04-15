@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def index
-    byebug
     if current_user
       redirect_to user_path(current_user)
     end

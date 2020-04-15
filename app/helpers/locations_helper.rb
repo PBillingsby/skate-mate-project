@@ -13,7 +13,7 @@ module LocationsHelper
       @location = Location.new(address: location_params[:address], city: location_search.city, country: location_search.country) #Will keep original search query for address
       if @location.save
         flash[:success] = "location added!"
-        user.update(location_id: @location.id)
+        user.update(location_id: @location.id).save
         redirect_to user_path(user)
       end
     end
