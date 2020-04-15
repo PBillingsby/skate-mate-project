@@ -4,19 +4,26 @@ body {
   font-family: Raleway;
 }
 header {
-  background-color: #eee;
 }
 h1, h2, h3 {
   font-family: 'Open Sans';
 }
+a, a:visited {
+  text-decoration: none;
+  color: rgb(0, 183, 255);
+
+}
 .container {
   width: 80vw;
   margin: 0 auto;
-  height: auto;
-  padding: 10px;
-  border: 1px solid rgb(115, 255, 0);
+  height: 100vh;
+  padding: 10px 0;
+  border: 1px solid rgba(85, 36, 36, 0.486);
 }
-
+ul {
+  margin: 0;
+  padding: 0;
+  }
 .centered {
   text-align: center;
 }
@@ -25,10 +32,14 @@ h1, h2, h3 {
 }
 .nav-links {
   text-align: center;
+  background-image: url('http://www.skate-the-planet.com/images/articles/deckTech/deckSides.jpg');
 }
 .nav-links li {
   padding: 20px;
   display: inline;
+}
+.blue-text {
+  color: rgb(0, 183, 255);
 }
 .flash-alert {
   color: red;

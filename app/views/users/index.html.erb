@@ -1,14 +1,14 @@
 <div class="centered"> 
-  <h1>Skate-Mate</h1>
+  <h1 class="blue-text">Skate-Mate</h1>
   <ul class="login-form"><%=form_for User.new do |f|%>
-    <h3>Sign Up</h3>
+    <h3><u>Sign Up</u></h3>
     <li><%=f.text_field :username, placeholder: :username%></li>
     <li><%=f.text_field :email, placeholder: :email%></li>
     <li><%=f.password_field :password, placeholder: :password%></li>
     <li><%=f.password_field :password_confirmation, placeholder: :password_confirmation%></li>
     <li><%=f.submit%></li>
-  <%end%></ul><hr>
-  <h3>Existing Users</h3>
-  <%=link_to 'Log In', login_path%><br>
+  <%end%></ul>
+  <h3><u>Existing Users</u></h3>
+  <%=link_to 'Log In', login_path%><br><br>
   <%=link_to 'Sign In with Google', '/auth/google_oauth2'%>
 </div>

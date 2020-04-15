@@ -13,8 +13,8 @@ module LocationsHelper
       @location = Location.find_or_create_by(address: location_params[:address], city: location_search.city, country: location_search.country)
       if @location
         check_in = @location.check_ins.create(user_id: user.id)
-        flash[:success] = "location added!"
-        user.update(location_id: @location.id)
+        flash[:success] = "Location Changed!"
+        # user.update(location_id: @location.id)
         redirect_to user_path(user)
       end
     end
