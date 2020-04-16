@@ -15,7 +15,6 @@ module LocationsHelper
         new_check_in = @location.check_ins.find_or_create_by(user_id: user.id)
         new_check_in.location_id = @location.id
         user.check_in = new_check_in
-        byebug
         flash[:success] = "Location Changed!"
         redirect_to user_path(user)
       end
