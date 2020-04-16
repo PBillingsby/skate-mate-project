@@ -3,12 +3,5 @@ New Spot
   <%=f.text_field :name, placeholder: :name%><br>
   <%=f.text_field :address, placeholder: :address%><br>
   <%=f.text_area :description, placeholder: :description%><br>
-  <h4>Add address</h4>
-  <%=f.fields_for :locations do |loc|%>
-    <%=loc.label :address%>
-    <%=loc.text_field :address%>
-  <%end%>
-  <h4>or select from below</h4>
-  <%=collection_select :location, :location_id, Location.all, :id, :address%>
   <%=f.submit%>
 <%end%>

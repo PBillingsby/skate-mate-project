@@ -1,4 +1,5 @@
 <%=@spot.name%><br>
 <%=@spot.address%>
+<%= image_tag(url_for(@spot.img)) if @spot.img.attached?%>
 <p>added by <%=@spot.user.username%></p>
 <p><%=edit_del_auth%></p>

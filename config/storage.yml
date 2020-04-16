@@ -16,10 +16,10 @@ local:
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
-  service: GCS
-  project: skate-mate
-  credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
-  bucket: 697688629201
+  # service: GCS
+  # project: skate-mate
+  # credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
+  # bucket: 697688629201
 
 
 

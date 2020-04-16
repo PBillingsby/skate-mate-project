@@ -1,4 +1,5 @@
 class SpotsController < ApplicationController
+  include SpotsHelper
   def index
     @spots = Spot.all
   end
@@ -6,6 +7,7 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
   def create
+    geocode_spot
     spot = Spot.new(spot_params)
     if spot.save
       redirect_to spot_path(spot)
@@ -27,6 +29,6 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :address, :description, :rating, :location_id, :user_id, location_attributes: [])
+    params.require(:spot).permit(:name, :address, :description, :rating, :img, :location_id, :user_id)
   end
 end

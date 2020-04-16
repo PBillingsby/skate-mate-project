@@ -8,7 +8,7 @@ module UsersHelper
     if @user.check_in
       link_to "#{@user.check_in.location.city}", location_path(@user)
     else
-      "Well, nowhere! Head over to add your location..."
+      "Well, nowhere! Check in to add your location..."
     end
   end
 end
