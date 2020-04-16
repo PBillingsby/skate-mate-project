@@ -28,6 +28,7 @@ gem 'geocoder'
 gem 'simple_form'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
+gem "google-cloud-storage", "~> 1.11", require: false
 
 gem 'dotenv-rails'
 # Reduces boot times through caching; required in config/boot.rb
