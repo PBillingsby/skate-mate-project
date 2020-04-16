@@ -10,7 +10,7 @@ h1, h2, h3 {
 }
 a, a:visited {
   text-decoration: none;
-  color: rgb(0, 183, 255);
+  color: rgb(1, 102, 6);
 
 }
 .container {
@@ -32,14 +32,13 @@ ul {
 }
 .nav-links {
   text-align: center;
-  background-image: url('http://www.skate-the-planet.com/images/articles/deckTech/deckSides.jpg');
 }
 .nav-links li {
   padding: 20px;
   display: inline;
 }
 .blue-text {
-  color: rgb(0, 183, 255);
+  color: rgb(250, 250, 250);
 }
 .flash-alert {
   color: red;

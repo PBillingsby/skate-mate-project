@@ -1,0 +1,5 @@
+<h1>Locations:</h1><br>
+<ul><%@locations.each do |loc|%>
+  <li><%=link_to loc.address, loc.address%>, <%=loc.city%>, <%=loc.country%></li>
+  <li>Spot count: <%=loc.spots.count%></li><br>
+<%end%></ul>

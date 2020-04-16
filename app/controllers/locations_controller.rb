@@ -1,5 +1,8 @@
 class LocationsController < ApplicationController
   include LocationsHelper
+  def index
+    @locations = Location.all
+  end
   def create
     geocode_address
   end
