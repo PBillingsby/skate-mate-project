@@ -12,4 +12,10 @@
     <li><%=link_to "Add Spot", new_spot_path%></li>
     <li><%=link_to "Cities", locations_path%></li>
   </ul>
+
+  <ul>Your spots
+    <%@user.spots.each do |spot|%>
+      <li><%=link_to spot.name, spot%></li>
+    <%end%>
+  <ul>
 </div>
