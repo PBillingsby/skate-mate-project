@@ -4,6 +4,6 @@ class CheckIn < ApplicationRecord
   before_save :check_in
 
   def check_in
-    byebug
+    self.save
   end
 end
