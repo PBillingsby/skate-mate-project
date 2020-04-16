@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @location = Location.new
     user_error_handle
   end
 
