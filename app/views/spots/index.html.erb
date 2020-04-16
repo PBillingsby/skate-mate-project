@@ -1,4 +1,8 @@
-<ul><%@spots.each do |spot|%>
-  <li><h3>Spot: <%=spot.name%>, <%=spot.location.city%>, <%=spot.location.country%></h3></li>
-  <li><h4>Address: <%=spot.address%></h4></li>
-<%end%></ul>
+<div class="spot-grid">
+  <ul><%@spots.each do |spot|%>
+    <div class="spot-box">
+      <li><h3>Spot: <%=spot.name%>, <%=spot.location.city%>, <%=spot.location.country%></h3></li>
+      <li><h4>Address: <%=spot.address%></h4></li>
+    </div>
+  <%end%></ul>
+</div>
