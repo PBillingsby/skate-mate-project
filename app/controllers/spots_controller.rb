@@ -8,13 +8,6 @@ class SpotsController < ApplicationController
   end
   def create
     geocode_spot
-    spot = Spot.new(spot_params)
-    if spot.save
-      redirect_to spot_path(spot)
-    else
-      flash.error = "Fill all fields and try again"
-      render 'spots/form'
-    end
   end
 
   def show
