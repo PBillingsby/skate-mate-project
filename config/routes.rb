@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :check_ins, only: [:new, :destroy]
   end
   resources :locations, only: [:create, :show, :index]
-  resources :spots, only: [:new, :create, :index, :show]
+  resources :spots, only: [:new, :create, :index, :show, :edit, :destroy]
   root 'users#index'
   get '/signup', to: 'users#new'
   get '/auth/:provider/callback' => 'sessions#create'

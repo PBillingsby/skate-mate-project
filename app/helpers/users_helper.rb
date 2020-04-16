@@ -1,10 +1,7 @@
 module UsersHelper
-
   def user_name
-    if @user.username.blank?
-      nil
-    elsif @user.username
-    "Hey, #{@user.username}"
+    if !@user.username.blank?
+      "Hey, #{@user.username}"
     end
   end
   def user_location

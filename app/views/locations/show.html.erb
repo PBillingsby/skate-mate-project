@@ -1,6 +1,6 @@
 Skate Spots in <%=@location.city%>:<br>
 <%@location.spots.each do |spot|%>
-  <%=link_to spot.name, spot_path(spot)%>
+  <%=link_to spot.name, spot_path(spot)%><br>
 <%end%>
 <hr>
 Users in your area
