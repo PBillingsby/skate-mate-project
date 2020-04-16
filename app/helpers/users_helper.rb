@@ -9,7 +9,6 @@ module UsersHelper
   end
   def user_location
     if @user.check_in
-      byebug
       link_to "#{@user.check_in.location.city}", location_path(@user.location_id)
     else
       "Well, nowhere! Head over to add your location..."
