@@ -1,5 +1,4 @@
-<%@spots.each do |spot|%>
-  <%spot.attribute.each do |k, v|%>
-    <li><%=k%>: <%=v%></li>
-  <%end%>
-<%end%>
+<ul><%@spots.each do |spot|%>
+  <li><h3>Spot: <%=spot.name%>, <%=spot.location.city%>, <%=spot.location.country%></h3></li>
+  <li><h4>Address: <%=spot.address%></h4></li>
+<%end%></ul>

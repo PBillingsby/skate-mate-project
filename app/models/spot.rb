@@ -1,6 +1,7 @@
 class Spot < ApplicationRecord
   belongs_to :location
-  has_many :users, through: :locations
+  belongs_to :user
+  has_many :users
   accepts_nested_attributes_for :location
   # ADD COMMENTS
 end
