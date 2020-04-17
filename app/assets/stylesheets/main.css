@@ -11,20 +11,25 @@ h2, h3 {
 a, a:visited {
   text-decoration: none;
   color: rgb(1, 102, 6);
-
 }
+
 .container {
-  width: 80vw;
-  margin: 0 auto;
-  height: auto;
-  padding: 20px;
-  border: 1px solid rgba(85, 36, 36, 0.486);
+  margin: 10px auto;
+  background: #ff8fc34a;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   }
+
+.page-grid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .centered {
   text-align: center;
 }
@@ -32,7 +37,6 @@ ul {
   list-style-type: none;
 }
 .spot-box {
-  border: 1px solid black;
   padding: 5px;
   display: inline-block;
 }

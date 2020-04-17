@@ -1,21 +1,23 @@
 <%=user_auth%>
-<div class="main">
-  <h1>SKATE-MATE</h1>
-  <h3><%=user_name%></h3>
-  <%=link_to "Edit", edit_user_path(@user)%></span>
-  <p>You are currently located in <%=user_location%>.</p>
-</div>
-<div class="spot-side">
-  <h3>Where are you skating today?</h3>
-  <%=render "locations/form"%>
-  <ul>
-    <li><%=link_to "Add Spot", new_spot_path%></li>
-    <li><%=link_to "Cities", locations_path%></li>
-  </ul>
+<div class="page-grid">  
+  <div class="main">
+    <h1>SKATE-MATE</h1>
+    <h3><%=user_name%></h3>
+    <%=link_to "Edit", edit_user_path(@user)%></span>
+    <p>You are currently located in <%=user_location%>.</p>
+  </div>
+  <div class="spot-side">
+    <h3>Where are you skating today?</h3>
+    <%=render "locations/form"%>
+    <ul>
+      <li><%=link_to "Add Spot", new_spot_path%></li>
+      <li><%=link_to "Cities", locations_path%></li>
+    </ul>
 
-  <ul>Your spots
-    <%@user.spots.each do |spot|%>
-      <li><%=link_to spot.name, spot%></li>
-    <%end%>
-  <ul>
+    <ul>Your spots
+      <%@user.spots.each do |spot|%>
+        <li><%=link_to spot.name, spot%></li>
+      <%end%>
+    <ul>
+  </div>
 </div>

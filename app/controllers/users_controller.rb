@@ -21,12 +21,12 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
     @location = Location.new
     user_error_handle
   end
 
   def edit
-    @user = User.new
     user_error_handle
   end
 
