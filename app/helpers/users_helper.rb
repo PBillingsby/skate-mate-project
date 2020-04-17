@@ -2,6 +2,8 @@ module UsersHelper
   def user_name
     if !@user.username.blank?
       "Hey, #{@user.username}"
+    else
+      "Add your username"
     end
   end
   def user_location
