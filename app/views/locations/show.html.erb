@@ -8,5 +8,8 @@ Users in your area
   <li><%=user.username%></li>
 <%end%></ul>
 <br>
-
-<%=render 'spots/form'%>
+<%=form_for @location.spots.create do |f|%>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :location_id, :value => @location.id %>
+  <%=render "spots/form", f:f%>
+<%end%>
