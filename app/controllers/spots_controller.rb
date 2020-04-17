@@ -7,7 +7,9 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
   def create
-    geocode_spot
+    spot = Spot.create(spot_params)
+    spot.save
+    redirect_to spot_path(spot)
   end
 
   def show
