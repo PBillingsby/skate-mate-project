@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   def user_auth
     if !params[:id].nil?
       if params[:id].to_i != current_user.id
-        flash[:error] = "Not authorized to view this profile."
+        flash[:error] = "Not authorized to view this page."
         redirect_to user_path(current_user)
       end
     end

@@ -3,7 +3,10 @@ module UsersHelper
     if !@user.username.blank?
       "Hey, #{@user.username}"
     else
-      "Add your username"
+      form_for @user do |f|
+        f.text_field :username, placeholder: "Add Username"
+        f.submit
+      end
     end
   end
   def user_location
