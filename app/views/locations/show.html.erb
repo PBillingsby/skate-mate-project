@@ -9,12 +9,4 @@ Users in your area
 <%end%></ul>
 <br>
 
-<%=form_for @location.spots.create do |f|%>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.hidden_field :location_id, :value => @location.id %>
-  <%=f.text_field :name, placeholder: :name%><br>
-  <%=f.text_field :address, placeholder: :address%><br>
-  <%=f.text_area :description, placeholder: :description%><br>
-  <%=f.file_field :image%>
-  <%=f.submit%>
-<%end%>
+<%=render 'spots/form'%>

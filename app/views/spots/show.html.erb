@@ -1,5 +1,6 @@
-<%=@spot.name%><br>
-<%=@spot.address%>
+<h3><%=@spot.name%></h3>
+<p><%=@spot.address%>, <%=@spot.location.city%></p>
+<%=link_to @spot.image, @spot.image%> 
 <p>added by <%=@spot.user.username%></p>
 <%if @spot.user_id == current_user%>
   <%=link_to "Delete", :spot, method: :delete%>
