@@ -11,11 +11,10 @@ module LocationsHelper
       location_search = Geocoder.search(location_params[:city]).first
       @location = Location.find_or_create_by(city: location_params[:city], country: location_search.country)
       if @location
-        new_check_in = current_user.check_in.find_or_create_by(location_id: @location.id)
-        current_user.save
-        byebug
+        new_check_in = @location.check_ins.find_or_create_by(location_id: @location.id, user_id: current_user.id)
+        current_user.check_in = new_check_in
         flash[:success] = "Location Changed!"
-        redirect_to user_path(user)
+        redirect_to user_path(current_user)
       end
     end
   end

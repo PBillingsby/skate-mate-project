@@ -29,7 +29,7 @@ gem 'simple_form'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem "google-cloud-storage", "~> 1.11", require: false
-
+gem 'octicons'
 gem 'dotenv-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

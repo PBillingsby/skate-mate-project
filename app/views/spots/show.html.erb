@@ -1,12 +1,10 @@
 <h3><%=@spot.name%></h3>
 <p><%=@spot.address%>, <%=@spot.location.city%></p>
 <p>added by <%=@spot.user.username%></p>
+<%@spot.rating.times do  %>
+ <%= octicon "star" %>
+<% end %>
 <%if @spot.user_id == current_user%>
   <%=link_to "Delete", :spot, method: :delete%>
   <%=link_to "Edit", edit_spot_path(@spot)%>
 <%end%>
-
-<% @spot.images.each do |image| %>
-  <%byebug%>
-  <%= image_tag(url_for(image)) %>
-<% end %>

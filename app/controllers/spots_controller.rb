@@ -8,7 +8,6 @@ class SpotsController < ApplicationController
     @spot = Spot.new
   end
   def create
-    byebug
     spot = Spot.create(spot_params)
     spot.save
     redirect_to spot_path(spot)
