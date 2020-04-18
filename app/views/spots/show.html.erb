@@ -16,3 +16,15 @@
     <%=link_to "Edit", edit_spot_path(@spot)%>
   <%end%>
 </div>
+
+<div align="right">
+  <%=form_for @spot.comments.create do |f|%>
+    <%=f.text_field :content, placeholder: "Comment"%>
+    <%=f.submit "Add Comment"%>
+  <%end%>
+
+  <%=@spot.comments.each do |comment|%>
+    <%=comment.content%>
+    Posted by: <%=comment.user%>
+  <%end%>
+</div>
