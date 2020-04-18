@@ -29,6 +29,7 @@ gem 'simple_form'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'octicons'
+gem 'octicons_helper', '~> 9.6'
 gem 'dotenv-rails'
 gem "mini_magick"
 

@@ -1,9 +1,13 @@
 <h3><%=@spot.name%></h3>
 <p><%=@spot.address%>, <%=@spot.location.city%></p>
-<p><%=@spot.rating%>/5 stars</p>
-<p>added by <%=@spot.user.username%></p>
+<p>Added by: <%=@spot.user.username%></p>
 <%-#<%=url_for @spot.image%>
-<%-# Add octicon back%>
+<span>
+  Rating:
+  <%@spot.rating.times do  %>
+  <%= octicon "star", :class => "gold-star" %>
+  <% end %>
+</span>
 <%if @spot.user_id == current_user%>
   <%=link_to "Delete", :spot, method: :delete%>
   <%=link_to "Edit", edit_spot_path(@spot)%>

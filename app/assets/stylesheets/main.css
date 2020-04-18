@@ -25,7 +25,9 @@ ul {
   margin: 0;
   padding: 0;
   }
-
+.gold-star {
+  color: #ffd700;
+}
 .page-grid {
   text-align: center;
   display: grid;

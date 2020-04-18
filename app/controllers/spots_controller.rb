@@ -1,6 +1,5 @@
 class SpotsController < ApplicationController
   require 'octicons'
-
   include SpotsHelper
   def index
     @locations = Location.all
@@ -16,7 +15,6 @@ class SpotsController < ApplicationController
   end
 
   def show
-    byebug
     @spot = Spot.find(params[:id])
   end
 
