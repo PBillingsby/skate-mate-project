@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_one :check_in, :dependent => :destroy
   has_many :locations, through: :check_ins
   has_many :spots
+  has_many :comments
   has_many :comments, through: :spots
 
   validates :email, presence: true, uniqueness: true

@@ -17,14 +17,16 @@
   <%end%>
 </div>
 
-<div align="right">
+<div>
   <%=form_for @spot.comments.create do |f|%>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :spot_id, :value => @spot.id %>
     <%=f.text_field :content, placeholder: "Comment"%>
     <%=f.submit "Add Comment"%>
   <%end%>
 
-  <%=@spot.comments.each do |comment|%>
+  <%@spot.comments.each do |comment|%>
+    <%=comment.user.username%> posted:
     <%=comment.content%>
-    Posted by: <%=comment.user%>
   <%end%>
 </div>
