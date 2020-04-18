@@ -1,4 +1,6 @@
 class SpotsController < ApplicationController
+  require 'octicons'
+
   include SpotsHelper
   def index
     @locations = Location.all

@@ -28,3 +28,7 @@ USER SHOW
 
   SPOT RATINGS
     <%= f.input :rating, collection: 1..10 %>
+
+    <%@spot.rating.times do  %>
+ <%= octicon "star" %>
+<% end %>
