@@ -1,14 +1,18 @@
-<h3><%=@spot.name%></h3>
-<p><%=@spot.address%>, <%=@spot.location.city%></p>
-<p>Added by: <%=@spot.user.username%></p>
-<%-#<%=url_for @spot.image%>
-<span>
-  Rating:
-  <%@spot.rating.times do  %>
-  <%= octicon "star", :class => "gold-star" %>
-  <% end %>
-</span>
-<%if @spot.user_id == current_user%>
-  <%=link_to "Delete", :spot, method: :delete%>
-  <%=link_to "Edit", edit_spot_path(@spot)%>
-<%end%>
+<div>  
+  <h3><%=@spot.name%></h3>
+  <p><%=@spot.address%>, <%=@spot.location.city%>, <%=@spot.location.country%>.</p>
+  <p>Added by: <%=@spot.user.username%></p>
+  <%-#<%=url_for @spot.image%>
+  <span>
+    Rating:
+    <%if @spot.rating%>
+      <%@spot.rating.times do  %>
+      <%= octicon "star", class: "gold-star" %>
+      <% end %>
+    <%end%>
+  </span>
+  <%if @spot.user == current_user%>
+    <%=link_to "Delete", :spot, method: :delete%>
+    <%=link_to "Edit", edit_spot_path(@spot)%>
+  <%end%>
+</div>
