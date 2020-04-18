@@ -11,7 +11,7 @@ class SpotsController < ApplicationController
   def create
     spot = Spot.create(spot_params)
     spot.save
-    redirect_to spot_path(spot)
+    redirect_to spot
   end
 
   def show
@@ -19,6 +19,13 @@ class SpotsController < ApplicationController
   end
 
   def edit
+    @spot = Spot.find(params[:id])
+  end
+
+  def update
+    spot = Spot.find(params[:id])
+    spot.update(spot_params)
+    redirect_to spot
   end
 
   def destroy
