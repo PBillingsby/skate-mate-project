@@ -32,3 +32,10 @@ USER SHOW
     <%@spot.rating.times do  %>
  <%= octicon "star" %>
 <% end %>
+
+<%if loc.spots.count > 1%>
+      <%=form_for(loc) do |f|%>
+        <li><%=f.collection_select :spots, :spot_id, loc.spots, :id, :name%></li>
+        <li><%=f.submit "View Spot"%></li><br>
+      <%end%>
+    <%end%><br>

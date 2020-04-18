@@ -16,6 +16,7 @@ class SpotsController < ApplicationController
   end
 
   def show
+    byebug
     @spot = Spot.find(params[:id])
   end
 

@@ -2,6 +2,7 @@
 <p><%=@spot.address%>, <%=@spot.location.city%></p>
 <p><%=@spot.rating%>/5 stars</p>
 <p>added by <%=@spot.user.username%></p>
+<%-#<%=url_for @spot.image%>
 <%-# Add octicon back%>
 <%if @spot.user_id == current_user%>
   <%=link_to "Delete", :spot, method: :delete%>

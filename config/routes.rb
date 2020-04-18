@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update] do
     resources :check_ins, only: [:new, :destroy]
   end
-  resources :locations, only: [:create, :show, :index]
-  resources :spots
+  resources :locations, only: [:create, :show, :index] do
+    resources :spots
+  end
   root 'users#index'
   get '/signup', to: 'users#new'
   get '/auth/:provider/callback' => 'sessions#omniauth'
