@@ -12,6 +12,20 @@ module UsersHelper
     end
   end
 
+  def my_link_to(text, href)
+    "<a href='#{href}'>#{text}</a>".html_safe
+  end
+
+  def check_in
+    if !@user.spots.present? && @user.check_in
+      my_link_to "here", location_path(@user.check_in.location
+    elsif !@user.check_in 
+      puts "Check in to add spots."
+    else
+      render 'spots/user_spots'
+    end
+  end 
+
   def spots
     Spot.all
   end

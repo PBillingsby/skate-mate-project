@@ -22,24 +22,6 @@
   </div>
   <div class="spot-side">
     <h2>Your spots</h2>
-    <%if !@user.spots.present?%>
-      <p>You have no spots yet. Click <%=link_to "here", location_path(@user.check_in.location)%> to add some.</p>
-    <%else%>
-      <div class="spot-view">
-        <%@user.spots.each do |spot|%>
-          <div><p><%=link_to spot.name, spot%></p>
-          <p><%=spot.location.city%>, <%=spot.location.country%></p>
-        <%if spot.image.attached?%>
-          <%=image_tag(spot.image, class: 'image-box')%>
-        <%end%>
-        <%if spot.rating%>
-          <%spot.rating.times do  %>
-            <%= octicon "star", class: "gold-star" %>
-          <%end%>
-        <%end%>
-        <p>Click <%=link_to "here", location_path(@user.check_in.location)%> to add a spot.</p>
-      <%end%>
-      </div>
-    <%end%>
+    <%check_in%>
   </div>
 </div>

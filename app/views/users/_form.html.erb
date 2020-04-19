@@ -3,7 +3,7 @@
   <h3><u>Sign Up</u></h3>
   <li><%=f.text_field :username, placeholder: :username%></li>
   <li><%=f.text_field :email, placeholder: :email%></li>
-  <li><%=f.password_field :password, placeholder: :password%></li>
+  <li><%=f.password_field :password, placeholder: :password, hint: "Must be 8 characters or more"%></li>
   <li><%=f.password_field :password_confirmation, placeholder: :password_confirmation%></li>
   <li><%=f.submit%></li>
 <%end%>
