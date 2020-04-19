@@ -1,6 +1,6 @@
 <div class="spot-view">
   <%@user.spots.each do |spot|%>
-    <div><p><%=link_to spot.name, spot%></p>
+    <div class="spot-box"><p><%=link_to spot.name, spot%></p>
     <p><%=spot.location.city%>, <%=spot.location.country%></p>
     <%if spot.image.attached?%>
       <%=image_tag(spot.image, class: 'image-box')%>
@@ -10,6 +10,6 @@
         <%= octicon "star", class: "gold-star" %>
       <%end%>
     <%end%>
-    <p>Click <%=link_to "here", location_path(@user.check_in.location)%> to add a spot.</p>
-  <%end%>
+  <%end%></div>
+  <p>Click <%=link_to "here", location_path(@user.check_in.location)%> to add a spot.</p>
 </div>

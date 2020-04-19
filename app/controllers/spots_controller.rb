@@ -16,7 +16,6 @@ class SpotsController < ApplicationController
   def create
     spot = Spot.create(spot_params)
     spot.comments.create(content: params[:comments][:content], user_id: spot.user_id)
-    
     flash.alert = "Spot added."
     redirect_to spot
   end

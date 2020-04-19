@@ -11,15 +11,16 @@ class ApplicationController < ActionController::Base
   def logged_in
     session[:current_user]
   end
-  # FIND A NEW PLACE TO PUT HELPERS
+
   def user_auth
-    if !params[:id].nil?
-      if params[:id].to_i != current_user.id
-        flash[:error] = "Not authorized to view this page."
-        redirect_to user_path(current_user)
-      end
+    if params[:id].to_i != current_user.id
+      flash[:error] = "Not authorized to view this page."
+      redirect_to user_path(current_user)
+    else
+      @user = User.find(params[:id])
     end
   end
+  # FIND A NEW PLACE TO PUT HELPERS
   def user_error_handle
     begin
       @user = User.find(params[:id])

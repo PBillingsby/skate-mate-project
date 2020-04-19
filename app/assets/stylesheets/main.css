@@ -40,21 +40,15 @@ ul {
   border: 1px solid black;
   padding: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 .main {
   display: inline-block;
   border-right: none;
   height: auto;
 }
-.spot-side {
-  border-left: none;
-  float: right;
-  display: inline-block;
-}
 .page-grid {
   border: 1px solid black;
-  margin: 10px;
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -67,7 +61,6 @@ ul {
 }
 .spot-box {
   padding: 5px;
-  display: inline-block;
 }
 .nav-links li {
   padding: 20px;

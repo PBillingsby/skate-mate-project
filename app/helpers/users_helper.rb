@@ -1,4 +1,5 @@
 module UsersHelper
+  
   def user_name
     if !@user.username.blank?
       "Hey, #{@user.username}"
@@ -18,11 +19,11 @@ module UsersHelper
 
   def check_in
     if !@user.spots.present? && @user.check_in
-      my_link_to "here", location_path(@user.check_in.location
+      link_to "Click here to add spots", location_path(@user.check_in.location)
     elsif !@user.check_in 
-      puts "Check in to add spots."
+      "Check in to add spots."
     else
-      render 'spots/user_spots'
+      render 'user_spots'
     end
   end 
 
