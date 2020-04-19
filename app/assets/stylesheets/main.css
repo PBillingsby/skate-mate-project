@@ -15,6 +15,7 @@ a, a:visited {
 }
 
 .container {
+  height: 75vh;
   margin: 10px auto;
   background: #8a6f7b4a;
   padding: 10px 25px;
@@ -26,6 +27,13 @@ ul {
   }
 .gold-star {
   fill: #ffa600;
+}
+.spot-view {
+  display: flex;
+}
+.image-box {
+  height: 50%;
+  width: 50%;
 }
 .page-grid {
   text-align: center;

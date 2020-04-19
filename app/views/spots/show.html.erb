@@ -1,31 +1,36 @@
-<div>  
-  <h3><%=@spot.name%></h3>
-  <p><%=@spot.address%>, <%=@spot.location.city%>, <%=@spot.location.country%>.</p>
-  <p>Added by: <%=@spot.user.username%></p>
-  <%-#<%=url_for @spot.image%>
-  <span>
-    Rating:
-    <%if @spot.rating%>
-      <%@spot.rating.times do  %>
-      <%= octicon "star", class: "gold-star" %>
-      <% end %>
+<div class='spot-view'>
+  <div>  
+    <h3><%=@spot.name%></h3>
+    <p><%=@spot.address%>, <%=@spot.location.city%>, <%=@spot.location.country%>.</p>
+    <span>
+      Rating:
+      <%if @spot.rating%>
+        <%@spot.rating.times do  %>
+        <%= octicon "star", class: "gold-star" %>
+        <% end %>
+      <%end%>
+    </span>
+    <p>Added by: <%=@spot.user.username%></p>
+
+    <%if @spot.image.attached?%>
+      <%=image_tag(@spot.image, class: 'image-box')%>
+    <%end%><br>
+    <%if @spot.user == current_user%>
+      <%=link_to "Delete", :spot, method: :delete%>
+      <%=link_to "Edit", edit_spot_path(@spot)%>
     <%end%>
-  </span>
-  <%if @spot.user == current_user%>
-    <%=link_to "Delete", :spot, method: :delete%>
-    <%=link_to "Edit", edit_spot_path(@spot)%>
-  <%end%>
-  <%if @spot.image.attached?%>
-    <%=image_tag(@spot.image), :class => 'image-box'%>
-  <%end%>
+  </div>
 
-</div>
-
-<div>
-  <%=form_for @spot.comments.create do |f|%>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.hidden_field :spot_id, :value => @spot.id %>
-    <%=f.text_field :content, placeholder: "Comment"%>
-    <%=f.submit "Add Comment"%>
-  <%end%>
+  <div>
+    <%=form_for @spot.comments.create do |f|%>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :spot_id, :value => @spot.id %>
+      <%=f.text_field :content, placeholder: "Comment"%>
+      <%=f.submit "Add Comment"%>
+    <%end%>
+    <h4>Comments</h4>
+    <%=@spot.comments.each do |comment|%>
+      <%=comment.user.try(:username)%>: <%=comment.content%>
+    <%end%>
+  </div>
 </div>
