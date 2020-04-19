@@ -11,4 +11,8 @@ module UsersHelper
       "Well, nowhere! Check in to add your location..."
     end
   end
+
+  def spots
+    Spot.all
+  end
 end

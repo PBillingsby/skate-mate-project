@@ -19,9 +19,13 @@
     <ul>
 
     <h3>Search spot by city</h3>
-    <%=form_tag('/spots'), method: :get do%>
-      <%=text_field_tag :address%>
+    <%=form_tag(spots_path, :method => "get") do%>
+      <%=text_field_tag :search, params[:search]%>
       <%=submit_tag "Search Spots"%>
+    <%end%>
+
+    <%spots.each do |spot|%>
+      <%=image_tag(spot.image), class: 'image-box'%>
     <%end%>
   </div>
 </div>

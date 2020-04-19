@@ -2,7 +2,12 @@ class SpotsController < ApplicationController
   require 'octicons'
   include SpotsHelper
   def index
-    @spots = Spot.all
+    if params[:search]
+      loc = Location.where(["city LIKE ?", "%#{params[:search]}%"])
+      @spots = loc.first.spots
+    else
+      @spots = Spot.all
+    end
   end
   def new
     @spot = Spot.new
