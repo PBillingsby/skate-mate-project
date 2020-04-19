@@ -16,7 +16,7 @@
     <%=link_to "Edit", edit_spot_path(@spot)%>
   <%end%>
   <%if @spot.image.attached?%>
-    <%=image_tag(@spot.image)%>
+    <%=image_tag(@spot.image), :class => 'image-box'%>
   <%end%>
 
 </div>

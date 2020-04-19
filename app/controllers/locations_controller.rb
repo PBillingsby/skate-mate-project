@@ -11,11 +11,7 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
   end
 
-  def update
-    byebug
-  end
-
   def location_params
-    params.require(:location).permit(:city, :user_id)
+    params.require(:location).permit(:city, :user_id, :image)
   end
 end
