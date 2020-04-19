@@ -2,6 +2,7 @@ class SpotsController < ApplicationController
   require 'octicons'
   include SpotsHelper
   def index
+    @locations = Location.all
     if params[:search]
       @spots = Spot.where("RATING(spot) == ?", params[:search].to_i)
     else
