@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2020_04_18_153549) do
     t.text "content"
     t.integer "user_id"
     t.integer "spot_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "locations", force: :cascade do |t|

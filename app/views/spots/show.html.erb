@@ -21,7 +21,8 @@
     <%end%>
   </div>
 
-  <div>
+
+  <div align="right">
     <%=form_for @spot.comments.create do |f|%>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.hidden_field :spot_id, :value => @spot.id %>
@@ -30,7 +31,8 @@
     <%end%>
     <h4>Comments</h4>
     <%@spot.comments.each do |comment|%>
-      <p><%=comment.user.try(:username)%>: <%=comment.content%></p>
+      <p><%=comment.content%></p>
+      <p>posted: <%=comment.created_at.strftime('%B, %Y')%> by <%=comment.user.try(:username)%></p>
     <%end%>
   </div>
 </div>

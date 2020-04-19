@@ -29,8 +29,14 @@ ul {
 .gold-star {
   fill: #ffa600;
 }
+.image-box {
+  width: 150px;
+  height: 150px;
+}
 .spot-view {
-  display: flex;
+  border: 1px solid black;
+  padding: 10px;
+  display: grid;
   flex-direction: row;
 }
 .page-grid {
@@ -38,7 +44,7 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.centered {
+.centered, .nav-links {
   text-align: center;
 }
 .login-form {
@@ -47,9 +53,6 @@ ul {
 .spot-box {
   padding: 5px;
   display: inline-block;
-}
-.nav-links {
-  text-align: center;
 }
 .nav-links li {
   padding: 20px;
@@ -60,6 +63,7 @@ ul {
 }
 .flash-alert {
   color: red;
+  text-align: center
 }
 .nav-bar li {
   text-align: center;

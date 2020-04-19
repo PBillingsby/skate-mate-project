@@ -24,8 +24,11 @@
       <%=submit_tag "Search Spots"%>
     <%end%>
 
-    <%spots.each do |spot|%>
-      <%=image_tag(spot.image), class: 'image-box'%>
-    <%end%>
+    <div class="spot-view">
+      <%spots.each do |spot|%>
+        <p><%=link_to spot.name, spot%></p>
+        <%=image_tag(spot.image, class: 'image-box')%>
+      <%end%>
+    </div>
   </div>
 </div>
