@@ -12,22 +12,22 @@
       <li>Click <%=link_to "here", locations_path%> to view all cities.</li>
     </ul>
 
-    <ul><h3>Your spots</h3>
-      <%@user.spots.each do |spot|%>
-        <li><%=link_to spot.name, spot%> - <%=spot.location.city%>, <%=spot.location.country%></li>
-      <%end%>
-    <ul>
     <h3>Search by rating</h3>
     <%=form_tag(spots_path, :method => "get") do%>
       <%=select_tag :search, options_for_select((1..5)), prompt: "-"%><br>
       <%=submit_tag "Search"%>
     <%end%>
-
+    <h3>Your spots</h3>
     <div class="spot-view">
       <%spots.each do |spot|%>
-        <div><p><%=link_to spot.name, spot%></p>
-        <%=image_tag(spot.image, class: 'image-box')%></div>
-      <%end%>
+        <div><p><%=link_to spot.name, spot%><sub><%=spot.location.city%>, <%=spot.location.country%></sub></p>
+        <%if spot.rating%>
+          <%spot.rating.times do  %>
+          <%= octicon "star", class: "gold-star" %>
+        <% end %>
+        <%=image_tag(spot.image, class: 'image-box')%>
+      <%end%></div>
+    <%end%>
     </div>
   </div>
 </div>

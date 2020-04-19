@@ -3,8 +3,7 @@ class SpotsController < ApplicationController
   include SpotsHelper
   def index
     if params[:search]
-      @spots = Spot.where(rating: params[:search].to_i)
-      @spots.count == nil ? flash.alert = "No spots with this rating." : nil
+      @spots = Spot.where("RATING(spot) == ?", params[:search].to_i)
     else
       @spots = Spot.all
     end
