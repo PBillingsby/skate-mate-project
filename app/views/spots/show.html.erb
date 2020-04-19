@@ -29,8 +29,8 @@
       <%=f.submit "Add Comment"%>
     <%end%>
     <h4>Comments</h4>
-    <%=@spot.comments.each do |comment|%>
-      <%=comment.user.try(:username)%>: <%=comment.content%>
+    <%@spot.comments.each do |comment|%>
+      <p><%=comment.user.try(:username)%>: <%=comment.content%></p>
     <%end%>
   </div>
 </div>

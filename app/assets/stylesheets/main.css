@@ -31,10 +31,6 @@ ul {
 .spot-view {
   display: flex;
 }
-.image-box {
-  height: 50%;
-  width: 50%;
-}
 .page-grid {
   text-align: center;
   display: grid;
