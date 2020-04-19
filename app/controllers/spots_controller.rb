@@ -8,6 +8,7 @@ class SpotsController < ApplicationController
   def new
     @spot = Spot.new
   end
+  
   def create
     spot = Spot.create(spot_params)
     spot.save

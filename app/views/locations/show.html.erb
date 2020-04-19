@@ -1,5 +1,8 @@
 <h1><%=@location.city%>, <%=@location.country%>.</h1>
-
+<%=form_for @location do |f|%>
+  <%=f.file_field :image%>
+  <%=f.submit%>
+<%end%>
 Skate Spots in <%=@location.city%>:<br>
 <%@location.spots.each do |spot|%>
   <%=link_to spot.name, spot_path(spot)%><br>

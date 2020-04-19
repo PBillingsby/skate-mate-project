@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update] do
     resources :check_ins, only: [:new, :destroy]
   end
-  resources :locations, only: [:create, :show, :index] do
+  resources :locations, only: [:create, :show, :index, :update] do
     resources :spots, only: [:show, :index]
   end
   resources :spots

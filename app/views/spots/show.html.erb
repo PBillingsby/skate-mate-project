@@ -15,7 +15,9 @@
     <%=link_to "Delete", :spot, method: :delete%>
     <%=link_to "Edit", edit_spot_path(@spot)%>
   <%end%>
-  <%=url_for(@spot.image)%>
+  <%if @spot.image.attached?%>
+    <%=image_tag(@spot.image)%>
+  <%end%>
 
 </div>
 
