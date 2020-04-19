@@ -5,5 +5,5 @@ class Spot < ApplicationRecord
   has_many :comments
   has_one_attached :image
   accepts_nested_attributes_for :location
-  # ADD COMMENTS
+
 end

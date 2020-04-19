@@ -3,8 +3,8 @@ class SpotsController < ApplicationController
   include SpotsHelper
   def index
     if params[:search]
-      loc = Location.where(["city LIKE ?", "%#{params[:search]}%"])
-      @spots = loc.first.spots
+      @spots = Spot.where(rating: params[:search].to_i)
+      @spots.count == nil ? flash.alert = "No spots with this rating." : nil
     else
       @spots = Spot.all
     end

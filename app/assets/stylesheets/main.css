@@ -39,7 +39,7 @@ ul {
   border: 1px solid black;
   padding: 10px;
   display: grid;
-  flex-direction: row;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .page-grid {
   text-align: center;
