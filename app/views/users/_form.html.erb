@@ -1,6 +1,5 @@
-<%=form_for @user do |f|%>
+<%=simple_form_for @user do |f|%>
   <%=render 'layouts/shared_errors', form_object: @user%>
-
   <h3><u>Sign Up</u></h3>
   <li><%=f.text_field :username, placeholder: :username%></li>
   <li><%=f.text_field :email, placeholder: :email%></li>
