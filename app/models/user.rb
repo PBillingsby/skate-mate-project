@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  validates :password, :length => {minimum: 8, message: "%{count} characters is the minimum allowed"}
+  validates :password, confirmation: true, :length => {minimum: 8, message: "Password must be atleast 8 characters."}
   has_one :check_in, :dependent => :destroy
   has_many :locations, through: :check_ins
   has_many :spots

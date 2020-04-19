@@ -12,8 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to user
     else
-      flash.alert = "Sign up details incorrect. Try again."
-      render :new
+      render :index
     end
   end
 
