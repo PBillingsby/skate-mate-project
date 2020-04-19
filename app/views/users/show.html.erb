@@ -1,6 +1,4 @@
 <%=user_auth%>
-    <h1 align="center">SKATE-MATE</h1>
-
 <div class="page-grid">  
   <div class="main">
     <h3><%=user_name%></h3>
@@ -14,10 +12,11 @@
       <li>Click <%=link_to "here", locations_path%> to view all cities.</li>
     </ul>
 
-    <ul>Your spots
+    <ul><h3>Your spots</h3>
       <%@user.spots.each do |spot|%>
-        <li><%=link_to spot.name, spot%></li>
+        <li><%=link_to spot.name, spot%> - <%=spot.location.city%>, <%=spot.location.country%></li>
       <%end%>
     <ul>
+    <%=render 'spots/search', locals: {f:f}%>
   </div>
 </div>

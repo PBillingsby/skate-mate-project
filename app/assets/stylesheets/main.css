@@ -30,6 +30,7 @@ ul {
 }
 .spot-view {
   display: flex;
+  flex-direction: row;
 }
 .page-grid {
   text-align: center;
