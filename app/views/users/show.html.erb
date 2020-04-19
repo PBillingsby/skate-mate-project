@@ -24,6 +24,10 @@
       <%=submit_tag "Search Spots"%>
     <%end%>
 
+    <%=form_tag(spots_path, :method => "get") do%>
+      <%=select_tag :rating, options_for_select((1..5), prompt: :rating)%><br>
+    <%end%>
+
     <div class="spot-view">
       <%spots.each do |spot|%>
         <p><%=link_to spot.name, spot%></p>

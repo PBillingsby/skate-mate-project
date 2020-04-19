@@ -32,7 +32,7 @@
     <h4>Comments</h4>
     <%@spot.comments.each do |comment|%>
       <p><%=comment.content%></p>
-      <p>posted: <%=comment.created_at.strftime('%B, %Y')%> by <%=comment.user.try(:username)%></p>
+      <p>posted: <%=comment&.created_at&.strftime('%B, %Y')%><%=comment.user.try(:username)%></p>
     <%end%>
   </div>
 </div>

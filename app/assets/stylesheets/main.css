@@ -2,7 +2,6 @@
 
 body {
   font-family: Raleway;
-  background-color: #eee;
 }
 header {
 }
@@ -17,7 +16,7 @@ a, a:visited {
 .container {
   height: 85vh;
   margin: 10px auto;
-  background: #8a6f7b4a;
+  background: #f7f7f74a;
   padding: 10px 25px;
   overflow: scroll;
 }
@@ -32,6 +31,9 @@ ul {
 .image-box {
   width: 150px;
   height: 150px;
+}
+.feature {
+  background-color: rgba(89, 241, 109, 0.3)
 }
 .spot-view {
   border: 1px solid black;
@@ -57,9 +59,6 @@ ul {
 .nav-links li {
   padding: 20px;
   display: inline;
-}
-.blue-text {
-  color: rgb(33, 17, 255);
 }
 .flash-alert {
   color: red;
