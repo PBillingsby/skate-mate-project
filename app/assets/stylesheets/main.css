@@ -12,7 +12,6 @@ a, a:visited {
   text-decoration: none;
   color: rgb(1, 102, 6);
 }
-
 .container {
   height: 85vh;
   margin: 10px auto;
@@ -43,7 +42,19 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+.main {
+  display: inline-block;
+  border-right: none;
+  height: auto;
+}
+.spot-side {
+  border-left: none;
+  float: right;
+  display: inline-block;
+}
 .page-grid {
+  border: 1px solid black;
+  margin: 10px;
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -69,11 +80,4 @@ ul {
 .nav-bar li {
   text-align: center;
   list-style: none;
-}
-.main {
-  display: inline-block;
-}
-.spot-side {
-  float: right;
-  display: inline-block;
 }

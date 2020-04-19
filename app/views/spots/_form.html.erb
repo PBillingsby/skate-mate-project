@@ -3,5 +3,8 @@
 <%=f.text_area :description, placeholder: :description%><br>
 <%=f.label :rating%>
 <%=f.select :rating, (1..5), prompt: :rating%><br>
-<%=f.file_field :image%>
+<%=f.file_field :image%><br>
+<%=fields_for :comments do |ff|%>
+  <%=ff.text_field :content, placeholder: "Comment"%>
+<%end%><br>
 <%=f.submit%>

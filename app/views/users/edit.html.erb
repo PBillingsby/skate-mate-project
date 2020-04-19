@@ -1,5 +1,5 @@
 <%=user_auth%>
-<%=simple_form_for @user do |f|%>
+<%=form_for @user do |f|%>
   <%=f.label :username%>
   <%=f.text_field :username, placeholder: :username%>
   <%=f.submit%>
