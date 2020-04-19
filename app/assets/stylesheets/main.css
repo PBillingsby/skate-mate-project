@@ -15,10 +15,11 @@ a, a:visited {
 }
 
 .container {
-  height: 75vh;
+  height: 85vh;
   margin: 10px auto;
   background: #8a6f7b4a;
   padding: 10px 25px;
+  overflow: scroll;
 }
 ul {
   list-style-type: none;

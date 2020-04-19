@@ -1,4 +1,6 @@
 <%@spots.each do |spot|%>
   <h3><%=spot.location.city%></h3>
-  <li class="spot-box"><%=link_to spot.name, spot%></li>
+  <%spot.location.spots.each do |location_spot|%>
+    <li class="spot-box"><%=link_to location_spot.name, location_spot%></li>
+  <%end%>
 <%end%>

@@ -2,7 +2,6 @@ class SpotsController < ApplicationController
   require 'octicons'
   include SpotsHelper
   def index
-    @locations = Location.all
     @spots = Spot.all
   end
   def new

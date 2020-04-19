@@ -17,6 +17,11 @@
         <li><%=link_to spot.name, spot%> - <%=spot.location.city%>, <%=spot.location.country%></li>
       <%end%>
     <ul>
-    <%=render 'spots/search', locals: {f:f}%>
+
+    <h3>Search spot by city</h3>
+    <%=form_tag('/spots'), method: :get do%>
+      <%=text_field_tag :address%>
+      <%=submit_tag "Search Spots"%>
+    <%end%>
   </div>
 </div>
