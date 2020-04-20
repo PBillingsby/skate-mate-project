@@ -1,6 +1,6 @@
 <div class="spot-view">
   <%@user.spots.each do |spot|%>
-    <div class="spot-box"><h3><%=link_to spot.name, spot%></h3>
+    <div class="spot-box-show"><h3><%=link_to spot.name, spot%></h3>
     <p><%=spot.location.city%>, <%=spot.location.country%></p>
     <%if spot.image.attached?%>
       <%=image_tag(spot.image, class: 'image-box')%>

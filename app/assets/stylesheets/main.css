@@ -4,6 +4,9 @@ body {
   font-family: Raleway;
 }
 header {
+  height: 30px;
+  box-shadow: 0 0 25px 0 rgb(163, 163, 163);
+
   background-color: #eee;
   position: fixed;
   top: 0;
@@ -32,7 +35,6 @@ a, a:visited {
   overflow: scroll;
 }
 ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
   }
@@ -55,7 +57,6 @@ ul {
 }
 .main {
   display: inline-block;
-  border-right: none;
   height: auto;
 }
 .page-grid {
@@ -67,15 +68,20 @@ ul {
 .centered, .nav-links {
   text-align: center;
 }
-.login-form {
+.login-form, ul {
   list-style-type: none;
 }
-.spot-box {
+.div-index {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.spot-box-show {
   display: block;
   padding: 5px;
 }
 .nav-links li {
   padding: 20px;
+  padding-top: 10px;
   display: inline;
 }
 .flash-alert {

@@ -1,6 +1,12 @@
-<%@locations.each do |loc|%>
-  <h3><%=loc.city%></h3>
-  <%loc.spots.each do |location_spot|%>
-    <li class="spot-box"><%=link_to location_spot.name, location_spot%></li>
+<div class="grid-index">  
+  <%@locations.each do |loc|%>
+    <h3><%=loc.city%></h3>
+    <ul><%loc.spots.each do |location_spot|%>
+      <li>
+        <%=link_to location_spot.name, location_spot%>
+      <%=image_tag(location_spot.image, :class => 'image-box') if location_spot.image%></li>
+      
+      </ul>
+    <%end%>
   <%end%>
-<%end%>
+</div>
