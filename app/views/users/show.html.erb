@@ -5,18 +5,14 @@
     <p>You are currently located in <%=user_location%>.</p>
 
     <h3>Where are you skating today?</h3>
-    <%=render "locations/form"%><br>
-    <ul>
-      <li>Click <%=link_to "here", locations_path%> to view all cities.</li>
-    </ul>
-
+    <%=render "locations/form"%>
     <h3>Search by</h3>
-
     <%=form_tag(location_path, method: "get") do%>
       <%=label_tag "City: "%>
       <%=select( "location", "id",  Location.order('country ASC').all.map { |p| ["#{p.city}, #{p.country}", p.id]}.uniq, { include_blank: true })%>
       <%=submit_tag "Search"%>
-    <%end%>      
+    <%end%> 
+    <p>Click <%=link_to "here", locations_path%> to view all cities.</p>
   </div>
   <div>
     <h3>Your Spots</h3>
