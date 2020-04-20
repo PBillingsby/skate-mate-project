@@ -16,16 +16,7 @@
         <%=msg%>
       <%end%>
     </div>
-    <%if current_user%>
-    <header>
-      <ul class="nav-links">
-        <li><%=link_to "Home", user_path(current_user)%></li>
-        <li><%=link_to "Spots", spots_path%></li>
-        <li><%=link_to "Locations", locations_path%></li>
-        <li><%=link_to "Logout", logout_path%></li>
-      </ul>
-    </header>
-    <%end%>
+    <%=render 'layouts/nav'%>
     <div class="container">
       <h1 align="center">SKATE-MATE</h1>
       <%= yield %>

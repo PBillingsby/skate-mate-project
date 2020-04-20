@@ -13,14 +13,14 @@
     <h3>Search by</h3>
     <%=form_tag(spots_path, :method => "get") do%>
       <%=label_tag "City"%>
-      <%=text_field_tag :search%><br>
+      <%=text_field_tag :search_city%><br>
       <%=label_tag "Rating"%>
-      <%=select_tag :search, options_for_select((1..5)), prompt: "-"%><br>
+      <%=select_tag :search_rating, options_for_select((1..5)), prompt: "-"%><br>
       <%=submit_tag "Search"%>
     <%end%>
   </div>
   <div>
-    <h2>Your spots</h2>
+    <h3>Your Spots</h3>
     <%=check_in%>
   </div>
 </div>
