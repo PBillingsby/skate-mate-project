@@ -1,5 +1,5 @@
 <%=simple_form_for @location do |f|%>
   <%= f.hidden_field :user_id, :value => @user.id %>
-  <%=f.text_field :city, placeholder: "Type city to check in"%>
+  <%=f.text_field :city, placeholder: "Enter major city"%>
   <%=f.submit "Check In"%>
 <%end%>

@@ -6,10 +6,9 @@
 
     <h3>Where are you skating today?</h3>
     <%=render "locations/form"%>
-    <h3>Search by</h3>
+    <h3>Search by city</h3>
     <%=form_tag(location_path, method: "get") do%>
-      <%=label_tag "City: "%>
-      <%=select( "location", "id",  Location.order('country ASC').all.map { |p| ["#{p.city}, #{p.country}", p.id]}.uniq, { include_blank: true })%>
+      <%=select( "location", "id",  Location.order('country ASC').all.map { |p| ["#{p.city}, #{p.country}", p.id]}.uniq, { prompt: 'Enter city' })%>
       <%=submit_tag "Search"%>
     <%end%> 
     <p>Click <%=link_to "here", locations_path%> to view all cities.</p>

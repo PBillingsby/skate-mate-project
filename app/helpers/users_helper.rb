@@ -13,9 +13,9 @@ module UsersHelper
     end
   end
 
-  def my_link_to(text, href)
-    "<a href='#{href}'>#{text}</a>".html_safe
-  end
+  # def my_link_to(text, href)
+  #   "<a href='#{href}'>#{text}</a>".html_safe
+  # end
 
   def check_in
     if !@user.spots.present? && @user.check_in

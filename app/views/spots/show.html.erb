@@ -13,7 +13,7 @@
     <p>Added by: <%=@spot.user.username%></p>
 
     <%if @spot.image.attached?%>
-      <%=image_tag(@spot.image, class: 'image-box')%>
+      <%=image_tag(@spot.image)%>
     <%end%><br>
     <%if @spot.user == current_user%>
       <%=link_to "Delete", :spot, method: :delete%>
@@ -22,17 +22,18 @@
   </div>
 
 
-  <div align="right">
+  <div class="comment-box">
     <%=form_for @spot.comments.create do |f|%>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.hidden_field :spot_id, :value => @spot.id %>
-      <%=f.text_field :content, placeholder: "Comment"%>
+      <%=f.text_area :content, placeholder: "Comment"%><br>
       <%=f.submit "Add Comment"%>
     <%end%>
     <h4>Comments</h4>
     <%@spot.comments.each do |comment|%>
-      <p><%=comment.content%></p>
-      <p>posted: <%=comment&.created_at&.strftime('%B, %Y')%><%=comment.user.try(:username)%></p>
+      <strong><%=comment.user.try(:username)%></strong>
+      <sup><%=comment&.created_at&.strftime('%B, %Y')%></sup>
+      <p><%=comment.content%></p><hr>
     <%end%>
   </div>
 </div>
