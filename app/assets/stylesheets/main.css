@@ -66,6 +66,9 @@ ul {
 .comment-box {
 	padding: 25px;
 }
+.location-show {
+	display: flex;
+}
 .spot-view {
 	padding: 10px;
 	margin: 10px;

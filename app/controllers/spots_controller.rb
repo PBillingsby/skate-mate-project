@@ -10,8 +10,8 @@ class SpotsController < ApplicationController
   end
 
   def create
-    spot = Spot.create(spot_params)
-    # spot.comments.create(content: params[:comments][:content], user_id: spot.user_id)
+    # FIX COMMENT CREATE WITH NEW SPOT
+    byebug
     flash.alert = "Spot added."
     redirect_to spot
   end
@@ -38,6 +38,6 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :address, :description, :rating, :image, :location_id, :user_id, comments: [:content])
+    params.require(:spot).permit(:name, :address, :description, :rating, :image, :location_id, :user_id)
   end
 end
