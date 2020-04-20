@@ -13,8 +13,8 @@
     <h3>Search by</h3>
 
     <%=form_tag(location_path, method: "get") do%>
-      <%=label_tag "City"%>
-      <%=select( "location", "id",  Location.all.map { |p| ["#{p.city}, #{p.country}", p.id]}.uniq, { include_blank: true })%>
+      <%=label_tag "City: "%>
+      <%=select( "location", "id",  Location.order('country ASC').all.map { |p| ["#{p.city}, #{p.country}", p.id]}.uniq, { include_blank: true })%>
       <%=submit_tag "Search"%>
     <%end%>      
   </div>
