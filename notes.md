@@ -37,3 +37,5 @@ USER SHOW
 
      <%=label_tag "Rating"%>
       <%=select_tag :search_rating, options_for_select((1..5)), prompt: "-"%><br>
+
+      <%=collection_select :location, :city, Location.all.map{|c|["#{c.city}, #{c.country}"]}, :id, :country%><br>

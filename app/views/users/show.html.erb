@@ -14,7 +14,7 @@
 
     <%=form_tag(location_path, method: "get") do%>
       <%=label_tag "City"%>
-      <%=collection_select :location, :id,  Location.all, :id, :city, {include_blank: '-'}%><br>
+      <%=select( "location", "id",  Location.all.map { |p| ["#{p.city}, #{p.country}", p.id]}.uniq, { include_blank: true })%>
       <%=submit_tag "Search"%>
     <%end%>      
   </div>

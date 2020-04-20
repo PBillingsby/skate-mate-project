@@ -8,6 +8,7 @@ class LocationsController < ApplicationController
   end
 
   def show
+    byebug
     if !params[:location]
       @location = Location.find(params[:id])
     else
