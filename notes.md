@@ -34,3 +34,6 @@ USER SHOW
       <%=text_field_tag :search, params[:search]%>
       <%=submit_tag "Search Spots"%>
     <%end%>
+
+     <%=label_tag "Rating"%>
+      <%=select_tag :search_rating, options_for_select((1..5)), prompt: "-"%><br>

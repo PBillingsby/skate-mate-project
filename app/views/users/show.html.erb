@@ -11,11 +11,10 @@
     </ul>
 
     <h3>Search by</h3>
-    <%=form_tag(spots_path, :method => "get") do%>
+
+    <%=form_tag(spot_path, method: "get") do%>
       <%=label_tag "City"%>
-      <%=text_field_tag :search_city%><br>
-      <%=label_tag "Rating"%>
-      <%=select_tag :search_rating, options_for_select((1..5)), prompt: "-"%><br>
+      <%=collection_select :location, :id,  Location.all, :id, :city, {include_blank: '-'}%><br>
       <%=submit_tag "Search"%>
     <%end%>
   </div>

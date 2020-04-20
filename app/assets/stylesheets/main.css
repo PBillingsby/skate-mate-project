@@ -4,9 +4,8 @@ body {
   font-family: Raleway;
 }
 header {
-  height: 30px;
+  height: 40px;
   box-shadow: 0 0 25px 0 rgb(163, 163, 163);
-
   background-color: #eee;
   position: fixed;
   top: 0;
@@ -15,6 +14,7 @@ header {
   margin: 0 auto;
 }
 footer {
+  box-shadow: 0 0 25px 0 rgb(163, 163, 163);
   position: fixed;
   bottom: 0;
   width: 100vw;
@@ -30,8 +30,8 @@ a, a:visited {
 .container {
   height: 85vh;
   margin: 10px auto;
-  background: #f7f7f74a;
-  padding: 10px 25px;
+  background: #eee;
+  padding: 15px 25px;
   overflow: scroll;
 }
 ul {
@@ -79,9 +79,11 @@ ul {
   display: block;
   padding: 5px;
 }
+.nav-links {
+  margin-top: 10px;
+}
 .nav-links li {
   padding: 20px;
-  padding-top: 10px;
   display: inline;
 }
 .flash-alert {
