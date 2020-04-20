@@ -12,11 +12,11 @@
 
     <h3>Search by</h3>
 
-    <%=form_tag(spot_path, method: "get") do%>
+    <%=form_tag(location_path, method: "get") do%>
       <%=label_tag "City"%>
       <%=collection_select :location, :id,  Location.all, :id, :city, {include_blank: '-'}%><br>
       <%=submit_tag "Search"%>
-    <%end%>
+    <%end%>      
   </div>
   <div>
     <h3>Your Spots</h3>

@@ -3,15 +3,7 @@ class SpotsController < ApplicationController
   include SpotsHelper
   def index
     @locations = Location.all
-    case params
-    when params[:search_city]
-      @spots = Spot.location.where(city: params[:search_city])
-    when params[:search_rating]
-      @spots = Spot.where("RATING(spot) == ?", params[:search].to_i)
-    else
-      @spots = Spot.all
-    end
-    render :index
+    @spots = Spot.all
   end
   def new
     @spot = Spot.new

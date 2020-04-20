@@ -8,7 +8,11 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @location = Location.find(params[:id])
+    if !params[:location]
+      @location = Location.find(params[:id])
+    else
+      @location = Location.find(params[:location][:id])
+    end
   end
 
   def location_params
