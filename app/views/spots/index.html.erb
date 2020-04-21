@@ -2,8 +2,7 @@
   <div class="centered">
     <h2>Search spots by city</h2>
     <%=form_tag(spots_path, method: "get") do%>
-      <%=text_field_tag('search', nil, placeholder: "City")%><br>
-      <%= collection_select(:spot, :city, Location.all, :id, :city, {include: :blank}) %>
+      <%= collection_select(:spot, :location_id, Location.all, :id, :city, :prompt => true) %>
       <%=submit_tag "Search"%>
     <%end%>
   </div>
