@@ -1,7 +1,5 @@
-<h1>SPOTS</h1>
 <%=form_for @spot do |f|%>
+  <%= f.hidden_field :location_id, :value => params[:location_id] %>
+  <%= f.hidden_field :user_id, :value => params[:user_id] %>
   <%=render 'form', f:f%>
-  <%=f.fields_for @location |ff|%>
-    <%=ff.text_field :location%>
-  <%end%>
 <%end%>

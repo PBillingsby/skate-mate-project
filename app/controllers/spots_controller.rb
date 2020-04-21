@@ -18,7 +18,7 @@ class SpotsController < ApplicationController
   end
 
   def create
-    # FIX COMMENT CREATE WITH NEW SPOT
+    byebug
     spot = Spot.new(spot_params)
     if spot.save
       flash.alert = "Spot added."
