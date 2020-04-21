@@ -1,0 +1,7 @@
+<h1>SPOTS</h1>
+<%=form_for @spot do |f|%>
+  <%=render 'form', f:f%>
+  <%=f.fields_for @location |ff|%>
+    <%=ff.text_field :location%>
+  <%end%>
+<%end%>

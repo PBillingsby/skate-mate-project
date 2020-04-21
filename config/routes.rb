@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :spots, only: [:index, :show]
   end
   resources :locations, only: [:create, :show, :index] do
-    resources :spots, only: [:show, :index]
+    resources :spots, only: [:show, :index, :new]
   end
   resources :spots
   resources :comments, only: [:create]

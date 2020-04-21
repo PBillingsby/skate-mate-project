@@ -2,12 +2,12 @@
 
 body {
 	font-family: Raleway;
+	background: linear-gradient(90deg, rgba(246,246,246,1) 0%, #D7BE69 58%, rgba(255,255,255,1) 100%);
 }
 
 header {
 	height: 40px;
-	box-shadow: 0 0 25px 0 rgb(163, 163, 163);
-	background-color: #eee;
+	box-shadow: 0 0 25px 0 rgb(255, 227, 227);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -40,9 +40,9 @@ a:visited {
 
 .container {
 	height: auto;
-  margin: 25px auto;
-	background: #eee;
-	padding: 15px 25px;
+	margin: 40px auto;
+	background-color: rgb(198, 251, 255);
+	padding: 10px 25px;
 	overflow: scroll;
 }
 
@@ -58,10 +58,6 @@ ul {
 .image-box {
 	width: 150px;
 	height: 150px;
-}
-
-.feature {
-	background-color: rgba(89, 241, 109, 0.3)
 }
 .black-border-box {
 	border: 1px solid black;
