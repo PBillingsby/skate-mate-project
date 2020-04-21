@@ -1,4 +1,8 @@
-<div class="black-border-box"> 
+<div class="black-border-box">
+  <%=form_tag(locations_path, method: "get") do%>
+    <%=text_field_tag :country%>
+    <%=submit_tag "Search"%>
+  <%end%>
   <%@locations.each do |loc|%>
     <div class="centered">
       <h2><u><%=loc.city%></u></h2>

@@ -4,3 +4,4 @@ THINGS TO DO
 - Add validations
 - Fix comments iterator in spots#show
 - Fix user spots in index
+- Change search methods to locations#index/spots#index
