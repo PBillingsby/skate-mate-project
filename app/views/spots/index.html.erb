@@ -1,19 +1,19 @@
-<div class="black-border-box">
-  <%=form_tag(locations_path, method: "get") do%>
-    <%=text_field_tag :country%>
-    <%=submit_tag "Search"%>
-  <%end%>
-  <%@locations.each do |loc|%>
+<div class="black-border-box ">
+  <div class="centered">
+    <h2>Search spots by city</h2>
+    <%=form_tag(spots_path, method: "get") do%>
+      <%=text_field_tag "search"%>
+      <%=submit_tag "Search"%>
+    <%end%>
+  </div>
+  <%@spots.each do |spot|%>
     <div class="centered">
-      <h2><u><%=loc.city%></u></h2>
       <div class="spot-grid">
-        <%loc.spots.each do |location_spot|%>
-          <div><%=link_to location_spot.name, location_spot%>
-          <h4><%=location_spot.address%></h4>
-          <%if location_spot.image.attached?%>
-            <%=image_tag(location_spot.image, :class => 'image-box')%>
-          <%end%></div>
-        <%end%>
+        <div><%=link_to spot.name, spot%>
+        <h4><%=spot.address%></h4>
+        <%if spot.image.attached?%>
+          <%=image_tag(spot.image, :class => 'image-box')%>
+        <%end%></div>
       </div>
     </div>
   <%end%>

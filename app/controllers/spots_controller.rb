@@ -2,13 +2,10 @@ class SpotsController < ApplicationController
   require 'octicons'
   include SpotsHelper
   def index
-    @locations = Location.all
-    if params[:user_id]
-      @spots = Spot.where(user_id: params[:user_id].to_i) # MAKE WORK
-      if @spots.empty?
-        flash[:alert] = "No spots yet. Add some above!"
-        redirect_to user_path(current_user)
-      end
+    # @locations = Location.all
+    byebug
+    if !params[:spot].nil?
+      @spots = Spot.where(city: spot_params[:location_id].titleize)
     else
       @spots = Spot.all
     end
