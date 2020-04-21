@@ -18,7 +18,6 @@ class SpotsController < ApplicationController
   end
 
   def create
-    byebug
     spot = Spot.new(spot_params)
     if spot.save
       flash.alert = "Spot added."
@@ -40,6 +39,7 @@ class SpotsController < ApplicationController
   def update
     spot = Spot.find(params[:id])
     spot.update(spot_params)
+    flash[:alert] = "Spot updated."
     redirect_to spot
   end
 

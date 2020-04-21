@@ -1,14 +1,16 @@
 <div class="black-border-box"> 
   <%@locations.each do |loc|%>
-    <h3><%=loc.city%></h3>
-    <div>
-      <%loc.spots.each do |location_spot|%>
-        <%=link_to location_spot.name, location_spot%> 
-        <h4><%=location_spot.address%></h4>
-        <%if location_spot.image.attached?%>
-          <%=image_tag(location_spot.image, :class => 'image-box')%>
+    <div class="centered">
+      <h2><u><%=loc.city%></u></h2>
+      <div class="spot-grid">
+        <%loc.spots.each do |location_spot|%>
+          <div><%=link_to location_spot.name, location_spot%>
+          <h4><%=location_spot.address%></h4>
+          <%if location_spot.image.attached?%>
+            <%=image_tag(location_spot.image, :class => 'image-box')%>
+          <%end%></div>
         <%end%>
-      <%end%>
+      </div>
     </div>
   <%end%>
 </div>
