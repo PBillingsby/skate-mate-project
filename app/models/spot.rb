@@ -1,7 +1,6 @@
 class Spot < ApplicationRecord
   belongs_to :location
   belongs_to :user
-  has_one :location
   has_many :users
   has_many :comments
   has_one_attached :image

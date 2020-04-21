@@ -3,9 +3,8 @@ class SpotsController < ApplicationController
   include SpotsHelper
   def index
     # @locations = Location.all
-    byebug
-    if !params[:spot].nil?
-      @spots = Spot.where(city: spot_params[:location_id].titleize)
+    if !params[:search].nil?
+      @spots = Spot.where(city: spot_params[:city].titleize)
     else
       @spots = Spot.all
     end

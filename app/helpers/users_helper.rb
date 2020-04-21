@@ -23,7 +23,6 @@ module UsersHelper
   end
 
   def check_in
-    byebug
     if !@user.spots.present? && @user.check_in # If user has no spots, but user is checked in
       link_to "Click here to add spots", location_path(@user.check_in.location) # Show add spot link
     elsif !@user.check_in # If user not checked in
