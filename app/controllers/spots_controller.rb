@@ -19,9 +19,14 @@ class SpotsController < ApplicationController
 
   def create
     # FIX COMMENT CREATE WITH NEW SPOT
-    spot = Spot.create(spot_params)
-    flash.alert = "Spot added."
-    redirect_to spot
+    spot = Spot.new(spot_params)
+    if spot.save
+      flash.alert = "Spot added."
+      redirect_to spot
+    else
+      flash.alert = "Spot needs name and address"
+      redirect_to location_path(spot_params[:location_id])
+    end
   end
 
   def show

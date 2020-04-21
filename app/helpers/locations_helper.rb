@@ -13,7 +13,7 @@ module LocationsHelper
       if @location
         new_check_in = @location.check_ins.find_or_create_by(location_id: @location.id, user_id: current_user.id)
         current_user.check_in = new_check_in
-        flash[:success] = "Location Changed!"
+        flash[:success] = "You are now skating in #{new_check_in.location.city}!"
         redirect_to user_path(current_user)
       end
     end

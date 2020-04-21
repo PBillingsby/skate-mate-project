@@ -13,8 +13,8 @@
     <p>Added by: <%=@spot.user.username%></p>
 
     <%if @spot.image.attached?%>
-      <%=image_tag(@spot.image)%>
-    <%end%>
+      <%=image_tag(@spot.image), :class => 'image-box'%>
+    <%end%><br>
     <%if @spot.user == current_user%>
       <%=link_to "Delete", :spot, method: :delete%>
       <%=link_to "Edit", edit_spot_path(@spot)%>
