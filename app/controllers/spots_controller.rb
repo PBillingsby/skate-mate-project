@@ -4,7 +4,7 @@ class SpotsController < ApplicationController
   def index
     @locations = Location.all
     if params[:user_id]
-      @spots = Spot.where(user_id: params[:user_id].to_i)
+      @spots = Spot.where(user_id: params[:user_id].to_i) # MAKE WORK
       if @spots.empty?
         flash[:alert] = "No spots yet. Add some above!"
         redirect_to user_path(current_user)

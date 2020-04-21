@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     begin
       @user = User.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      flash[:error] = "User doesn't exist"
+      flash[:error] = "User doesn't exist" # Handles RecordNotFound error and redirects.
       redirect_to user_path(current_user)
     end
   end

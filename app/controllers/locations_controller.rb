@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
     @locations = Location.all
   end
   def create
-    geocode_address
+    geocode_address # Located in helpers#location. Creates locations and check_ins
   end
 
   def show
