@@ -14,7 +14,7 @@
 
     <%if @spot.image.attached?%>
       <%=image_tag(@spot.image)%>
-    <%end%><br>
+    <%end%>
     <%if @spot.user == current_user%>
       <%=link_to "Delete", :spot, method: :delete%>
       <%=link_to "Edit", edit_spot_path(@spot)%>

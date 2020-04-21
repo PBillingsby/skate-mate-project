@@ -11,15 +11,15 @@
   </head>
 
   <body>
-    <div class="flash-alert" align="center">
+    <%=render 'layouts/nav'%>
+    <div class="container">
+      <h1 class="centered">SKATE-MATE</h1>
+      <%= yield %>
+      <div class="flash-alert" align="center">
       <%flash.each do |type, msg|%>
         <%=msg%>
       <%end%>
     </div>
-    <%=render 'layouts/nav'%>
-    <div class="container">
-      <h1 align="center">SKATE-MATE</h1>
-      <%= yield %>
     </div>
     <footer align="center">Skate-Mate 2020.</footer>
   </body>

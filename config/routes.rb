@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy, :omniauth]
   resources :users, only: [:new, :create, :show, :edit, :update] do
     resources :check_ins, only: [:new, :destroy]
+    resources :spots, only: [:index, :show]
   end
   resources :locations, only: [:create, :show, :index] do
     resources :spots, only: [:show, :index]
