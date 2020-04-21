@@ -1,7 +1,7 @@
-<div> 
+<div class="black-border-box"> 
   <%@locations.each do |loc|%>
       <h3><%=loc.city%></h3>
-      <div class="spot-index-view">
+      <div>
         <%loc.spots.each do |location_spot|%>
           <%=link_to location_spot.name, location_spot%> 
           <h4><%=location_spot.address%></h4>

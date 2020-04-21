@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    user_auth
     user_error_handle
   end
 

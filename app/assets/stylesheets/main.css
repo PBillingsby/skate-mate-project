@@ -63,11 +63,18 @@ ul {
 .feature {
 	background-color: rgba(89, 241, 109, 0.3)
 }
+.black-border-box {
+	border: 1px solid black;
+}
 .comment-box {
 	padding: 25px;
 }
 .location-show {
+	padding: 10px;
 	display: flex;
+}
+.margin-center {
+	margin: 0 auto;
 }
 .spot-view {
 	padding: 10px;

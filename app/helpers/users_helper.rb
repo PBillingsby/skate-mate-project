@@ -13,9 +13,14 @@ module UsersHelper
     end
   end
 
-  # def my_link_to(text, href)
-  #   "<a href='#{href}'>#{text}</a>".html_safe
-  # end
+  def user_auth
+    if params[:id].to_i != current_user.id
+      flash[:alert] = "Not authorized to view this page."
+      redirect_to user_path(current_user)
+    else
+      @user = User.find(params[:id])
+    end
+  end
 
   def check_in
     if !@user.spots.present? && @user.check_in
