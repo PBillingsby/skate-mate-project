@@ -1,7 +1,7 @@
 <div class="spot-view black-border-box">
   <div class="centered">
     <h3>Add a spot</h3>
-    <div class="form-box">
+    <div>
     <%=simple_form_for Spot.new do |f|%>
       <%= f.hidden_field :user_id, :value => @user.id %>
       <%=render 'spots/form', f:f%>

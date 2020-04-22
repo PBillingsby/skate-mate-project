@@ -1,15 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway&display=swap');
-
 body {
 	font-family: Raleway;
-	background: linear-gradient(90deg, rgba(246,246,246,1) 0%, rgb(217, 245, 247) 58%, rgba(255,255,255,1) 100%);
+	background: linear-gradient(90deg, rgba(246, 246, 246, 1) 0%, rgb(217, 245, 247) 58%, rgba(255, 255, 255, 1) 100%);
 }
 
 header {
-	background: linear-gradient(90deg, rgba(246,246,246,1) 0%, rgb(217, 245, 247) 58%, rgba(255,255,255,1) 100%);
+	background: linear-gradient(90deg, rgba(246, 246, 246, 1) 0%, rgb(217, 245, 247) 58%, rgba(255, 255, 255, 1) 100%);
 	height: 40px;
 	border-bottom: 1px solid black;
-	/* box-shadow: 0 0 25px 0 rgba(238, 238, 238, .5); */
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -19,89 +17,109 @@ header {
 
 footer {
 	border-top: 1px solid black;
+	background: linear-gradient(90deg, rgba(246, 246, 246, 1) 0%, rgb(217, 245, 247) 58%, rgba(255, 255, 255, 1) 100%);
+	width: 100%;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 }
+
 h1 {
-	text-shadow: -1px 0 black, 0 1.25px black, 1.25px 0 black, 0 -1px rgb(1, 102, 6);
+	text-shadow: -1px 0 rgb(1, 102, 6), 0 1.25px rgb(1, 102, 6), 1.25px 0 rgb(1, 102, 6), 0 -1px rgb(1, 102, 6);
 	letter-spacing: 10px;
 	font-size: 2.5em;
 }
-h1,
-h2,
-h3 {
+
+h2
+ {
 	font-family: 'Open Sans';
 	color: rgb(1, 102, 6);
 }
+
 a,
 a:visited {
 	text-decoration: none;
 	color: rgb(1, 102, 6);
 }
-input[type=text], select, password {
-  display: inline-block;
-  border: 1px solid rgba(68,68,68, 0.75);
-  border-radius: 2px;
-  box-sizing: border-box;
+
+input[type=text],
+select,
+password {
+	display: inline-block;
+	border: 1px solid rgba(68, 68, 68, 0.75);
+	border-radius: 2px;
+	box-sizing: border-box;
 }
+
 input[type=submit] {
-  background-color: rgb(1, 102, 6);
-  color: white;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
+	background-color: rgb(1, 102, 6);
+	color: white;
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
 }
+
 .container {
 	box-shadow: 0 0 25px 0 #eee;
 	height: auto;
 	margin: 40px auto;
 	background-color: rgba(238, 238, 238, .5);
 	padding: 10px 25px;
-	overflow: scroll;
 }
 
 ul {
 	margin: 0;
 	padding: 0;
+	list-style-type: none;
 }
+
 .gold-star {
 	fill: #ffa600;
 }
+
 .x {
 	display: inline;
 }
+
 .image-box {
 	width: 200px;
 	height: 200px;
 }
+
 .show-image {
 	width: 50%;
 	height: auto;
 }
+
 .black-border-box {
-	border: 1px solid rgba(0,0,0,0.5);
+	border: 1px solid rgba(0, 0, 0, 0.5);
 }
+
 .comment-box {
 	padding: 25px;
 }
+
 .location-show {
 	padding: 10px;
 	display: flex;
 }
+
 .margin-center {
 	margin: 0 auto;
 }
+
 .spot-view {
 	padding: 10px;
 	margin: 10px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
+
 .main {
 	display: inline-block;
 	height: auto;
 }
+
 .page-grid {
 	border: 1px solid black;
 	text-align: center;
@@ -113,25 +131,6 @@ ul {
 .nav-links {
 	text-align: center;
 }
-
-.login-form,
-ul {
-	list-style-type: none;
-}
-.div-index {
-  display: flex;
-  flex-direction: column;
-}
-.form-box {
-	margin: 0 auto;
-	align-content: left;
-}
-
-.spot-index-view {
-	display: flex;
-	
-}
-
 .nav-links {
 	margin-top: 10px;
 }
@@ -145,10 +144,3 @@ ul {
 	color: red;
 	text-align: center
 }
-
-.nav-bar li {
-	list-style: none;
-}
-
-
-
