@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Location.create(address: "Martin Place, Sydney", city: "Sydney", country: "Australia")
+Location.create(city: "Sydney", country: "Australia")
 Location.create(address: "Love Park", city: "Philadelphia", country: "United States of America")
 Location.create(address: "Wall St", city: "New York", country: "United States of America")
 
-Spot.create(name: "The Pit", user_id: 1, location_id: 1)
+Spot.create(name: "The Pit", address: "Martin Place", user_id: 1, location_id: 1)
 Spot.create(name: "Love Park", user_id: 1, location_id: 2)
 Spot.create(name: "Water Street Benches", user_id: 1, location_id: 3)
