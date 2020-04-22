@@ -1,13 +1,15 @@
-<div class="spot-view">
-  <div class="centered"><br>
+<div class="spot-view black-border-box">
+  <div class="centered">
     <h3>Add a spot</h3><br>
+    <div class="form-box">
     <%=simple_form_for Spot.new do |f|%>
       <%= f.hidden_field :user_id, :value => @user.id %>
       <%=render 'spots/form', f:f%>
     <%end%>
+    </div>
   </div>
   <%@user.spots.each do |spot|%>
-    <div class="spot-box-show"><h3><%=link_to spot.name, spot%></h3>
+    <div><h3><u><%=link_to spot.name, spot%></u></h3>
     <p><%=spot.location.city%>, <%=spot.location.country%></p>
     <%if spot.image.attached?%>
       <%=image_tag(spot.image, class: 'image-box')%>

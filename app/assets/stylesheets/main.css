@@ -8,7 +8,7 @@ body {
 header {
 	background: linear-gradient(90deg, rgba(246,246,246,1) 0%, rgb(217, 245, 247) 58%, rgba(255,255,255,1) 100%);
 	height: 40px;
-	box-shadow: 0 0 25px 0 rgb(255, 227, 227);
+	box-shadow: 0 0 25px 0 #eee;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -17,7 +17,7 @@ header {
 }
 
 footer {
-	box-shadow: 0 0 25px 0 rgb(163, 163, 163);
+	box-shadow: 0 0 25px 0 #eee;
 	position: fixed;
 	bottom: 0;
 	width: 100vw;
@@ -26,13 +26,26 @@ footer {
 h2,
 h3 {
 	font-family: 'Open Sans';
+	color: rgb(1, 102, 6);
 }
 a,
 a:visited {
 	text-decoration: none;
 	color: rgb(1, 102, 6);
 }
-
+input[type=text], select, password {
+  display: inline-block;
+  border: 1px solid rgba(68,68,68, 0.75);
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+input[type=submit] {
+  background-color: rgb(1, 102, 6);
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
 .container {
 	box-shadow: 0 0 25px 0 #eee;
 	height: auto;
@@ -58,7 +71,8 @@ ul {
 	height: 200px;
 }
 .show-image {
-	size: 50%;
+	width: 50%;
+	height: auto;
 }
 .black-border-box {
 	border: 1px solid rgba(0,0,0,0.5);
@@ -78,10 +92,6 @@ ul {
 	margin: 10px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-}
-.spot-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
 }
 .main {
 	display: inline-block;
@@ -107,10 +117,9 @@ ul {
   display: flex;
   flex-direction: column;
 }
-
-.spot-box-show {
-	display: block;
-	padding: 5px;
+.form-box {
+	margin: 0 auto;
+	align-content: left;
 }
 
 .spot-index-view {

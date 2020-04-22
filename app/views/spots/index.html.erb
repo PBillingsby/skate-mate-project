@@ -6,7 +6,7 @@
       <%=submit_tag "Search"%>
     <%end%>
   </div><br>
-  <div class="spot-grid">
+  <div class="spot-view">
     <%@spots.each do |spot|%>
       <div>
         <div class="centered"><h3><%=link_to spot.name, spot%></h3>

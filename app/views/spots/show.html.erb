@@ -26,7 +26,7 @@
     <%=form_for @spot.comments.create do |f|%>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.hidden_field :spot_id, :value => @spot.id %>
-      <%=f.text_area :content, placeholder: "Comment"%><br>
+      <%=f.text_area :content%><br>
       <%=f.submit "Add Comment"%>
     <%end%>
     <h4>Comments</h4>
