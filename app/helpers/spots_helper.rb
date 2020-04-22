@@ -12,4 +12,11 @@ module SpotsHelper
       @spots = Spot.all
     end
   end
+
+  def spot_admin
+    if current_user.id != @spot.user_id
+      flash[:alert] = "You do not have edit permissions for this spot."
+      redirect_to current_user
+    end
+  end 
 end

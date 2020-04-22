@@ -1,10 +1,4 @@
 module UsersHelper
-  
-  def user_name
-    if !@user.username.blank?
-      "Hey, #{@user.username}"
-    end
-  end
   def user_location
     if @user.check_in # If a user has a check_in, link user to location#show
       link_to "#{@user.check_in.location.city}", location_path(@user.check_in.location)
@@ -30,9 +24,5 @@ module UsersHelper
     else
       render 'user_spots' # If user has spots, and is checked in, render user spots partial
     end
-  end 
-
-  def spots # Not sure if needed yet.
-    Spot.all
   end
 end

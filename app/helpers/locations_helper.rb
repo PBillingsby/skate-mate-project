@@ -1,8 +1,4 @@
 module LocationsHelper
-  def location_show
-    @location = Location.find(params[:id])
-  end
-  
   def geocode_address
     if location_params[:city].blank?
       flash[:error] = "Search can't be empty. Try again"

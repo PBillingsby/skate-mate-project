@@ -1,9 +1,5 @@
 <%=form_for @user do |f|%>
   <%=f.label :username%>
-  <%=f.text_field :username, placeholder: :username%><br>
-  <%=f.fields_for(locations_path, method: "get") do |ff|%>
-    <%=ff.label :city%>
-    <%=ff.text_field :city%>
-  <%end%><br>
+  <%=f.text_field :username%><br>
   <%=f.submit%>
 <%end%>

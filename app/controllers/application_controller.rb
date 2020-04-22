@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   helper_method [:current_user, :logged_in?, :user_auth]
   def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, :location)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, location: [:city])
   end
   private
   def current_user
@@ -20,13 +20,13 @@ class ApplicationController < ActionController::Base
       @user = User.find(params[:id])
     end
   end
-  # FIND A NEW PLACE TO PUT HELPERS
-  def user_error_handle
-    begin
-      @user = User.find(params[:id])
-    rescue ActiveRecord::RecordNotFound
-      flash[:error] = "User doesn't exist" # Handles RecordNotFound error and redirects.
-      redirect_to user_path(current_user)
-    end
-  end
+  # May not need this method
+  # def user_error_handle
+  #   begin
+  #     @user = User.find(params[:id])
+  #   rescue ActiveRecord::RecordNotFound
+  #     flash[:error] = "User doesn't exist" # Handles RecordNotFound error and redirects.
+  #     redirect_to user_path(current_user)
+  #   end
+  # end
 end
