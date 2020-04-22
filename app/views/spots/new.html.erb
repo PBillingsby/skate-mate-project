@@ -1,5 +1,7 @@
-<%=simple_form_for @spot do |f|%>
-  <%= f.hidden_field :location_id, :value => params[:location_id] %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%=render 'form', f:f%>
-<%end%>
+<div class="black-border-box">  
+  <%=simple_form_for @spot do |f|%>
+    <%= f.hidden_field :location_id, :value => params[:location_id] %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%=render 'form', f:f%>
+  <%end%>
+</div>

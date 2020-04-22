@@ -11,5 +11,7 @@
       <%end%>
     <%end%></div>
   <%end%>
+  <%=form_for Spot.new do |f|%>
+   <%=render 'spots/form', f:f%>
+  <%end%>
 </div>
-<p class="centered">Click <%=link_to "here", location_path(@user.check_in.location)%> to add a spot.</p>
