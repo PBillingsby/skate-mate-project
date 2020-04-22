@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :user_auth, only: [:show, :edit]
   def index
     @user = User.new
     if current_user
@@ -17,12 +18,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    user_auth
     @location = Location.new
   end
 
   def edit
-    user_auth
   end
 
   def update

@@ -1,4 +1,4 @@
-<div class="black-border-box ">
+<div class="black-border-box">
   <div class="centered">
     <h2>Search spots by city</h2>
     <%=form_tag(spots_path, method: "get") do%>
@@ -11,14 +11,12 @@
       <div class="spot-grid">
         <div><%=link_to spot.name, spot%>
         <h4><%=spot.address%> - <%=spot.location.city%>, <%=spot.location.country%></h4>
-        <%if spot.image.attached?%>
-          <%=image_tag(spot.image, :class => 'image-box')%>
-        <%end%></div>
       </div>
     </div>
   <%end%>
   <%if @spots.empty?%>
     <div class="centered">
+      
       <p>No spots in <%=@location.city%></p>
     <p><%=link_to "Go Back", spots_path%></p>
   <%end%>

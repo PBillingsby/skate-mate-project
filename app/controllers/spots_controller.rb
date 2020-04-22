@@ -1,6 +1,7 @@
 class SpotsController < ApplicationController
   require 'octicons'
   include SpotsHelper
+  before_action :spot_admin, only: [:edit] 
   def index
     spot_search
   end
@@ -24,7 +25,6 @@ class SpotsController < ApplicationController
   end
 
   def edit
-    @spot = Spot.find(params[:id])
     spot_admin
   end
 

@@ -1,6 +1,9 @@
-<h1>Locations:</h1><br>
-<%=render 'search'%><br>
-<ul><%@locations.each do |loc|%>
-  <li><%=link_to loc.city, loc%>, <%=loc.city%>, <%=loc.country%></li>
-  <li>Spot count: <%=loc.spots.count%></li><br>
-<%end%></ul>
+<div class="black-border-box">  
+  <h1>Locations:</h1><br>
+  <h4>Search for locations by country</h4>
+  <%=render 'search'%><br>
+  <ul><%@locations.each do |loc|%>
+    <div><li><%=link_to loc.city, loc%>, <%=loc.city%>, <%=loc.country%></li>
+    <li>Spot count: <%=loc.spots.count%></li></div><br>
+  <%end%></ul>
+</div>

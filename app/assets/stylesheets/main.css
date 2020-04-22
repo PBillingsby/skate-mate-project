@@ -52,8 +52,11 @@ ul {
 }
 
 .image-box {
-	width: 150px;
-	height: 150px;
+	width: 200px;
+	height: 200px;
+}
+.show-image {
+	size: 50%;
 }
 .black-border-box {
 	border: 1px solid black;
@@ -82,7 +85,6 @@ ul {
 	display: inline-block;
 	height: auto;
 }
-
 .page-grid {
 	border: 1px solid black;
 	text-align: center;
