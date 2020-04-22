@@ -1,4 +1,11 @@
 <div class="spot-view">
+  <div class="centered"><br>
+    <h3>Add a spot</h3><br>
+    <%=simple_form_for Spot.new do |f|%>
+      <%= f.hidden_field :user_id, :value => @user.id %>
+      <%=render 'spots/form', f:f%>
+    <%end%>
+  </div>
   <%@user.spots.each do |spot|%>
     <div class="spot-box-show"><h3><%=link_to spot.name, spot%></h3>
     <p><%=spot.location.city%>, <%=spot.location.country%></p>
@@ -11,7 +18,5 @@
       <%end%>
     <%end%></div>
   <%end%>
-  <%=form_for Spot.new do |f|%>
-   <%=render 'spots/form', f:f%>
-  <%end%>
+
 </div>

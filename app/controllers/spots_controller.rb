@@ -13,7 +13,7 @@ class SpotsController < ApplicationController
     spot = Spot.new(spot_params)
     if spot.save
       flash.alert = "Spot added."
-      redirect_to spot
+      spot
     else
       flash.alert = "Spot needs name and address"
       redirect_to location_path(spot_params[:location_id])
@@ -43,6 +43,6 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :address, :description, :rating, :image, :location_id, :user_id)
+    params.require(:spot).permit(:name, :address, :description, :rating, :image, :location_id, :user_id, :location)
   end
 end

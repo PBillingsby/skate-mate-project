@@ -61,7 +61,7 @@ ul {
 	size: 50%;
 }
 .black-border-box {
-	border: 1px solid black;
+	border: 1px solid rgba(0,0,0,0.5);
 }
 .comment-box {
 	padding: 25px;
@@ -135,3 +135,6 @@ ul {
 .nav-bar li {
 	list-style: none;
 }
+
+
+
