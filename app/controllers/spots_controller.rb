@@ -12,11 +12,11 @@ class SpotsController < ApplicationController
 
   def create
     spot = Spot.new(spot_params)
+    byebug
     if spot.save
-      flash.alert = "Spot added."
+      flash[:alert] = "Spot added."
       redirect_to spot_path(spot)
     else
-      flash.alert = "Spot needs name and address"
       redirect_to location_path(spot_params[:location_id])
     end
   end

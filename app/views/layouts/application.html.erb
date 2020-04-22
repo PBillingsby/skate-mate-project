@@ -13,13 +13,14 @@
   <body>
     <%=render 'layouts/nav'%>
     <div class="container">
+    
       <h1 class="centered">SKATE-MATE</h1>
-      <%= yield %>
-    <div class="flash-alert" class="centered">
+      <div class="flash-alert" class="centered">
       <%flash.each do |type, msg|%>
         <%=msg%>
       <%end%>
     </div>
+      <%= yield %>
     </div>
     <footer class="centered">Skate-Mate 2020.</footer>
   </body>

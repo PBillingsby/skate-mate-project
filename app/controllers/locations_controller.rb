@@ -12,6 +12,7 @@ class LocationsController < ApplicationController
   end
 
   def show
+    @spot = Spot.new
     if !params[:location]
       @location = Location.find(params[:id])
     else
