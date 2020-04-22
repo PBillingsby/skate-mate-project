@@ -5,15 +5,15 @@
       <%= collection_select(:spot, :location_id, Location.all.order("city ASC"), :id, :city, :prompt => true) %>
       <%=submit_tag "Search"%>
     <%end%>
-  </div>
-  <%@spots.each do |spot|%>
-    <div class="centered">
-      <div class="spot-grid">
-        <div><%=link_to spot.name, spot%>
-        <h4><%=spot.address%> - <%=spot.location.city%>, <%=spot.location.country%></h4>
+  </div><br>
+  <div class="spot-grid">
+    <%@spots.each do |spot|%>
+      <div>
+        <div class="centered"><h3><%=link_to spot.name, spot%></h3>
+        <h4><%=spot.address%> - <%=spot.location.city%>, <%=spot.location.country%></h4></div>
       </div>
-    </div>
-  <%end%>
+    <%end%>
+  </div>
   <%if @spots.empty?%>
     <div class="centered">
       

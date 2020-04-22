@@ -50,7 +50,9 @@ ul {
 .gold-star {
 	fill: #ffa600;
 }
-
+.x {
+	display: inline;
+}
 .image-box {
 	width: 200px;
 	height: 200px;

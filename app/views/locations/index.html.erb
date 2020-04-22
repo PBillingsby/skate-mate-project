@@ -1,9 +1,11 @@
-<div class="black-border-box">  
+<div class="black-border-box centered">  
   <h1>Locations:</h1><br>
   <h4>Search for locations by country</h4>
   <%=render 'search'%><br>
-  <ul><%@locations.each do |loc|%>
-    <div><li><%=link_to loc.city, loc%>, <%=loc.city%>, <%=loc.country%></li>
-    <li>Spot count: <%=loc.spots.count%></li></div><br>
-  <%end%></ul>
+  <%@locations.each do |loc|%>
+  <div>
+    <strong><%=link_to loc.city, loc%>, <%=loc.country%>.</strong><br>
+    <div class="x">Spot count: <%=loc.spots.count%> <%=button_to location_path(loc)%></div>
+  </div>
+  <%end%>
 </div>
