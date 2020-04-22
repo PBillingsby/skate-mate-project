@@ -30,10 +30,15 @@ h1 {
 	font-size: 2.5em;
 }
 
-h2
- {
+h2 {
 	font-family: 'Open Sans';
 	color: rgb(1, 102, 6);
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
 
 a,
@@ -67,18 +72,8 @@ input[type=submit] {
 	padding: 10px 25px;
 }
 
-ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
 .gold-star {
 	fill: #ffa600;
-}
-
-.x {
-	display: inline;
 }
 
 .image-box {
@@ -108,7 +103,7 @@ ul {
 	margin: 0 auto;
 }
 
-.spot-view {
+.spot-index-view {
 	padding: 10px;
 	margin: 10px;
 	display: grid;
@@ -120,7 +115,7 @@ ul {
 	height: auto;
 }
 
-.page-grid {
+.main-page-grid {
 	border: 1px solid black;
 	text-align: center;
 	display: grid;
@@ -131,6 +126,7 @@ ul {
 .nav-links {
 	text-align: center;
 }
+
 .nav-links {
 	margin-top: 10px;
 }
@@ -143,4 +139,11 @@ ul {
 .flash-alert {
 	color: red;
 	text-align: center
+}
+
+.spot-view {
+	padding: 10px;
+	margin: 10px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }

@@ -1,6 +1,6 @@
 <%=f.text_field :name, placeholder: :name%><br>
 <%=f.text_field :address, placeholder: :address, hint: "Spot"%><br>
-<%=f.select :location_id, options_for_select(Location.all.order("country ASC").map{|x| ["#{x.city}, #{x.country}", x.id]}), :prompt => "Select city"%>
+<%=f.select :location_id, options_for_select(Location.all.order("country ASC").map{|x| ["#{x.city}, #{x.country}", x.id]}), {:include_blank => 'Select City'}%><br>
 <%=f.text_area :description, placeholder: :description%><br>
 <%=f.select :rating, (1..5), prompt: "Select rating"%><br>
 <%=f.file_field :image%><br>

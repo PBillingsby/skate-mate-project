@@ -13,7 +13,7 @@ class SpotsController < ApplicationController
     spot = Spot.new(spot_params)
     if spot.save
       flash.alert = "Spot added."
-      spot
+      redirect_to spot_path(spot)
     else
       flash.alert = "Spot needs name and address"
       redirect_to location_path(spot_params[:location_id])
