@@ -5,7 +5,7 @@
   <%@locations.each do |loc|%>
   <div>
     <strong><%=link_to loc.city, loc%>, <%=loc.country%>.</strong><br>
-    <div>Spot count: <%=loc.spots.count%> <%=button_to location_path(loc)%></div>
+    <div>Spot count: <%=loc.spots.count%></div>
   </div>
   <%end%>
 </div>

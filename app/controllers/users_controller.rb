@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  include UsersHelper
   before_action :user_auth, only: [:show, :edit]
+  # before_action :show, :user_check_in
   def index
     @user = User.new
     if current_user

@@ -1,14 +1,14 @@
 module SpotsHelper
   def spot_search
-    
     if !params[:spot].nil?
       if !spot_params[:location_id].blank?
         @spots = Spot.where(location_id: spot_params[:location_id])
-        # @location = Location.find(spot_params[:location_id])
+        byebug
+        @location = Location.find(spot_params[:location_id])
         render :index
       end
+    else
       @spots = Spot.all.sort_by {|x| x.location.country}
-
     end
   end
 
