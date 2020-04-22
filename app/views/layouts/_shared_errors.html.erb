@@ -1,9 +1,8 @@
-
 <% if form_object.errors.any? %>
   <div id="error_explanation">
     <ul>
-    <% form_object.errors.full_messages.each do |msg| %>
-      <li class="flash-alert"><%= msg %></li>
+    <% form_object.errors.full_messages.each do |msg| %> 
+      <li class="flash-alert">* <%= msg %></li>
     <% end %>
     </ul>
   </div>

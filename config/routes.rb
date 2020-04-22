@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :locations, only: [:create, :show, :index] do
     resources :spots, only: [:show, :index, :new]
   end
-  resources :spots
+  resources :spots do
+    resources :comments, only: [:create]
+  end
   # resources :comments, only: [:create]
   root 'users#index'
   get '/signup', to: 'users#new'

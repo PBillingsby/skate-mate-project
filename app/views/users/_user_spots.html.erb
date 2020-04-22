@@ -18,8 +18,9 @@
   <%=simple_form_for Spot.new do |f|%>
     <%= f.hidden_field :user_id, :value => @user.id %>
     <%if !params[:location_id]%>
-      <%=f.text_field :location%>
-      <%=f.select :location_id, options_for_select(Location.all.order("country ASC").map{|x| ["#{x.city}, #{x.country}", x.id]}), {:include_blank => 'Select City'}%><br>
+      <%=f.label "Add or choose location"%><br>
+      <%=f.text_field :location, placeholder: :city%><br>
+      <%=f.select :location_id, options_for_select(Location.all.order("city ASC").uniq.map{|x| ["#{x.city}", x.id]}), {:include_blank => 'Select City'}%><br>
     <%end%>
     <%=render 'spots/form', f:f%>
   <%end%><br>

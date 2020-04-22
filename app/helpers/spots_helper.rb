@@ -3,7 +3,6 @@ module SpotsHelper
     if !params[:spot].nil?
       if !spot_params[:location_id].blank?
         @spots = Spot.where(location_id: spot_params[:location_id])
-        byebug
         @location = Location.find(spot_params[:location_id])
         render :index
       end

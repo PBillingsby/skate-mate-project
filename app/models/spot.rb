@@ -6,5 +6,6 @@ class Spot < ApplicationRecord
   has_one_attached :image
   accepts_nested_attributes_for :location
   accepts_nested_attributes_for :comments
+  validates :name, presence: true
   validates :address, presence: true
 end
