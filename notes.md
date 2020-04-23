@@ -4,9 +4,10 @@ THINGS TO DO
 - Add validations
 - Fix CSS 
 - Fix comments iterator in spots#show
-- Add user submittable attribute to CheckIn
-- User helper method in conditional in spotscontroller#index
+- Add user submittable attribute to CheckIn 
+- ADD CHECKIN NOTES NESTED FORM TO LOCATIONS
 - Validation messages
+-
 
 POSSIBLE SEARCH INPUT<%=text_field_tag('search', nil, placeholder: "Search spots by city")%><br>
 
