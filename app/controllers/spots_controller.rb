@@ -4,20 +4,25 @@ class SpotsController < ApplicationController
   # before_action :set_spot
 
   def index
-    spot_search
+    if params[:location_id] || spot_params[:location_id]
+      spot_search
+    else
+      @spots = Spot.all.sort_by {|x| x.location.country}
+    end
   end
+
   def new
     @spot = Spot.new
   end
 
   def create
     spot = Spot.new(spot_params)
-    byebug
+    location = Location.find(spot_params[:location_id])
     if spot.save
       flash[:alert] = "Spot added."
       redirect_to spot_path(spot)
     else
-      redirect_to location_path(spot_params[:location_id])
+      render :'locations/index'
     end
   end
 
