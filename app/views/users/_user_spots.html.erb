@@ -19,7 +19,7 @@
     <%= f.hidden_field :user_id, :value => @user.id %>
     <%if !params[:location_id]%>
       <%=f.fields_for :location do |ff|%>
-        <%=ff.text_field :location, placeholder: :city%><br>
+        <%=ff.text_field :city, placeholder: :city%><br>
         <%=ff.select :location_id, options_for_select(Location.all.order("city ASC").uniq.map{|x| ["#{x.city}", x.id]}), {:include_blank => 'Select City'}%><br>
       <%end%>
     <%end%>
