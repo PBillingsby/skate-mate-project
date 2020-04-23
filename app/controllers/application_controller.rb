@@ -1,8 +1,5 @@
 class ApplicationController < ActionController::Base
   helper_method [:current_user, :logged_in?, :user_auth]
-  def user_params
-    params.require(:user).permit(:username, :email, :password, :password_confirmation, location: [:city])
-  end
   private
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

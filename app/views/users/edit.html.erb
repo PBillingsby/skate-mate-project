@@ -2,5 +2,9 @@
   <%=render 'layouts/shared_errors', form_object: @user%>
   <%=f.label :username%>
   <%=f.text_field :username%><br>
+  <%=f.fields_for :check_in do |ff|%>
+    <%=ff.label :city%>
+    <%=ff.text_field :city%>
+  <%end%>
   <%=f.submit%>
 <%end%>

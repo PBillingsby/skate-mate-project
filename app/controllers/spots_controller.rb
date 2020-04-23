@@ -2,7 +2,7 @@ class SpotsController < ApplicationController
   require 'octicons'
   include SpotsHelper
   # before_action :set_spot
-
+  
   def index
     if params[:location_id] || params[:spot]
       spot_search

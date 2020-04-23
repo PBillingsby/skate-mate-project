@@ -28,8 +28,14 @@ class UsersController < ApplicationController
   end
 
   def update
+    byebug
     @user = User.find(params[:id])
+    @user.check_ins.create(user_params[:city])
     @user.update(user_params)
     redirect_to user_path(@user)
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, location: [:city])
   end
 end

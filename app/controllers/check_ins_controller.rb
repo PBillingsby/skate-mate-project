@@ -3,6 +3,7 @@ class CheckInsController < ApplicationController
   def create
     geocode_address
     current_user.check_ins.create(notes: check_in_params[:notes], location_id: @check_in_location.id)
+    redirect_to user_path(current_user)
   end
 
   def check_in_params
