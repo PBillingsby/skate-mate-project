@@ -17,7 +17,13 @@ class SpotsController < ApplicationController
 
   def create
     spot = Spot.new(spot_params)
-    location = Location.find(spot_params[:location_id])
+    case
+    when spot_params[:location_name]
+      location = Location.find_or_create_by(city: spot_params[:location_name])
+    else
+      location = Location.find(spot_params[:location_id]) unless spot_params[:location_id].blank?
+    end
+    byebug
     if spot.save
       flash[:alert] = "Spot added."
       redirect_to spot_path(spot)
@@ -49,6 +55,6 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :address, :description, :rating, :image, :location_id, :user_id, :location)
+    params.require(:spot).permit(:name, :address, :description, :rating, :image, :user_id, :location_id, :location)
   end
 end

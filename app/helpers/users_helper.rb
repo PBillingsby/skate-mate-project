@@ -2,24 +2,16 @@ module UsersHelper
 
   def user_check_in
     if current_user
+      byebug
       @user_check_in = current_user.check_in.last
     end
   end
   def user_location
-    last_check_in = @user.check_ins.last
-    if last_check_in # If a user has a check_in, link user to location#show
-      link_to "#{last_check_in.location.city}", location_path(last_check_in.location)
+    @last_check_in = @user.check_ins.last
+    if @last_check_in # If a user has a check_in, link user to location#show
+      link_to "#{@last_check_in.location.city}", location_path(@last_check_in.location)
     else
       "Well, nowhere! Check in to add your location..." # Prompts user to add user#location if no check_in 
-    end
-  end
-
-  def user_auth
-    if params[:id].to_i != current_user.id # If user tries to access someone elses page
-      flash[:alert] = "Not authorized to view this page." # Show error
-      redirect_to user_path(current_user)
-    else
-      @user = User.find(params[:id])
     end
   end
 

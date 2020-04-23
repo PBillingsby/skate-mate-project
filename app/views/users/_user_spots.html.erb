@@ -15,12 +15,13 @@
 <div class="centered">
   <h3>Add a spot</h3>
   <div>
-  <%=simple_form_for Spot.new do |f|%>
+  <%=simple_form_for :spot, url: user_spots_path(current_user), :method => :post do |f|%>
     <%= f.hidden_field :user_id, :value => @user.id %>
     <%if !params[:location_id]%>
-      <%=f.label "Add or choose location"%><br>
-      <%=f.text_field :location, placeholder: :city%><br>
-      <%=f.select :location_id, options_for_select(Location.all.order("city ASC").uniq.map{|x| ["#{x.city}", x.id]}), {:include_blank => 'Select City'}%><br>
+      <%=f.fields_for :location do |ff|%>
+        <%=ff.text_field :location, placeholder: :city%><br>
+        <%=ff.select :location_id, options_for_select(Location.all.order("city ASC").uniq.map{|x| ["#{x.city}", x.id]}), {:include_blank => 'Select City'}%><br>
+      <%end%>
     <%end%>
     <%=render 'spots/form', f:f%>
   <%end%><br>

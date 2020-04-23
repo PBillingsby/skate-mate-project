@@ -2,7 +2,10 @@
   <div class="main">
     <h2>Welcome, <%=@user.username%>.</h2>
     <%=link_to "Edit", edit_user_path(@user)%></span>
-    <p>You are currently located in <%=user_location%>.</p><br><br>
+    <p>You are currently located in <%=user_location%>.</p>
+    <%if @last_check_in%>
+      <p>Notes: <%=@last_check_in.notes%></p>
+    <%end%><br>
     <h3>Check In</h3>
     <p>Where will you be skating today?</p>
     <%=form_for :check_in, url: user_check_ins_path(@user), :method => :post do |f|%>

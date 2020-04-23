@@ -17,13 +17,4 @@ class ApplicationController < ActionController::Base
       @user = User.find(params[:id])
     end
   end
-  # May not need this method
-  # def user_error_handle
-  #   begin
-  #     @user = User.find(params[:id])
-  #   rescue ActiveRecord::RecordNotFound
-  #     flash[:error] = "User doesn't exist" # Handles RecordNotFound error and redirects.
-  #     redirect_to user_path(current_user)
-  #   end
-  # end
 end

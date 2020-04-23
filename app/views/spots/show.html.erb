@@ -21,6 +21,8 @@
     <%end%>
   </div>
   <div class="comment-box">
-    <%# <%=@spot.comments.each%> %>
+    <%@spot.comments.each do |comment|%>
+      <%byebug%>
+    <%end%>
   </div>
 </div>
