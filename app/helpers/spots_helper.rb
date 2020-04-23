@@ -1,6 +1,10 @@
 module SpotsHelper
   def spot_search
-    @spots = Spot.where(location_id: params[:location_id])
+    if params[:location_id]
+      @spots = Spot.where(location_id: params[:location_id])
+    else
+      @spots = Spot.where(location_id: spot_params[:location_id])
+    end
   end
 
   def spot_admin

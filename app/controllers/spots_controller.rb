@@ -4,7 +4,7 @@ class SpotsController < ApplicationController
   # before_action :set_spot
 
   def index
-    if params[:location_id] || spot_params[:location_id]
+    if params[:location_id] || params[:spot]
       spot_search
     else
       @spots = Spot.all.sort_by {|x| x.location.country}
