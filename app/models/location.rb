@@ -1,6 +1,6 @@
 class Location < ApplicationRecord
   has_many :check_ins
-  has_many :users, through: :check_ins
+  has_many :users, through: :check_ins, dependent: :destroy
   has_many :spots
   has_one_attached :image
   geocoded_by :city
