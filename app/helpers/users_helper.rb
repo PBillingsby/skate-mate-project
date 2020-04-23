@@ -2,7 +2,6 @@ module UsersHelper
 
   def user_check_in
     if current_user
-      byebug
       @user_check_in = current_user.check_in.last
     end
   end

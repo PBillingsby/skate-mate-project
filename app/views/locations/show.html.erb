@@ -14,8 +14,7 @@
   <hr>
   <div class="margin-center">
     <h3>Create a spot</h3>
-    <%=simple_form_for @spot do |f|%>
-      <%=render 'layouts/shared_errors', form_object: @spot%>
+    <%=simple_form_for @location.spots.build do |f|%>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.hidden_field :location_id, :value => @location.id %>
       <%=render "spots/form", f:f%>

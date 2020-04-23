@@ -1,13 +1,11 @@
 class SpotsController < ApplicationController
   require 'octicons'
-  include SpotsHelper
-  # before_action :set_spot
-  
+  include SpotsHelper  
   def index
-    if params[:location_id] || params[:spot]
-      spot_search
-    else
+    if !params[:spot]
       @spots = Spot.all.sort_by {|x| x.location.country}
+    else
+      spot_search
     end
   end
 
@@ -16,13 +14,6 @@ class SpotsController < ApplicationController
   end
 
   def create
-    case
-    when spot_params[:location][:city]
-      location = Location.location_create(spot_params[:location][:city])
-    else
-      location = Location.find(spot_params[:location][:location_id]) unless spot_params[:location_id].blank?
-    end
-    byebug
     spot = Spot.new(spot_params)
     if spot.save
       flash[:alert] = "Spot added."
@@ -55,6 +46,6 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :address, :description, :rating, :image, :user_id, location: [:city, :location_id])
+    params.require(:spot).permit(:name, :address, :description, :rating, :image, :user_id, :location_id)
   end
 end

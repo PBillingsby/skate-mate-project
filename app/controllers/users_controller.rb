@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    byebug
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
@@ -28,7 +27,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    byebug
     @user = User.find(params[:id])
     @user.check_ins.create(user_params[:city])
     @user.update(user_params)

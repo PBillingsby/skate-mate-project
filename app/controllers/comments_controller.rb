@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
   def new
   end
   def create
-    byebug
     @comment = Comment.create(comment_params)
     redirect_to @comment.spot
   end

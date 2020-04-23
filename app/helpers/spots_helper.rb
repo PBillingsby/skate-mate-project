@@ -1,12 +1,7 @@
 module SpotsHelper
   def spot_search
-    if spot_params[:location_id].blank?
-      @spots = Spot.all
-    elsif params[:location_id]
-      @spots = Spot.where(location_id: params[:location_id])
-    elsif spot_params[:location_id]
-      @spots = Spot.where(location_id: spot_params[:location_id])
-    end
+    @spots = Spot.where(location_id: spot_params[:location_id])
+    render :index
   end
 
   def spot_admin

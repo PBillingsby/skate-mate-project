@@ -17,7 +17,9 @@
   <%if @spots.empty?%>
     <div class="centered">
       <p>No spots yet</p>
-     
+      <%=form_tag :spot do%>
+        <%=render 'form', f:f%>
+      <%end%>
     <p><%=link_to "Go Back", spots_path%></p>
   <%end%>
 </div>
