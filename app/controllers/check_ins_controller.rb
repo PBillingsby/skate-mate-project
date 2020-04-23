@@ -1,9 +1,10 @@
 class CheckInsController < ApplicationController
+  include CheckInsHelper
   def create
-    byebug
+    geocode_address
   end
 
   def check_in_params
-    params.require(:check_in).permit(:notes)
+    params.require(:check_in).permit(:notes, :city)
   end
 end

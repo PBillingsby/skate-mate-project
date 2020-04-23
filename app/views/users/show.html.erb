@@ -5,7 +5,13 @@
     <p>You are currently located in <%=user_location%>.</p><br><br>
     <h3>Check In</h3>
     <p>Where will you be skating today?</p>
-    <%=render "locations/form"%>
+    <%=form_for :check_in, url: user_check_ins_path(@user), :method => :post do |f|%>
+      <%=f.label "Add location"%>
+      <%=f.text_field :city%>
+      <%=f.text_field :notes%>
+      <%=f.submit%>
+    <%end%>
+    
   </div>
   <div>
     <h2>Your Spots</h2>

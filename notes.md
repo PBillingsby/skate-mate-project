@@ -7,7 +7,7 @@ THINGS TO DO
 - Add user submittable attribute to CheckIn 
 - ADD CHECKIN NOTES NESTED FORM TO LOCATIONS
 - Validation messages
--
+- FIX CHECK_IN IN GEOCODE ADDRESS
 
 POSSIBLE SEARCH INPUT<%=text_field_tag('search', nil, placeholder: "Search spots by city")%><br>
 

@@ -23,6 +23,8 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_by(email: auth[:info][:email]) do |u|
       u.username = auth.info.name
       u.password = SecureRandom.hex
+      u.uid = auth.uid
+      u.provider = auth.provider
     end
     session[:user_id] = @user.id
     redirect_to user_path(@user)
