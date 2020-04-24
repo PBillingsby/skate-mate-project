@@ -5,8 +5,8 @@ class User < ApplicationRecord
   has_many :spots
   has_many :comments
   validates :username, uniqueness: true
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
-  validates :password, :length => {minimum: 8, message: "must be at least 8 characters"}
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true, :on => :create
+  validates :password, :length => {minimum: 8, message: "must be at least 8 characters"}, :on => :create
   validates_confirmation_of :password
   accepts_nested_attributes_for :check_ins
 end

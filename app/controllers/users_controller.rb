@@ -9,9 +9,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      session[:user_id] = @user.id
+    user = User.new(user_params)
+    if user.save
+      session[:user_id] = user.id
       current_user_path
     else
       render :index
@@ -27,8 +27,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.check_ins.create(user_params[:city])
-    byebug
     @user.update(username: user_params[:username])
     current_user_path
   end
