@@ -28,7 +28,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.check_ins.create(user_params[:city])
-    @user.update(user_params)
+    byebug
+    @user.update(username: user_params[:username])
     current_user_path
   end
 

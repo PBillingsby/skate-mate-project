@@ -1,8 +1,4 @@
 module UsersHelper
-
-  def current_user_path
-    redirect_to user_path(current_user)
-  end
   def user_location
     user_check_in = current_user.check_ins.last
     if user_check_in # If a user has a check_in, link user to location#show

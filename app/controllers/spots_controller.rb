@@ -31,7 +31,7 @@ class SpotsController < ApplicationController
   end
 
   def edit
-    spot_admin
+    spot_admin # Helper method for editing spots authorization
   end
 
   def update
