@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
   include UsersHelper
   before_action :user_auth, only: [:show, :edit]
-  # before_action :show, :user_check_in
   def index
     @user = User.new
     if current_user
-      redirect_to user_path(current_user)
+      current_user_path # Redirect to current user path method
     end
   end
 
@@ -13,14 +12,14 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to @user
+      current_user_path
     else
       render :index
     end
   end
 
   def show
-    @location = Location.new
+    @location = @user.locations.new
   end
 
   def edit
@@ -30,10 +29,20 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.check_ins.create(user_params[:city])
     @user.update(user_params)
-    redirect_to user_path(@user)
+    current_user_path
   end
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation, location: [:city])
+  end
+
+  private
+  def user_auth
+    if params[:id].to_i != current_user.id
+      flash[:error] = "Not authorized to view this page."
+      current_user_path
+    else
+      @user = User.find(params[:id])
+    end
   end
 end

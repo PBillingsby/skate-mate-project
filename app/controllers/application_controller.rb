@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method [:current_user, :logged_in?, :user_auth]
+  helper_method [:current_user, :logged_in?]
   private
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -7,14 +7,5 @@ class ApplicationController < ActionController::Base
 
   def logged_in
     session[:current_user]
-  end
-
-  def user_auth
-    if params[:id].to_i != current_user.id
-      flash[:error] = "Not authorized to view this page."
-      redirect_to user_path(current_user)
-    else
-      @user = User.find(params[:id])
-    end
   end
 end

@@ -5,7 +5,7 @@ class SpotsController < ApplicationController
     if !params[:spot]
       @spots = Spot.all.sort_by {|x| x.location.country}
     else
-      spot_search # search spots by selection of locations.
+      spot_search # search spots by selection of locations
     end
   end
 

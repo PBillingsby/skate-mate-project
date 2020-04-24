@@ -1,10 +1,8 @@
 module UsersHelper
 
-  # def user_check_in
-  #   if current_user
-  #     user_check_in = current_user.check_ins.last
-  #   end
-  # end
+  def current_user_path
+    redirect_to user_path(current_user)
+  end
   def user_location
     user_check_in = current_user.check_ins.last
     if user_check_in # If a user has a check_in, link user to location#show
@@ -15,9 +13,9 @@ module UsersHelper
   end
 
   def check_in
-    if user_check_in && @user.spots.present?
+    if current_user.check_ins.last && current_user.spots.present?
       render 'user_spots' # If user has spots, and is checked in, render user spots partial
-    elsif !@user.spots.present? # If user has no spots
+    else # If user has no spots
       render 'spots/new' # Show add spot link
     end
   end

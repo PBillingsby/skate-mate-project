@@ -22,6 +22,7 @@
   </div>
   <div class="comment-box">
     <%=form_for @comment, :method => :post do |f|%>
+      <%= f.hidden_field :spot_id, :value => @spot.id%>
       <%=f.hidden_field :user_id, :value => current_user.id %>
       <%=f.text_area :content, placeholder: :comment%>
       <%=f.submit "Add Comment"%>
