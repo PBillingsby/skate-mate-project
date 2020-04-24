@@ -6,6 +6,7 @@ class SpotsController < ApplicationController
       @spots = Spot.all.sort_by {|x| x.location.country}
     else
       spot_search # search spots by selection of locations
+      @location = Location.find(spot_params[:location_id])
     end
   end
 
@@ -14,12 +15,10 @@ class SpotsController < ApplicationController
   end
 
   def create
-    spot = Spot.new(spot_params)
-    location_results = Geocoder.search(spot_params[:location_attributes][:city]).first
-    spot.location = Location.find_or_create_by(city: spot_params[:location_attributes][:city], country: location_results.country)
-    if spot.save
+    spot_location_set # Sets from new or existing location
+    if @spot.save
       flash[:alert] = "Spot added."
-      redirect_to spot_path(spot)
+      redirect_to spot_path(@spot)
     else
       render :'locations/index'
     end

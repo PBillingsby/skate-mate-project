@@ -146,3 +146,6 @@ input[type=submit] {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
+.comment-display {
+	background-color: rgba(238, 238, 238, 0.7);
+}
