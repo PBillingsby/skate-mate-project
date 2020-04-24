@@ -20,20 +20,23 @@
       <%=link_to "Edit", edit_spot_path(@spot)%>
     <%end%>
   </div>
-  <div class="comment-box">
+  <div class="comment-box centered">
     <%=form_for @comment, :method => :post do |f|%>
       <%= f.hidden_field :spot_id, :value => @spot.id%>
       <%=f.hidden_field :user_id, :value => current_user.id %>
-      <%=f.text_area :content, placeholder: :comment%>
+      <%=f.text_area :content%><br>
       <%=f.submit "Add Comment"%>
     <%end%>
     <div>
-      <%@spot.comments.each do |comment|%>
-        <div class="comment-display centered">
-          <p>Posted - <%=comment.created_at.strftime('%B %d, %Y')%></p>
-          <p><strong><%=comment.user.username%></strong> - <%=comment.content%></p>
-        </div>
-      <%end%>
+      <h3>Comments</h3>
+      <div class="comment-display">
+        <%@spot.comments.each do |comment|%>
+          <div class="centered">
+            <p>Posted - <%=comment.created_at.strftime('%B %d, %Y')%></p>
+            <p><strong><%=comment.user.username%></strong> - <%=comment.content%></p>
+          </div>
+        <%end%>
+      </div>
     </div>
   </div>
 </div>

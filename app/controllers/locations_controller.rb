@@ -12,11 +12,12 @@ class LocationsController < ApplicationController
   end
 
   def show
-    @spot = Location.spots.build
     if !params[:location]
       @location = Location.find(params[:id])
+      @spot = @location.spots.build
     else
       @location = Location.find(params[:location][:id])
+      @spot = @location.spots.build
     end
   end
 

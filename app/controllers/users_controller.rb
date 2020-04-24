@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 
   def show
     @location = @user.locations.build
-    @spot = @user.spots.build
   end
 
   def edit
