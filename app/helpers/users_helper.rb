@@ -14,12 +14,10 @@ module UsersHelper
   end
 
   def check_in
-    if !@user.spots.present? && user_check_in # If user has no spots, but user is checked in
-      link_to "Click here to add spots", location_path(user_check_in.location) # Show add spot link
-    elsif !@user.spots && !user_check_in # If user not checked in
-      "Check in to add spots."  # Show this
-    else
+    if user_check_in && @user.spots.present?
       render 'user_spots' # If user has spots, and is checked in, render user spots partial
+    elsif !@user.spots.present? # If user has no spots
+      render 'spots/new' # Show add spot link
     end
   end
 end

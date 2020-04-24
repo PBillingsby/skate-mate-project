@@ -1,13 +1,10 @@
 THINGS TO DO
 
 - Add nested attributes form for comments
-- Add validations
-- Fix CSS 
 - Fix comments iterator in spots#show
-- Add user submittable attribute to CheckIn 
-- ADD CHECKIN NOTES NESTED FORM TO LOCATIONS
 - Validation messages
-- FIX CHECK_IN IN GEOCODE ADDRESS
+- FIX USER#SHOW 'YOUR SPOTS' TO ADD SPOTS, OR NEW FORM.
+
 
 POSSIBLE SEARCH INPUT<%=text_field_tag('search', nil, placeholder: "Search spots by city")%><br>
 

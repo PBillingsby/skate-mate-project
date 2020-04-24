@@ -14,6 +14,7 @@ class SpotsController < ApplicationController
   end
 
   def create
+    byebug
     spot = Spot.new(spot_params)
     if spot.save
       flash[:alert] = "Spot added."
@@ -46,6 +47,6 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :address, :description, :rating, :image, :user_id, :location_id)
+    params.require(:spot).permit(:name, :address, :description, :rating, :image, :user_id, :location_id, location_attributes: [])
   end
 end
