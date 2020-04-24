@@ -28,7 +28,7 @@
       <%=f.submit "Add Comment"%>
     <%end%>
     <%@spot.comments.each do |comment|%>
-      <%=comment.content%>
+      <p>Content: <%=comment.content%></p>
     <%end%>
   </div>
 </div>

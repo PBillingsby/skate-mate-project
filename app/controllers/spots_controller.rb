@@ -15,9 +15,8 @@ class SpotsController < ApplicationController
 
   def create
     spot = Spot.new(spot_params)
-    byebug
-
-    location = Location.find_or_create_by(city: spot_params[:location_attributes][:city])
+    location_results = Geocoder.search(spot_params[:location_attributes][:city]).first
+    spot.location = Location.find_or_create_by(city: spot_params[:location_attributes][:city], country: location_results.country)
     if spot.save
       flash[:alert] = "Spot added."
       redirect_to spot_path(spot)
@@ -28,8 +27,8 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
-    @location = @spot.locations.build
-    @comment = @spot.comments.build
+    @comment = Comment.new
+    @location = Location.new
   end
 
   def edit
