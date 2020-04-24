@@ -8,9 +8,8 @@ Rails.application.routes.draw do
   resources :locations, only: [:create, :show, :index] do
     resources :spots, only: [:show, :index, :new]
   end
-  resources :spots do
-    resources :comments, only: [:create]
-  end
+  resources :spots
+  resources :comments
   root 'users#index'
   get '/signup', to: 'users#new'
   get '/auth/:provider/callback' => 'sessions#omniauth'

@@ -1,11 +1,12 @@
 module UsersHelper
 
-  def user_check_in
-    if current_user
-      user_check_in = current_user.check_ins.last
-    end
-  end
+  # def user_check_in
+  #   if current_user
+  #     user_check_in = current_user.check_ins.last
+  #   end
+  # end
   def user_location
+    user_check_in = current_user.check_ins.last
     if user_check_in # If a user has a check_in, link user to location#show
       link_to "#{user_check_in.location.city}", location_path(user_check_in.location)
     else
