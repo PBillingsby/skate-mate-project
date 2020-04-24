@@ -22,6 +22,7 @@
     <%end%>
     <h4>Add Spot</h4>
     <%=form_for @spot do |f|%>
+      <%=render 'layouts/shared_errors', form_object:@spot%>
       <%=f.hidden_field :user_id, :value => current_user.id %>
       <%=f.fields_for :location, @location do |ff|%>
         <%=ff.text_field :city, placeholder: :city%>

@@ -8,8 +8,4 @@ class Spot < ApplicationRecord
   accepts_nested_attributes_for :comments
   validates :name, presence: true
   validates :address, presence: true
-  # before_save :find_or_create_location
-  # def find_or_create_location
-  #   byebug # FIX THIS
-  # end
 end

@@ -1,8 +1,8 @@
 <div class="spot-view black-border-box">
-  <%@user.spots.joins(:locations).order('locations.country') do |spot|%>
-      <div>
-        <h3><u><%=link_to spot.name, spot%></u></h3>
-        <%=spot.location.city%>, <%=spot.location.country%>
-      </div>
+  <%@user.spots.each do |spot|%>
+    <div>
+      <h3><u><%=link_to spot.name, spot%></u></h3>
+      <%=spot.location.city%>, <%=spot.location.country%>
+    </div>
   <%end%>
 </div>

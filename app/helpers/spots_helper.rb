@@ -13,9 +13,11 @@ module SpotsHelper
   end
 
   def spot_location_set
-    if spot_params[:location_attributes]
-      location_results = Geocoder.search(spot_params[:location_attributes][:city]).first
-      @spot.location = Location.find_or_create_by(city: spot_params[:location_attributes][:city], country: location_results.country)
+    if spot_params[:city]
+      if spot_params[:location_attributes]
+        location_results = Geocoder.search(spot_params[:location_attributes][:city]).first
+        @spot.location = Location.find_or_create_by(city: spot_params[:location_attributes][:city], country: location_results.country)
+      end
     end
   end
   def spot_admin

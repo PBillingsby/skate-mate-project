@@ -15,8 +15,4 @@ module UsersHelper
       render 'spots/new' # Show add spot link
     end
   end
-
-  def sort_by_country
-    byebug
-  end
 end

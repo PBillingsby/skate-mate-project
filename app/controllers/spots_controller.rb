@@ -22,7 +22,7 @@ class SpotsController < ApplicationController
       flash[:alert] = "Spot added."
       redirect_to spot_path(@spot)
     else
-      render :'locations/index'
+      render :'users/show'
     end
   end
 
