@@ -139,7 +139,10 @@ input[type=submit] {
 	color: red;
 	text-align: center
 }
-
+.location-index {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
 .spot-view {
 	padding: 10px;
 	margin: 10px;

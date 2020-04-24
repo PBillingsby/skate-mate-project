@@ -2,10 +2,12 @@
   <h1>Locations</h1>
   <h4>Search for locations by country</h4>
   <%=render 'search'%><br>
-  <%@locations.each do |loc|%>
-  <div>
-    <strong><%=link_to loc.city, loc%>, <%=loc.country%>.</strong><br>
-    <div>Spot count: <%=loc.spots.count%></div>
+  <div class="location-index">
+    <%@locations.each do |loc|%>
+    <div>
+      <strong><u><%=link_to loc.city, loc%></u>, <%=loc.country%>.</strong><br>
+      <div>Spot count: <%=loc.spots.count%></div><br>
+    </div>
+    <%end%>
   </div>
-  <%end%>
 </div>

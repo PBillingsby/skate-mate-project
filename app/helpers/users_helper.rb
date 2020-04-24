@@ -10,7 +10,7 @@ module UsersHelper
 
   def check_in
     if current_user.check_ins.last && current_user.spots.present?
-      render 'user_spots' # If user has spots, and is checked in, render user spots partial
+      render 'users/user_spots' # If user has spots, and is checked in, render user spots partial
     else # If user has no spots
       render 'spots/new' # Show add spot link
     end
