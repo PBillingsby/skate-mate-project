@@ -16,13 +16,12 @@
   </div>
   <%if @spots.empty?%>
     <div class="centered">
-      <p>No spots yet</p>
-      <p>Add a spot in <%=@index_location.city%>
+      <p>No spots in <%=@index_location.city%> yet</p>
+      <p>Add Spot</p>
       <%=form_with model: Spot.new, url: spots_path, :method => :post do |f|%>
         <%= f.hidden_field :location_id, :value => params[:spot][:location_id] if params[:spot].present? %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
         <%=render 'form', f:f%>
       <%end%>
-    <p><%=link_to "Go Back", spots_path%></p>
   <%end%>
 </div>

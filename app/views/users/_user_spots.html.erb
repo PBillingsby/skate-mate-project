@@ -5,11 +5,6 @@
         <%if spot.image.attached?%>
           <%=image_tag(spot.image, class: 'image-box')%>
         <%end%>
-        <%if spot.rating%>
-          <%spot.rating.times do%>
-            <%= octicon "star", class: "gold-star" %>
-          <%end%>
-        <%end%>
       </div>
   <%end%>
 </div>
