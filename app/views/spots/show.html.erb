@@ -1,6 +1,6 @@
 <div class='spot-view'>
   <div>  
-    <h3><%=@spot.name%></h3>
+    <h2><%=@spot.name%></h2>
     <p><%=@spot.address%>, <%=@spot.location.city%>, <%=@spot.location.country%>.</p>
     <span>
       Rating:
@@ -21,22 +21,23 @@
     <%end%>
   </div>
   <div class="comment-box centered">
+    <div>
+      <h2><strong>Comments</strong></h2>
+      <div class="comment-display">
+        <%@spot.comments.each do |comment|%>
+          <div class="centered">
+            <p><%=comment.content%></p>
+
+            <small><p>Posted - <%=comment.created_at.strftime('%B %d, %Y')%> by <%=comment.user.username%></p></small>
+          </div><hr>
+        <%end%>
+      </div>
+    </div><br>
     <%=form_for @comment, :method => :post do |f|%>
       <%= f.hidden_field :spot_id, :value => @spot.id%>
       <%=f.hidden_field :user_id, :value => current_user.id %>
       <%=f.text_area :content%><br>
       <%=f.submit "Add Comment"%>
     <%end%>
-    <div>
-      <h3>Comments</h3>
-      <div class="comment-display">
-        <%@spot.comments.each do |comment|%>
-          <div class="centered">
-            <p>Posted - <%=comment.created_at.strftime('%B %d, %Y')%></p>
-            <p><strong><%=comment.user.username%></strong> - <%=comment.content%></p>
-          </div>
-        <%end%>
-      </div>
-    </div>
   </div>
 </div>

@@ -2,11 +2,10 @@ class SpotsController < ApplicationController
   require 'octicons'
   include SpotsHelper  
   def index
-    if !params[:spot]
+    if !params[:spot] || spot_params[:location_id].blank?
       @spots = Spot.all.sort_by {|x| x.location.country}
     else
       spot_search # search spots by selection of locations
-      byebug
       @location = Location.find(spot_params[:location_id])
     end
   end

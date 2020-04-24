@@ -1,6 +1,7 @@
 module SpotsHelper
   def spot_search
     @spots = Spot.where(location_id: spot_params[:location_id]) # Using scope method to search by spot location in spots#index
+    @index_location = Location.find(spot_params[:location_id])
     render :index
   end
 
