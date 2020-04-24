@@ -14,9 +14,10 @@ class SpotsController < ApplicationController
   end
 
   def create
-    byebug
     spot = Spot.new(spot_params)
-    # HAVE TO MAKE THIS WORK !!!! spot.location.find_or_create_by(city: spot_params[:location_attributes][:city])
+    byebug
+
+    location = Location.find_or_create_by(city: spot_params[:location_attributes][:city])
     if spot.save
       flash[:alert] = "Spot added."
       redirect_to spot_path(spot)
@@ -27,6 +28,7 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @location = @spot.locations.build
     @comment = @spot.comments.build
   end
 

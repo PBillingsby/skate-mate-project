@@ -17,6 +17,8 @@
   </div>
   <div>
     <h2>Your Spots</h2>
-    <%=check_in%> <!--user helpers-->
+    <%if @user.spots%>
+      <%=check_in%> <!--user helpers-->
+    <%end%>
   </div>
 </div>

@@ -1,4 +1,4 @@
-<div class="black-border-box">  
+<div class="black-border-box centered">  
   <%=form_for Spot.new do |f|%>
     <%=f.hidden_field :user_id, :value => current_user.id %>
     <%=f.fields_for :location, Location.new do |location_attributes| %>

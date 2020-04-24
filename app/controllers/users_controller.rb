@@ -19,7 +19,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @location = @user.locations.new
+    @location = @user.locations.build
+    @spot = @user.spots.build
   end
 
   def edit
