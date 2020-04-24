@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    byebug
     @location = Location.new
   end
 
