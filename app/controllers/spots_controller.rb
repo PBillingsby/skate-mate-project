@@ -7,7 +7,7 @@ class SpotsController < ApplicationController
       @index_location = Location.find(params[:location_id])
     else
       spot_search # search spots by selection of locations
-      @location = Location.find(spot_params[:location_id]) unless spot_params[:location_id].blank?
+      @location = Location.find(params[:location_id]) unless params[:location_id].nil?
     end
   end
 

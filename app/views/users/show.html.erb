@@ -1,14 +1,14 @@
 <div class="main-page-grid">  
   <div class="main">
-    <h2>Welcome, <%=@user.username%>.</h2>
-    <%=link_to "Edit", edit_user_path(@user)%></span>
+    <h2>Welcome, <%=current_user.username%>.</h2>
+    <%=link_to "Edit", edit_user_path(current_user)%></span>
     <p>You are currently located in <%=user_location%>.</p>
     <%if @current_user_check_in%>
       <p>Check In Note: <%=@current_user_check_in.notes%></p>
     <%end%><br>
     <h3>Check In</h3>
     <p>Where will you be skating today?</p>
-    <%=form_for :check_in, url: user_check_ins_path(@user), :method => :post do |f|%>
+    <%=form_for :check_in, url: user_check_ins_path(current_user), :method => :post do |f|%>
       <%=f.text_field :city, placeholder: :city%><br>
       <%=f.text_area :notes, placeholder: :notes, cols: "18", rows: "3"%><br>
       <%=f.submit "Check In"%>
@@ -17,7 +17,7 @@
   </div>
   <div>
     <h2>Your Spots</h2>
-    <%if @user.spots%>
+    <%if current_user.spots%>
       <%=check_in%> <!--user helpers-->
     <%end%><br>
     <%=form_for @spot do |f|%>
