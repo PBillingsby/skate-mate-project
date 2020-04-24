@@ -18,7 +18,7 @@
     <div class="centered">
       <p>No spots yet</p>
       <%=form_with model: Spot.new, url: spots_path, :method => :post do |f|%>
-        <%= f.hidden_field :location_id, :value => params[:spot][:location_id] %>
+        <%= f.hidden_field :location_id, :value => params[:spot][:location_id] if params[:spot].present? %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
         <%=render 'form', f:f%>
       <%end%>

@@ -16,6 +16,7 @@ class SpotsController < ApplicationController
   def create
     byebug
     spot = Spot.new(spot_params)
+    # HAVE TO MAKE THIS WORK !!!! spot.location.find_or_create_by(city: spot_params[:location_attributes][:city])
     if spot.save
       flash[:alert] = "Spot added."
       redirect_to spot_path(spot)
@@ -47,6 +48,6 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :address, :description, :rating, :image, :user_id, :location_id, location_attributes: [])
+    params.require(:spot).permit(:name, :address, :description, :rating, :image, :user_id, :location_id, location_attributes: [:city])
   end
 end

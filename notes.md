@@ -5,6 +5,8 @@ THINGS TO DO
 - Validation messages
 - FIX USER#SHOW 'YOUR SPOTS' TO ADD SPOTS, OR NEW FORM.
 
+# LOCATION WORKS WITH CHECK IN But NOT WITH SPOT CREATE ##### FIXXXXXXX
+# NO FORMS HAVE A LOCATION ID NOW
 
 POSSIBLE SEARCH INPUT<%=text_field_tag('search', nil, placeholder: "Search spots by city")%><br>
 
