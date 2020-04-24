@@ -145,6 +145,8 @@ input[type=submit] {
 	margin: 10px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	overflow: scroll;
+	height: 35vh;
 }
 .comment-display {
 	background-color: rgba(238, 238, 238, 0.7);

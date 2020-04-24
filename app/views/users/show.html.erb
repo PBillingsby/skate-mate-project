@@ -19,7 +19,8 @@
     <h2>Your Spots</h2>
     <%if current_user.spots%>
       <%=check_in%> <!--user helpers-->
-    <%end%><br>
+    <%end%>
+    <h4>Add Spot</h4>
     <%=form_for @spot do |f|%>
       <%=f.hidden_field :user_id, :value => current_user.id %>
       <%=f.fields_for :location, @location do |ff|%>

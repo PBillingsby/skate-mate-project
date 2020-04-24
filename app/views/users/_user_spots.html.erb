@@ -1,10 +1,8 @@
-<div class="spot-view">
-  <%@user.spots.each do |spot|%>
+<div class="spot-view black-border-box">
+  <%@user.spots.joins(:locations).order('locations.country') do |spot|%>
       <div>
         <h3><u><%=link_to spot.name, spot%></u></h3>
-        <%if spot.image.attached?%>
-          <%=image_tag(spot.image, class: 'image-box')%>
-        <%end%>
+        <%=spot.location.city%>, <%=spot.location.country%>
       </div>
   <%end%>
 </div>
