@@ -1,14 +1,15 @@
 <div class="spot-view">
   <%@user.spots.each do |spot|%>
-    <%if !spot.id.nil?%>
       <div>
         <h3><u><%=link_to spot.name, spot%></u></h3>
-        <%=image_tag(spot.image, class: 'image-box') unless !spot.image.attached?%>
+        <%if spot.image.attached?%>
+          <%=image_tag(spot.image, class: 'image-box')%>
         <%end%>
-        <%spot.rating.times do unless spot.rating.nil?%>
-          <%= octicon "star", class: "gold-star" %>
+        <%if spot.rating%>
+          <%spot.rating.times do%>
+            <%= octicon "star", class: "gold-star" %>
+          <%end%>
         <%end%>
       </div>
-    <%end%>
   <%end%>
 </div>

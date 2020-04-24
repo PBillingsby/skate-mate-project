@@ -21,7 +21,11 @@
       <%=check_in%> <!--user helpers-->
     <%end%>
     <%=form_for @spot do |f|%>
-      <%=render 'spots/new', f:f%>
+      <%=f.hidden_field :user_id, :value => current_user.id %>
+      <%=f.fields_for :location, @location do |ff|%>
+        <%=ff.text_field :city, placeholder: :city%>
+      <%end%><br>
+      <%=render 'spots/form', f:f%>
     <%end%>
   </div>
 </div>

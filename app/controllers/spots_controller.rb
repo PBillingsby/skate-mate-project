@@ -15,6 +15,7 @@ class SpotsController < ApplicationController
   end
 
   def create
+    @spot = Spot.new(spot_params)
     spot_location_set # Sets from new or existing location
     if @spot.save
       flash[:alert] = "Spot added."
