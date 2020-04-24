@@ -20,5 +20,8 @@
     <%if @user.spots%>
       <%=check_in%> <!--user helpers-->
     <%end%>
+    <%=form_for @spot do |f|%>
+      <%=render 'spots/new', f:f%>
+    <%end%>
   </div>
 </div>

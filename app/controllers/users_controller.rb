@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @spot = @user.spots.build
     @current_user_check_in = current_user.check_ins.last
     @location = @user.locations.build
   end
