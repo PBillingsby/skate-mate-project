@@ -17,7 +17,7 @@
   <%if @spots.empty?%>
     <div class="centered">
       <p>No spots in <%=@index_location.city if @index_location%> yet</p>
-      <p>Click <%=link_to "here", location_path(@index_location.id)%> to add a spot in <%=@index_location.city%></p>
+      <p>Click <%=link_to "here", location_path(@index_location.id) if @index_location%> to add a spot in <%=@index_location.city if @index_location%></p>
     </div>
   <%end%>
 </div>

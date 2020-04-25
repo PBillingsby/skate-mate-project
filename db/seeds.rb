@@ -5,10 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Location.create(city: "Sydney", country: "Australia")
-Location.create(address: "Love Park", city: "Philadelphia", country: "United States of America")
-Location.create(address: "Wall St", city: "New York", country: "United States of America")
-
-Spot.create(name: "The Pit", address: "Martin Place", user_id: 1, location_id: 1)
-Spot.create(name: "Love Park", user_id: 1, location_id: 2)
-Spot.create(name: "Water Street Benches", user_id: 1, location_id: 3)
+Location.create(city: "Philadelphia", country: "United States of America")
+Location.create(city: "New York City", country: "United States of America")
+Location.create(city: "Bondi Beach", country: "Australia")
+Spot.create(name: "FDR Skatepark", address: "Pattinson Avenue", user_id: 1, location_id: 1, image: File.open(File.join(Rails.root,'app/assets/images/fdr.jpeg')))
+Spot.create(name: "LES Skatepark", address: "62 Monroe St", user_id: 1, location_id: 2, image: File.open(File.join(Rails.root,'app/assets/images/newLESskatePark_sm.jpg')))
+Spot.create(name: "FDR Skatepark", address: "Pattinson Avenue", user_id: 1, location_id: 3, image: File.open(File.join(Rails.root,'app/assets/images/bondimcredo1.jpg')))
