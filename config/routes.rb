@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :spots, only: [:show, :index, :new]
   end
   resources :spots
-  resources :comments, only: [:create]
+  resources :comments, only: [:create, :destroy]
   root 'users#index'
   get '/signup', to: 'users#new'
   get '/auth/:provider/callback' => 'sessions#omniauth'

@@ -149,11 +149,13 @@ input[type=submit] {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	overflow: scroll;
-	height: 35vh;
+	height: 60vh;
 }
 .comment-display {
 	background-color: rgba(238, 238, 238, 0.7);
-	border: 1px rgba(0, 0, 0, .075) solid;
+	border: 2px rgb(255, 255, 255) solid;
 	margin: 0 auto;
-	width: 50%;
+	height: 25vh;
+	width: 75%;
+	overflow: scroll;
 }

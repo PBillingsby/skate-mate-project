@@ -1,10 +1,7 @@
 THINGS TO DO
 
-- Add nested attributes form for comments
-- Fix comments iterator in spots#show
 - Validation messages for spots
-- FIX USER#SHOW 'YOUR SPOTS' TO ADD SPOTS, OR NEW FORM.
-
+- FIX SPOT SHOW CONTROLLER TO NOT INCLUDE @SPOT.COMMENTS.BUILD NIL VALUE
 # LOCATION WORKS WITH CHECK IN But NOT WITH SPOT CREATE ##### FIXXXXXXX
 # NO FORMS HAVE A LOCATION ID NOW
 
