@@ -29,7 +29,8 @@
       </div>
     </div>
     <h3><u>Cities you've skated in</u></h3>
-      <ul><%@user.check_ins.each do |ci|%>
+      <%unique_user_check_ins%>
+      <ul><%@unique_user_check_ins.each do |ci|%>
         <li><%=link_to ci.location.city, location_path(ci.location)%></li>
       <%end%></ul>
   </div>

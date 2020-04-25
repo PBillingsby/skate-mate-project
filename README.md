@@ -4,7 +4,7 @@ Keep track of all the places you've skated
 
 ## Installing
 
-Video walkthrough: https://drive.google.com/open?id=1-WUrdl6RFARW9DBJMWqJm4CRKPreI9OU 
+Video walkthrough: https://drive.google.com/file/d/1mhQACLQU08lcD7Nl0vudLDoO0gzntU4h/view?usp=sharing 
 
 To use VaxLog:
 Clone https://github.com/PBillingsby/skate-mate-project.git and change into directory.

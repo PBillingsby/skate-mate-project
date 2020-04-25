@@ -18,7 +18,7 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
     spot_location_set # Sets from new or existing location
     if @spot.save
-      flash[:alert] = "Spot added."
+      flash[:alert] = "#{@spot.name} added."
       redirect_to spot_path(@spot)
     else
       render :'users/show'
