@@ -3,9 +3,7 @@ class UsersController < ApplicationController
   before_action :user_auth, only: [:show, :edit]
   def index
     @user = User.new
-    if current_user
-      current_user_path # Redirect to current user path method
-    end
+    current_user ? current_user_path : nil# Redirect to current user path method
   end
 
   def create

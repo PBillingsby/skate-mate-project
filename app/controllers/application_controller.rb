@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     redirect_to user_path(current_user)
   end
 
+  def self.finder
+    self.find(params[:id])
+  end
+
   # HANDLE ACTIVE RECORD 404 errors.
   rescue_from (ActiveRecord::RecordNotFound) { |exception| handle_exception(exception, 404) }
 

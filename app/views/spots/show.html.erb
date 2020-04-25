@@ -24,6 +24,9 @@
     <div>
       <h2><strong>Comments</strong></h2>
       <div class="comment-display">
+        <%if @spot.comments.empty?%>
+          <h4>No comments yet. Add comment below</h4>
+        <%end%>
         <%@spot.comments.order('created_at DESC').each do |comment|%>
           <div class="centered">
             <p><%=comment.content%></p>

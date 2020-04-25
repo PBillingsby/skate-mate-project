@@ -6,4 +6,5 @@ class Location < ApplicationRecord
   geocoded_by :city
   after_validation :geocode, if: ->(obj){ obj.city.present? and obj.city_changed? }
   accepts_nested_attributes_for :check_ins
+  before_create {self.city = self.city.titleize}
 end

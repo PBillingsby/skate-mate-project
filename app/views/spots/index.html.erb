@@ -17,11 +17,7 @@
   <%if @spots.empty?%>
     <div class="centered">
       <p>No spots in <%=@index_location.city if @index_location%> yet</p>
-      <p>Add Spot</p>
-      <%=form_with model: Spot.new, url: spots_path, :method => :post do |f|%>
-        <%= f.hidden_field :location_id, :value => params[:location_id] %>
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-        <%=render 'form', f:f%>
-      <%end%>
+      <p>Click <%=link_to "here", location_path(@index_location)%> to add a spot in <%=@index_location.city%></p>
+    </div>
   <%end%>
 </div>

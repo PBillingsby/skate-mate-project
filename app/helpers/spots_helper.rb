@@ -1,7 +1,8 @@
 module SpotsHelper
+
   def spot_search
     if !params[:spot] || params[:spot][:location_id].blank?
-      @spots = Spot.all.sort_by {|x| x.location.country}
+      @spots = Spot.all
     elsif params[:spot][:location_id]
       @spots = Spot.where(location_id: params[:spot][:location_id])
       @index_location = Location.find(spot_params[:location_id])
