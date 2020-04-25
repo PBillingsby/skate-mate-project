@@ -102,7 +102,7 @@ input[type=submit] {
 /* SIGN UP PAGE/USERS#INDEX */
 .main-index {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 }
 .info {
 	width: 25vw;
