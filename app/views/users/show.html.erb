@@ -1,6 +1,6 @@
 <div class="main-page-grid">  
   <div class="main">
-    <h2>Welcome back, <%=current_user.username%>.</h2>
+    <h2>Welcome, <%=current_user.username%>.</h2>
     <sup><%=link_to "Edit", edit_user_path(current_user)%></sup>
     <p>You are currently located in <%=user_location%>.</p>
     <%if @current_user_check_in && !@current_user_check_in.notes.empty?%>
@@ -8,16 +8,20 @@
     <%end%>
     <div class="check-in-box">
       <div>
-        <h3>Check In</h3>
+        <h3><u>Check In</u></h3>
         <p>Where will you be skating today?</p>
         <%=form_for :check_in, url: user_check_ins_path(current_user), :method => :post do |f|%>
-          <%=f.text_field :city, placeholder: "City - eg. Paris"%><br>
+          <%=f.text_field :city, placeholder: "City - ex. Paris"%><br>
           <%=f.text_area :notes, placeholder: :notes, cols: "18", rows: "3"%><br>
           <%=f.submit "Check In"%>
         <%end%>
+        <h3><u>Places you've skated</u></h3>
+        <ul><%@user.check_ins.each do |ci|%>
+          <li><%=link_to ci.location.city, location_path(ci.location)%></li>
+        <%end%></ul>
       </div>
       <div>
-        <h3>Add Spot</h3>
+        <h3><u>Add Spot</u></h3>
         <%=form_for @spot do |f|%>
           <%=render 'layouts/shared_errors', form_object:@spot%>
           <%=f.hidden_field :user_id, :value => current_user.id %>
@@ -30,7 +34,7 @@
     </div>
   </div>
   <div>
-    <h2>Your Spots</h2>
+    <h2><u>Your Spots</u></h2>
     <%if current_user.spots%>
       <%=check_in%> <!--user helpers for user spots iterator-->
     <%end%>

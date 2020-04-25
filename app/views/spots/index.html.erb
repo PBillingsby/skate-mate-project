@@ -9,7 +9,7 @@
   <div class="spot-index-view">
     <%@spots.each do |spot|%>
       <div>
-        <div class="centered"><h3><%=link_to spot.name, spot%></h3>
+        <div class="centered"><h3><u><%=link_to spot.name, spot%></u></h3>
         <h4><%=spot.address%> - <%=spot.location.city%>, <%=spot.location.country%></h4></div>
       </div>
     <%end%>
@@ -17,7 +17,7 @@
   <%if @spots.empty?%>
     <div class="centered">
       <p>No spots in <%=@index_location.city if @index_location%> yet</p>
-      <p>Click <%=link_to "here", location_path(@index_location)%> to add a spot in <%=@index_location.city%></p>
+      <p>Click <%=link_to "here", location_path(@index_location.id)%> to add a spot in <%=@index_location.city%></p>
     </div>
   <%end%>
 </div>

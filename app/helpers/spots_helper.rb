@@ -3,14 +3,13 @@ module SpotsHelper
   def spot_search
     if !params[:spot]
       @spots = Spot.all
-    elsif params[:spot][:location_id]
-      @spots = Spot.where(location_id: params[:spot][:location_id])
+    elsif spot_params[:location_id]
+      @spots = Spot.where(location_id: spot_params[:location_id])
     else
       @spots = Spot.where(location_id: spot_params[:location_id]) # Using scope method to search by spot location in spots#index
     end
-    # @index_location = Location.find(spot_params[:location_id]) unless !spot_params
+    @index_location = Location.find(spot_params[:location_id]) unless !params.has_key?(:spot)
     @location = Location.find(params[:location_id]) unless params[:location_id].nil?
-    render :index
   end
 
   def spot_location_set
