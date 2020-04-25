@@ -58,14 +58,14 @@ password {
 input[type=submit] {
 	background-color: rgb(1, 102, 6);
 	color: white;
-	border: none;
+	/* border: none; */
 	border-radius: 2px;
 	cursor: pointer;
 }
 
 .container {
 	box-shadow: 0 0 25px 0 #eee;
-	height: auto;
+	height: 80vh;
 	margin: 40px auto;
 	background-color: rgba(238, 238, 238, .5);
 	padding: 10px 25px;
@@ -145,11 +145,10 @@ input[type=submit] {
 }
 .spot-view {
 	padding: 10px;
-	margin: 10px;
+	margin: 5px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	overflow: scroll;
-	height: 60vh;
+	height: 55vh;
 }
 .comment-display {
 	background-color: rgba(238, 238, 238, 0.7);
@@ -158,4 +157,9 @@ input[type=submit] {
 	height: 25vh;
 	width: 75%;
 	overflow: scroll;
+}
+.check-in-box {
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
