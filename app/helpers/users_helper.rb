@@ -12,7 +12,7 @@ module UsersHelper
     if current_user.check_ins.last && current_user.spots.present?
       render 'users/user_spots'
     else
-      render 'spots/new'
+      "You have no spots. Click <a href='/spots/new'>here</a> to add one.".html_safe
     end
      # If user has spots, and is checked in, render user spots partial
   end

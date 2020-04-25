@@ -15,10 +15,6 @@
           <%=f.text_area :notes, placeholder: :notes, cols: "18", rows: "3"%><br>
           <%=f.submit "Check In"%>
         <%end%>
-        <h3><u>Places you've skated</u></h3>
-        <ul><%@user.check_ins.each do |ci|%>
-          <li><%=link_to ci.location.city, location_path(ci.location)%></li>
-        <%end%></ul>
       </div>
       <div>
         <h3><u>Add Spot</u></h3>
@@ -32,6 +28,10 @@
         <%end%>
       </div>
     </div>
+    <h3><u>Cities you've skated in</u></h3>
+      <ul><%@user.check_ins.each do |ci|%>
+        <li><%=link_to ci.location.city, location_path(ci.location)%></li>
+      <%end%></ul>
   </div>
   <div>
     <h2><u>Your Spots</u></h2>
