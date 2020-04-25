@@ -1,8 +1,10 @@
-Log In Below
-<%= form_for(:user, :url => {:controller => 'sessions', :action => 'create'}) do |f| %>
-  <%=f.text_field :email, placeholder: :email%>
-  <%=f.password_field :password, placeholder: :password%>
-  <%=f.submit "Log In"%>
-<%end%>
+<div class="centered">  
+  Log In Below
+  <%= form_for(:user, :url => {:controller => 'sessions', :action => 'create'}) do |f| %>
+    <%=f.text_field :email, placeholder: :email%>
+    <%=f.password_field :password, placeholder: :password%>
+    <%=f.submit "Log In"%>
+  <%end%>
 
-<%=link_to "Go Back", root_url%>
+  <%=link_to "Go Back", root_url%>
+</div>

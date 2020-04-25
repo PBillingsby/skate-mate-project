@@ -1,9 +1,12 @@
 <div class="black-border-box centered">  
   <%=form_for Spot.new do |f|%>
     <%=f.hidden_field :user_id, :value => current_user.id %>
-    <%=f.fields_for :location, Location.new do |location_attributes| %>
-      <%=location_attributes.text_field :city, placeholder: :city%><br>
-    <%end%> <!-- MAKE THIS WORK, ITS NOT SHOWING UP-->
+    <%=f.hidden_field :location_id, :value => params[:location_id]%>
+    <%if !params[:location_id]%>
+      <%=f.fields_for :location, Location.new do |location_attributes| %>
+        <%=location_attributes.text_field :city, placeholder: :city%><br>
+      <%end%>
+    <%end%>
     <%=render 'spots/form', f:f%>
   <%end%>
 </div>
