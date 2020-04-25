@@ -1,5 +1,5 @@
-<div class='spot-view'>
-  <div>  
+<div class='spot-view margin-center'>
+  <div class="centered">  
     <h2><%=@spot.name%></h2>
     <p><%=@spot.address%>, <%=@spot.location.city%>, <%=@spot.location.country%>.</p>
     <span>
@@ -11,13 +11,14 @@
       <%end%>
     </span>
     <p>Added by: <%=@spot.user.username%></p>
-
-    <%if @spot.image.attached?%>
-      <%=image_tag(@spot.image, :class => 'show-image')%>
-    <%end%><br>
     <%if @spot.user == current_user%>
       <%=link_to "Delete", :spot, data: {confirm:'Are you sure you want to delete this spot?'}, method: :delete%>
-      <%=link_to "Edit", edit_spot_path(@spot)%>
+      - <%=link_to "Edit", edit_spot_path(@spot)%>
+    <%end%>
+  </div>
+  <div>
+    <%if @spot.image.attached?%>
+      <%=image_tag(@spot.image, :class => 'show-image')%>
     <%end%>
   </div>
   <div class="comment-box centered">

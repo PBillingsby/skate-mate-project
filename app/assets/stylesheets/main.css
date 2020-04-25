@@ -128,17 +128,20 @@ input[type=submit] {
 /* SPOTS */
 .spot-view {
 	padding: 10px;
-	margin: 5px;
+	margin: 10px;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	height: 55vh;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 .gold-star {
 	fill: #ffa600;
 }
 .show-image {
-	width: 50%;
-	height: auto;
+	width: 35vw;
+  height: auto;
+}
+.image-box {
+	width: 200px;
+	height: 200px;
 }
 
 /* SPOTS#INDEX */
@@ -158,14 +161,18 @@ input[type=submit] {
 	overflow: scroll;
 }
 .comment-box {
-	padding: 25px;
+	padding: 0 25px;
 }
 .image-box {
 	width: 200px;
 	height: 200px;
 }
-/* LOCATION#INDEX */
+/* LOCATIONS */
 .location-index {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+}
+.location-show {
+	padding: 10px;
+	display: flex;
 }
