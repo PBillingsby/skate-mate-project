@@ -3,7 +3,7 @@
     <h2>Welcome back, <%=current_user.username%>.</h2>
     <sup><%=link_to "Edit", edit_user_path(current_user)%></sup>
     <p>You are currently located in <%=user_location%>.</p>
-    <%if @current_user_check_in%>
+    <%if @current_user_check_in && !@current_user_check_in.notes.empty?%>
       <p>Check In Note: <%=@current_user_check_in.notes%></p>
     <%end%>
     <div class="check-in-box">

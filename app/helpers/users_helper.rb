@@ -4,7 +4,7 @@ module UsersHelper
     if user_check_in # If a user has a check_in, link user to location#show
       link_to "#{user_check_in.location.city}", location_path(user_check_in.location)
     else
-      "Well, nowhere! Check in to add your location..." # Prompts user to add user#location if no check_in 
+      "...nowhere. Check in below to add your location" # Prompts user to add user#location if no check_in 
     end
   end
 

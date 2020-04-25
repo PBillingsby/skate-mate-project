@@ -1,24 +1,22 @@
 module SpotsHelper
 
   def spot_search
-    if !params[:spot] || params[:spot][:location_id].blank?
+    if !params[:spot]
       @spots = Spot.all
     elsif params[:spot][:location_id]
       @spots = Spot.where(location_id: params[:spot][:location_id])
-      @index_location = Location.find(spot_params[:location_id])
     else
       @spots = Spot.where(location_id: spot_params[:location_id]) # Using scope method to search by spot location in spots#index
-      @index_location = Location.find(spot_params[:location_id])
     end
+    # @index_location = Location.find(spot_params[:location_id]) unless !spot_params
+    @location = Location.find(params[:location_id]) unless params[:location_id].nil?
     render :index
   end
 
   def spot_location_set
-    if spot_params[:city]
-      if spot_params[:location_attributes]
-        location_results = Geocoder.search(spot_params[:location_attributes][:city]).first
-        @spot.location = Location.find_or_create_by(city: spot_params[:location_attributes][:city], country: location_results.country)
-      end
+    if spot_params[:location_attributes]
+      location_results = Geocoder.search(spot_params[:location_attributes][:city]).first
+      @spot.location = Location.find_or_create_by(city: spot_params[:location_attributes][:city], country: location_results.country)
     end
   end
   def spot_admin
