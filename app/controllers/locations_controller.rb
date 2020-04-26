@@ -8,7 +8,7 @@ class LocationsController < ApplicationController
     end
   end
   def create
-    geocode_address # Located in helpers#location. Creates locations and check_ins
+    geocode_address # Located in helpers#location. Creates check_ins, and locations through check_ins
   end
 
   def show
