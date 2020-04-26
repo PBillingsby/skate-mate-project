@@ -2,15 +2,19 @@
   <h2><u>Cities</u></h2>
   <h4>Search cities by country</h4>
   <%=render 'search'%><br>
-  <div class="location-index">
-    <%if !@locations.present?%>
-      <p>Click <%=link_to "here", spots_path%> to add <%=params[:country]%></p>
-    <%end%>
-    <%@locations.each do |loc|%>
-    <div>
-      <strong><u><%=link_to loc.city, loc%></u>, <%=loc.country%>.</strong><br>
-      <div>Spot count: <%=loc.spots.count%></div><br>
+  <%if !@locations.present?%>
+    <div class="margin-center">
+      <p>No spots in <%=params[:country]%> yet</p>
+      <p><%=link_to "Go Back", locations_path%></p>
     </div>
-    <%end%>
-  </div>
+  <%else%>
+    <div class="location-index">
+      <%@locations.each do |loc|%>
+      <div>
+        <strong><u><%=link_to loc.city, loc%></u>, <%=loc.country%>.</strong><br>
+        <div>Spot count: <%=loc.spots.count%></div><br>
+      </div>
+      <%end%>
+    </div>
+  <%end%>
 </div>

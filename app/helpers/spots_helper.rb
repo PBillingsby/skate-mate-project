@@ -3,7 +3,7 @@ module SpotsHelper
   def spot_search
     if request.url == "http://localhost:3000/highest_rated"
       @spots = Spot.highest_rating
-    elsif !params[:spot]
+    elsif !params[:spot] || spot_params[:location_id].blank?
       @spots = Spot.all
     else
       @spots = Spot.where(location_id: spot_params[:location_id]) # Using scope method to search by spot location in spots#index

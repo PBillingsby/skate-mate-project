@@ -1,7 +1,8 @@
 <div class='spot-view margin-center'>
   <div class="centered">  
     <h2><%=@spot.name%></h2>
-    <p><%=@spot.address%>, <%=@spot.location.city%>, <%=@spot.location.country%>.</p>
+    <h4><b><%=@spot.address%>, <%=@spot.location.city%>, <%=@spot.location.country%>.</b></h4>
+    <p class="spot-description margin-center"><%=@spot.description%></p><br>
     <span>
       Rating:
       <%if @spot.rating%>

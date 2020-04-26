@@ -143,6 +143,9 @@ input[type=submit] {
 	width: 200px;
 	height: 200px;
 }
+.spot-description {
+	width: 50%;
+}
 
 /* SPOTS#INDEX */
 .spot-index-view {

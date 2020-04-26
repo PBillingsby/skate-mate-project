@@ -8,6 +8,8 @@ class SpotsController < ApplicationController
     else
       spot_search # search spots by selection of locations
     end
+    !@spots.present? ? (@spot = Spot.new) : (nil)
+    byebug
   end
 
   def new
@@ -36,10 +38,13 @@ class SpotsController < ApplicationController
   end
 
   def update
-    spot = Spot.find(params[:id])
-    spot.update(spot_params)
-    flash[:alert] = "Spot updated."
-    redirect_to spot
+    @spot = Spot.find(params[:id])
+    if @spot.update(spot_params)
+      flash[:alert] = "Spot updated."
+      redirect_to @spot
+    else
+      render :edit
+    end
   end
 
   def destroy
