@@ -8,10 +8,9 @@ class CommentsController < ApplicationController
 
   def destroy
     comment = Comment.find(params[:id])
-    spot = comment.spot
     comment.delete
     flash[:alert] = "Comment deleted."
-    redirect_to spot_path(spot)
+    redirect_to spot_path(comment.spot)
   end
 
   def comment_params

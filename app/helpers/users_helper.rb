@@ -1,7 +1,7 @@
 module UsersHelper
   def unique_user_check_ins
     check_ins = @user.check_ins.each {|x| x.location.city}
-    @unique_user_check_ins = check_ins.uniq {|x| x.location.city}
+    @unique_user_check_ins = check_ins.uniq {|x| x.location.city} # Creates an array of check_ins by unique city
   end
 
   def user_location
@@ -14,11 +14,6 @@ module UsersHelper
   end
 
   def check_in
-    if current_user.spots.present?
-      render 'users/user_spots'
-    else
-      "You have no spots. Click <a href='/spots/new'>here</a> to add one.".html_safe
-    end
-     # If user has spots, and is checked in, render user spots partial
+    current_user.spots.present? ? render('users/user_spots') : ("You have no spots. Click <a href='/spots/new'>here</a> to add one.".html_safe)
   end
 end

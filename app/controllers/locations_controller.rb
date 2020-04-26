@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
   include LocationsHelper
   def index
     if params[:country]
-      @locations = Location.where(country: params[:country])
+      @locations = Location.where('country = ?', params[:country])
     else
       @locations = Location.all
     end
@@ -14,11 +14,10 @@ class LocationsController < ApplicationController
   def show
     if !params[:location]
       @location = Location.find(params[:id])
-      @spot = @location.spots.build
     else
       @location = Location.find(params[:location][:id])
-      @spot = @location.spots.build
     end
+    @spot = @location.spots.build
   end
 
   def location_params
