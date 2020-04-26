@@ -5,8 +5,6 @@ module SpotsHelper
       @spots = Spot.highest_rating
     elsif !params[:spot]
       @spots = Spot.all
-    # elsif spot_params[:location_id]
-    #   @spots = Spot.where(location_id: spot_params[:location_id])
     else
       @spots = Spot.where(location_id: spot_params[:location_id]) # Using scope method to search by spot location in spots#index
     end
