@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   # HANDLE ACTIVE RECORD 404 errors.
-  rescue_from (ActiveRecord::RecordNotFound) { |exception| handle_exception(exception, 404) unless params[:id] == 'highest_rated'}
+  rescue_from (ActiveRecord::RecordNotFound) { |exception| handle_exception(exception, 404)}
 
   protected
 

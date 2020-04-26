@@ -1,11 +1,15 @@
 <div class="location-show black-border-box">
   <div class="margin-center">
     <h1><%=@location.city%>, <%=@location.country%>.</h1>
-    <strong><h3>Skate Spots in <%=@location.city%></strong></h3>
-    <%@location.spots.order('name ASC').each do |spot|%>
-      <%=link_to spot.name, spot_path(spot)%><br>
-    <%end%><br>
-    <strong><h3>Users in your area</strong></h3>
+    <%if @location.spots.count <= 0%>
+      <p>No spots yet. Add some on the right.</p>
+    <%else%>
+      <strong><h3>Skate Spots in <%=@location.city%></strong></h3>
+      <%@location.spots.order('name ASC').each do |spot|%>
+        <%=link_to spot.name, spot_path(spot)%><br>
+      <%end%><br>
+    <%end%>
+    <strong><h3><u>Users in your area</u></strong></h3>
     <ul><%@location.check_ins.uniq {|check| check.user}.map do |check_in|%>
       <h3><%=check_in.user.username%></h3>
     <%end%>

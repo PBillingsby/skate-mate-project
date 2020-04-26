@@ -2,7 +2,7 @@
   <div class="centered">
     <h2><u>Search spots by city</u></h2>
     <%=form_tag(spots_path, method: "get") do%>
-      <%= collection_select(:spot, :location_id, Location.all.order("city ASC"), :id, :city, {include_blank: "All Spots"}) %>
+      <%= collection_select(:spot, :location_id, Location.all.order("city ASC"), :id, :city, { selected: "", disabled: "", prompt: "All Spots" }) %>
       <%=submit_tag "Search"%>
     <%end%><br>
     <%=link_to "Highest Rated Spots", highest_rated_path, action: "index"%>

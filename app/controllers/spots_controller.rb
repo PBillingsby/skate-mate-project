@@ -1,15 +1,6 @@
 class SpotsController < ApplicationController
   require 'octicons'
   include SpotsHelper  
-  def index
-    if !params[:location_id].blank?
-      @spots = Spot.where(location_id: params[:location_id])
-      @index_location = Location.find(params[:location_id])
-    else
-      spot_search # search spots by selection of locations
-    end
-  end
-
   def new
     @spot = Spot.new
   end
@@ -24,7 +15,14 @@ class SpotsController < ApplicationController
       render :'users/show'
     end
   end
-
+  def index
+    if !params[:location_id].blank?
+      @spots = Spot.where(location_id: params[:location_id])
+      @index_location = Location.find(params[:location_id])
+    else
+      spot_search # search spots by selection of locations
+    end
+  end
   def show
     @spot = Spot.find(params[:id])
     @comment = Comment.new
