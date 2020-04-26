@@ -1,6 +1,8 @@
+<%=render 'layouts/shared_errors', form_object:@spot if @spot%>
 <div class="black-border-box centered">  
   <%=form_for Spot.new do |f|%>
     <%=f.hidden_field :user_id, :value => current_user.id %>
+    <%byebug%>
     <%=f.hidden_field :location_id, :value => params[:location_id]%>
     <%if !params[:location_id]%>
       <%=f.fields_for :location, Location.new do |location_attributes| %>

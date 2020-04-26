@@ -8,8 +8,6 @@ class SpotsController < ApplicationController
     else
       spot_search # search spots by selection of locations
     end
-    !@spots.present? ? (@spot = Spot.new) : (nil)
-    byebug
   end
 
   def new

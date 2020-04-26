@@ -1,6 +1,6 @@
 module UsersHelper
   def unique_user_check_ins
-    check_ins = @user.check_ins.each {|x| x.location.city}
+    check_ins = current_user.check_ins.each {|x| x.location.city}
     @unique_user_check_ins = check_ins.uniq {|x| x.location.city} # Creates an array of check_ins by unique city
   end
 

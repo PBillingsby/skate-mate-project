@@ -4,7 +4,7 @@
   <%=render 'search'%><br>
   <%if !@locations.present?%>
     <div class="margin-center">
-      <p>No spots in <%=params[:country]%> yet</p>
+      <p>No spots in <%=params[:country]%></p>
       <p><%=link_to "Go Back", locations_path%></p>
     </div>
   <%else%>
@@ -15,6 +15,6 @@
         <div>Spot count: <%=loc.spots.count%></div><br>
       </div>
       <%end%>
+    <%end%>
     </div>
-  <%end%>
 </div>
