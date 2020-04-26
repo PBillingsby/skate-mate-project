@@ -5,9 +5,8 @@ module UsersHelper
   end
 
   def user_location
-    user_check_in = current_user.check_ins.last
-    if user_check_in # If a user has a check_in, link user to location#show
-      link_to "#{user_check_in.location.city}, #{user_check_in.location.country}", location_path(user_check_in.location)
+    if last_check_in # Instance variable for last user check in
+      link_to "#{last_check_in.location.city}, #{last_check_in.location.country}", location_path(last_check_in.location)
     else
       "...nowhere. Check in below to add your location" # Prompts user to add user#location if no check_in 
     end
