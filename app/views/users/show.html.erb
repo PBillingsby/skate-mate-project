@@ -30,9 +30,11 @@
     </div>
     <h3><u>Cities you've skated in</u></h3>
       <%unique_user_check_ins%>
-      <ul><%@unique_user_check_ins.each do |ci|%>
-        <li><%=link_to ci.location.city, location_path(ci.location)%></li>
-      <%end%></ul>
+      <div>
+        <ul class="unique-check-in margin-center"><%@unique_user_check_ins.each do |ci|%>
+          <li class="centered"><%=link_to ci.location.city, location_path(ci.location)%></li>
+        <%end%></ul><br>
+      </div>
   </div>
   <div>
     <h2><u>Your Spots</u></h2>

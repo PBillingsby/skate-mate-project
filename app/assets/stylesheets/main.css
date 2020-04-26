@@ -124,6 +124,12 @@ input[type=submit] {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
+.unique-check-in {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	width: 30vw;
+}
 
 /* SPOTS */
 .spot-view {
