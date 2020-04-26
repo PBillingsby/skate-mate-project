@@ -13,25 +13,21 @@ class ApplicationController < ActionController::Base
     redirect_to user_path(current_user)
   end
 
-  def self.finder
-    self.find(params[:id])
-  end
-
   # HANDLE ACTIVE RECORD 404 errors.
-  rescue_from (ActiveRecord::RecordNotFound) { |exception| handle_exception(exception, 404) }
+  rescue_from (ActiveRecord::RecordNotFound) { |exception| handle_exception(exception, 404) unless params[:id] == 'highest_rated'}
 
   protected
 
    def handle_exception(ex, status)
-       render_error(ex, status)
-       logger.error ex   
+        render_error(ex, status)
+        logger.error ex 
    end
 
    def render_error(ex, status)
-       @status_code = status
-       respond_to do |format|
-         format.html { render :template => "error", :status => status }
-         format.all { render :nothing => true, :status => status }
-      end
+    @status_code = status
+    respond_to do |format|
+      format.html { render :template => "error", :status => status }
+      format.all { render :nothing => true, :status => status }
+    end
    end
 end

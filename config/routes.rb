@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :comments, only: [:create, :destroy]
   root 'users#index'
   get '/signup', to: 'users#new'
+  get '/highest_rated', to: 'spots#index', as: 'highest_rated'
   get '/auth/:provider/callback' => 'sessions#omniauth'
   get 'auth/failure' => redirect('/')
 

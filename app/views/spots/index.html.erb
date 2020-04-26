@@ -5,6 +5,7 @@
       <%= collection_select(:spot, :location_id, Location.all.order("city ASC"), :id, :city, {include_blank: "All Spots"}) %>
       <%=submit_tag "Search"%>
     <%end%>
+    <%=link_to "Highest Rated Spots", highest_rated_path, action: "index"%>
   </div><br><hr>
   <div class="spot-index-view">
     <%@spots.each do |spot|%>

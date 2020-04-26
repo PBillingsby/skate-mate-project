@@ -27,7 +27,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    find_user
+    byebug
     @user.update(username: user_params[:username])
     current_user_path
   end
@@ -35,8 +36,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation, location: [:city])
   end
-
   private
+
+  def find_user
+    @user = User.find(params[:id])
+  end
   def user_auth
     if params[:id].to_i != current_user.id
       flash[:error] = "Not authorized to view this page."
