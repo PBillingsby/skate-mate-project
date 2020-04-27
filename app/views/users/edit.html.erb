@@ -1,5 +1,4 @@
 <%=form_for @user do |f|%>
-  <%=render 'layouts/shared_errors', form_object: @user%>
   <%=f.label :username%>
   <%=f.text_field :username%>
   <%=f.submit%>
