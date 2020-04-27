@@ -8,7 +8,6 @@ module CheckInsHelper
       if !check_in_search
         flash[:alert] = "No such place. Please try again"
         @check_in_location = last_check_in
-
       else
         @check_in_location = Location.find_or_create_by(city: check_in_params[:city].titleize, country: check_in_search.country)
       end

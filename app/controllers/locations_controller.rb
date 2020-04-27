@@ -1,5 +1,4 @@
 class LocationsController < ApplicationController
-  include LocationsHelper
   def index
     if params[:country]
       @locations = Location.where('country = ?', params[:country])
@@ -8,7 +7,7 @@ class LocationsController < ApplicationController
     end
   end
   def create
-    geocode_address # Located in helpers#location. Creates check_ins, and locations through check_ins
+    # geocode_address # Located in helpers#check_in. Creates check_ins, and locations through check_ins
   end
 
   def show
