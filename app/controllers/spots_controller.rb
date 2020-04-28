@@ -24,7 +24,7 @@ class SpotsController < ApplicationController
     end
   end
   def show
-    @spot = Spot.find(params[:id])
+    found_spot
     @comment = Comment.new
     @location = Location.new
   end
@@ -34,7 +34,7 @@ class SpotsController < ApplicationController
   end
 
   def update
-    @spot = Spot.find(params[:id])
+    found_spot
     if @spot.update(spot_params)
       flash[:alert] = "Spot updated."
       redirect_to @spot
@@ -44,7 +44,7 @@ class SpotsController < ApplicationController
   end
 
   def destroy
-    spot = Spot.find(params[:id])
+    found_spot
     spot.delete
     flash.alert = "#{spot.name} has been deleted."
     redirect_to current_user
@@ -52,5 +52,9 @@ class SpotsController < ApplicationController
 
   def spot_params
     params.require(:spot).permit(:name, :address, :description, :rating, :image, :user_id, :location_id, location_attributes: [:city])
+  end
+  private
+  def found_spot
+    @spot = Spot.find(params[:id])
   end
 end
