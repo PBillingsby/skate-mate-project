@@ -15,4 +15,8 @@ module UsersHelper
   def check_in
     current_user.spots.present? ? render('users/user_spots') : ("You have no spots. Click <a href='/spots/new'>here</a> to add one.".html_safe)
   end
+
+  def user_spots
+    current_user.spots
+  end
 end
