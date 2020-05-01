@@ -6,7 +6,7 @@ Keep track of all the places you've skated
 
 Video walkthrough: https://drive.google.com/file/d/1mhQACLQU08lcD7Nl0vudLDoO0gzntU4h/view?usp=sharing 
 
-To use VaxLog:
+To use Skate-Mate:
 Clone https://github.com/PBillingsby/skate-mate-project.git and change into directory.
 Run bundle install in terminal.
 Run rake db:migrate

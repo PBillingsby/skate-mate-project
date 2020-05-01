@@ -40,11 +40,6 @@
         <%end%>
       </div>
     </div><br>
-    <%=form_for @comment, :method => :post do |f|%>
-      <%= f.hidden_field :spot_id, :value => @spot.id%>
-      <%=f.hidden_field :user_id, :value => current_user.id %>
-      <%=f.text_area :content%><br>
-      <%=f.submit "Add Comment"%>
-    <%end%>
+    <%=render 'comment'%>
   </div>
 </div>

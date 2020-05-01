@@ -122,7 +122,7 @@ input[type=submit] {
 .check-in-box {
 	margin: 0 auto;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 }
 .unique-check-in {
 	display: grid;
