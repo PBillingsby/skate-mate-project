@@ -24,9 +24,14 @@ class SpotsController < ApplicationController
     end
   end
   def show
-    @spot = Spot.find(params[:id])
-    @comment = Comment.new
-    @location = Location.new
+    if @spot = Spot.find_by(id: params[:id])
+      @comment = Comment.new
+      @location = Location.new
+      render :show
+    else
+      flash.alert = "Spot not found."
+      redirect_to spots_path
+    end
   end
 
   def edit
