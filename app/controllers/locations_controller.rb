@@ -4,6 +4,7 @@ class LocationsController < ApplicationController
       @locations = Location.where('country = ?', params[:country])
     else
       @locations = Location.all
+      # render json: locations
     end
   end
   def create
