@@ -15,11 +15,17 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function(event){
   let imageShow = document.querySelector('img');
-  imageShow.addEventListener('click', (e) => {
-    e.target.style.width = "70vw";
-    // e.target.className = "";
-  })
+  if (imageShow) { 
+    imageShow.addEventListener('click', (e) => {
+      if (e.target.style.width != "50vw") {
+        e.target.style.width = "50vw";
+      }
+      else {
+        e.target.style.width = "35vw";
+      }
+    })
+  }
   
 })
