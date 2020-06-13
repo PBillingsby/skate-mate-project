@@ -16,9 +16,11 @@ class SpotsController < ApplicationController
     end
   end
   def index
+
     if !params[:location_id].blank?
       @spots = Spot.where(location_id: params[:location_id])
-      # @index_location = @spots.first.location.find(params[:location_id])
+    elsif params[:user_id] 
+      @spots = Spot.where(user_id: params[:user_id])
     else
       spot_search # search spots by selection of locations
     end

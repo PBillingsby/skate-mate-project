@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :sessions, only: [:new, :create, :destroy, :omniauth]
   resources :users, only: [:index, :create, :show, :edit, :update] do
-    resources :spots, only: [:show, :create]
+    resources :spots, only: [:show, :create, :index]
     resources :check_ins, only: [:create]
   end
   resources :locations, only: [:create, :show, :index] do

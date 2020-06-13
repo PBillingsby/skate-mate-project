@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def index
     @user = User.new
     current_user ? current_user_path : nil# Redirect to current user path method
+    byebug
   end
 
   def create
