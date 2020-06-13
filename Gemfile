@@ -37,7 +37,7 @@ gem 'octicons_helper', '~> 9.6'
 gem 'dotenv-rails'
 gem "mini_magick"
 gem 'simple_form'
-
+gem 'bootstrap', '~> 4.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
