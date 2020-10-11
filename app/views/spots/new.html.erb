@@ -5,7 +5,10 @@
     <%=f.hidden_field :location_id, :value => params[:location_id]%>
     <%if !params[:location_id]%>
       <%=f.fields_for :location, Location.new do |location_attributes| %>
-        <%=location_attributes.text_field :city, placeholder: :city%><br>
+        <div class="form-group">
+          <%= location_attributes.label :city %><br>
+          <%=location_attributes.text_field :city, placeholder: :city%><br>
+        </div>
       <%end%>
     <%end%>
     <%=render 'spots/form', f:f%>
