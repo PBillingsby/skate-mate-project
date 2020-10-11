@@ -18,6 +18,7 @@
   <%if @spots.empty?%>
     <div class="centered">
       <p>No spots in <%=@index_location.city if @index_location%> yet</p>
+      <%= link_to 'Add spots', new_spot_path%>
     </div>
   <%end%>
 </div>
