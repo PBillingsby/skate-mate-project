@@ -1,5 +1,5 @@
 <div class="black-border-box">
-  <div class="centered">
+  <div class="text-center">
     <h2><u>Search spots by city</u></h2>
     <%=form_tag(spots_path, method: "get") do%>
       <%= collection_select(:spot, :location_id, Location.all.order("city ASC"), :id, :city, { selected: "", disabled: "", prompt: "All Spots" }) %>
@@ -10,13 +10,13 @@
   <div class="spot-index-view">
     <%@spots.each do |spot|%>
       <div>
-        <div class="centered"><h3><u><%=link_to spot.name, spot%></u></h3>
+        <div class="text-center"><h3><u><%=link_to spot.name, spot%></u></h3>
         <h4><%=spot.address%> - <%=spot.location.city%>, <%=spot.location.country%></h4></div>
       </div>
     <%end%>
   </div>
   <%if @spots.empty?%>
-    <div class="centered">
+    <div class="text-center">
       <p>No spots in <%=@index_location.city if @index_location%> yet</p>
       <%= link_to 'Add spots', new_spot_path%>
     </div>

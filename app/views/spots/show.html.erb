@@ -1,8 +1,8 @@
-<div class='spot-view margin-center'>
-  <div class="centered">  
+<div class='spot-view mx-auto'>
+  <div class="text-center">  
     <h2><%=@spot.name%></h2>
     <h4><b><%=@spot.address%>, <%=@spot.location.city%>, <%=@spot.location.country%>.</b></h4>
-    <p class="spot-description margin-center"><%=@spot.description%></p><br>
+    <p class="spot-description mx-auto"><%=@spot.description%></p><br>
     <span>
       Rating:
       <%if @spot.rating%>
@@ -22,7 +22,7 @@
       <%=image_tag(@spot.image, :class => 'show-image')%>
     <%end%>
   </div>
-  <div class="comment-box centered">
+  <div class="comment-box text-center">
     <div>
       <h2><strong>Comments</strong></h2>
       <div class="comment-display">
@@ -30,9 +30,9 @@
           <h4>No comments yet. Add comment below</h4>
         <%end%>
         <%@spot.comments.order('created_at DESC').each do |comment|%>
-          <div class="centered">
+          <div class="text-center">
             <p><%=comment.content%></p>
-            <small><p>Posted - <%=comment.created_at.strftime('%B %d, %Y')%> by <%=comment.user.username%></p></small>
+            <small><p>Posted - <%=comment.created_at.strftime('%B %d, %Y')%> by <%= comment.user.username %></p></small>
             <%if comment.user == current_user%>
               <sub><%=link_to "Delete", comment_path(comment), data: {confirm:'Are you sure you want to delete this comment?'}, method: :delete%></sub>
             <%end%>

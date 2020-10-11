@@ -3,7 +3,7 @@
   <h4>Search cities by country</h4>
   <%=render 'search'%><br>
   <%if !@locations.present?%>
-    <div class="margin-center">
+    <div class="mx-auto">
       <p>No spots in <%=params[:country]%></p>
       <p><%=link_to "Go Back", locations_path%></p>
     </div>

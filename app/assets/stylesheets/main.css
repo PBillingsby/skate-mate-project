@@ -23,7 +23,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  /* width: 100vw; */
   margin: 0 auto;
 }
 
@@ -95,11 +95,6 @@ input[type="submit"] {
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.margin-center {
-  margin: 0 auto;
-}
-
-.centered,
 .nav-links {
   text-align: center;
 }
