@@ -133,6 +133,7 @@ GEM
     omniauth-oauth2 (1.7.0)
       oauth2 (~> 1.4)
       omniauth (~> 1.9)
+    pg (1.2.3)
     popper_js (1.16.0)
     puma (5.0.2)
       nio4r (~> 2.0)
@@ -196,7 +197,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -237,13 +237,13 @@ DEPENDENCIES
   octicons_helper (~> 9.6)
   omniauth
   omniauth-facebook
+  pg
   puma (>= 4.3.4)
   rails (~> 6.0.2, >= 6.0.2.2)
   sass-rails (>= 6)
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   web-console (>= 3.3.0)
   webpacker (~> 4.0)
