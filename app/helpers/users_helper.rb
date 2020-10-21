@@ -21,25 +21,26 @@ module UsersHelper
   end
 
   def geocode_address
-    geo_city = Geocoder.search(request.location.city)
-    location = Location.find_or_create_by(city: geo_city)
-    if location
-      current_user.check_ins.create(location_id: location.id)
-    end
-    #   flash[:error] = "Search can't be empty. Try again"
-    #   current_user_path
-    # end
-    # if check_in_params[:city].blank?
-    #   flash[:error] = "Search can't be empty. Try again"
-    #   current_user_path
-    # else
-    #   check_in_search = Geocoder.search(check_in_params[:city]).first # Finds first instance from city search
-    #   if !check_in_search
-    #     flash[:alert] = "No such place. Please try again"
-    #     @check_in_location = last_check_in
-    #   else
-    #     @check_in_location = Location.find_or_create_by(city: check_in_params[:city].titleize, country: check_in_search.country)
-    #   end
-    # end 
+    byebug
+  #   location = Geocoder.search([request.location.latitude, request.location.longitude])
+  #   byebug
+  #   if location
+  #     current_user.check_ins.create(location_id: location.id)
+  #   end
+  #   #   flash[:error] = "Search can't be empty. Try again"
+  #   #   current_user_path
+  #   # end
+  #   # if check_in_params[:city].blank?
+  #   #   flash[:error] = "Search can't be empty. Try again"
+  #   #   current_user_path
+  #   # else
+  #   #   check_in_search = Geocoder.search(check_in_params[:city]).first # Finds first instance from city search
+  #   #   if !check_in_search
+  #   #     flash[:alert] = "No such place. Please try again"
+  #   #     @check_in_location = last_check_in
+  #   #   else
+  #   #     @check_in_location = Location.find_or_create_by(city: check_in_params[:city].titleize, country: check_in_search.country)
+  #   #   end
+  #   # end 
   end
 end
