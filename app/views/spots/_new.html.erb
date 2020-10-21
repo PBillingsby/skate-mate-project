@@ -3,7 +3,7 @@
     <%=render 'layouts/shared_errors', form_object:@spot%>
     <%=f.hidden_field :user_id, :value => current_user.id %>
     <%=f.fields_for :location, @location do |location_attributes| %>
-      <%=location_attributes.text_field :city, placeholder: :city%><br>
+        <%= location_attributes.text_field :city, placeholder: :city %><br>
     <%end%>
     <%=render 'spots/form', f:f%>
   <%end%>

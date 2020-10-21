@@ -1,5 +1,5 @@
 <div class="location-show black-border-box">
-  <div class="margin-center">
+  <div class="mx-auto">
     <h1><%=@location.city%>, <%=@location.country%>.</h1>
     <%if @location.spots.count <= 0%>
       <p>No spots yet. Add some on the right.</p>
@@ -16,7 +16,7 @@
     <%end%>
   </div>
   <hr>
-  <div class="margin-center">
+  <div class="mx-auto">
     <h3>Create a spot</h3>
     <%=form_for @spot do |f|%>
       <%= f.hidden_field :user_id, :value => current_user.id %>

@@ -1,6 +1,26 @@
-<%=f.text_field :name, placeholder: "Spot Name"%><br>
-<%=f.text_field :address, placeholder: :address, hint: "Spot"%><br>
-<%=f.text_area :description, placeholder: :description%><br>
-<%=f.select :rating, (1..5), prompt: "Select rating"%><br>
-<%=f.file_field :image%><br>
-<%=f.submit "Add Spot"%>
+<div class="form">
+  <div class="form-group">
+  <%= f.label :name %><br>
+  <%=f.text_field :name, placeholder: "Spot Name"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :address %><br>
+    <%=f.text_field :address, placeholder: :address, hint: "Spot"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%=f.text_area :description, placeholder: :description%>
+  </div>
+  <div class="form-group">
+    <%= f.label :rating %><br>
+    <%=f.select :rating, (1..5), prompt: "Select rating"%>
+  </div>
+<!-- <% (1..5).each do |star| %>
+  <span class="glyphicon glyphicon-star-empty" onclick: "window.alert('I work!');" aria-hidden="true"></span>
+<% end %> -->
+  <div class="form-group">
+    <%= f.label 'Add Image' %>
+    <%=f.file_field :image, :class => "d-inline-block text-center"%>
+  </div>
+<%=f.submit "Add Spot", :class => "mb-3"%>
+</div>

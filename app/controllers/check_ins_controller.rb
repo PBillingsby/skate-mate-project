@@ -1,8 +1,7 @@
 class CheckInsController < ApplicationController
-  include CheckInsHelper
+  include UsersHelper
   def create
-    geocode_address # Method to create a user check_in with location
-    current_user.check_ins.create(notes: check_in_params[:notes], location_id: @check_in_location.id)
+    current_user.check_ins.create(location_id: @check_in_location.id)
     current_user_path
   end
 

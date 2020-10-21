@@ -1,28 +1,14 @@
-<div class="main-page-grid">  
+<div class="main-page-grid  pt-5">  
   <div class="main">
-    <h2>Welcome, <%=current_user.username%>.</h2>
-    <sup><%=link_to "Edit", edit_user_path(current_user)%></sup>
+    <h2 class="text-dark">Welcome, <%=current_user.username%>.</h2>
+    <sup><%=link_to "Edit", edit_user_path(current_user)%></sup><br>
     <p>You are currently located in <%=user_location%>.</p>
-    <%if @current_user_check_in && !@current_user_check_in.notes.empty?%>
-      <p>Check In Note: <%=@current_user_check_in.notes%></p>
-    <%end%>
-    <div class="check-in-box">
-      <div>
-        <h3><u>Check In</u></h3>
-        <p>Where will you be skating today?</p>
-        <%=form_for :check_in, url: user_check_ins_path(current_user), :method => :post do |f|%>
-          <%=f.text_field :city, placeholder: "City - ex. Paris"%><br>
-          <%=f.text_area :notes, placeholder: :notes, cols: "18", rows: "3"%><br>
-          <%=f.submit "Check In"%>
-        <%end%>
-      </div>
-      
-    </div>
+
     <h3><u>Cities you've skated in</u></h3>
       <%unique_user_check_ins%>
       <div>
-        <ul class="unique-check-in margin-center"><%@unique_user_check_ins.each do |ci|%>
-          <li class="centered"><%=link_to ci.location.city, location_path(ci.location)%></li>
+        <ul class="unique-check-in mx-auto"><%@unique_user_check_ins.each do |loc|%>
+          <li class="text-center"><%=link_to "#{loc.location.city}, #{loc.location.state}", location_path(loc.location)%></li>
         <%end%></ul><br>
       </div>
   </div>

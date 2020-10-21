@@ -1,184 +1,205 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Raleway&display=swap");
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
+
 body {
-	font-family: Raleway;
-	background: linear-gradient(90deg, rgba(246, 246, 246, 1) 0%, rgb(217, 245, 247) 58%, rgba(255, 255, 255, 1) 100%);
+  font-family: Raleway;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 246, 246, 1) 0%,
+    rgb(217, 245, 247) 58%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 header {
-	background: linear-gradient(90deg, rgba(246, 246, 246, 1) 0%, rgb(217, 245, 247) 58%, rgba(255, 255, 255, 1) 100%);
-	height: 40px;
-	border-bottom: 1px solid black;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 246, 246, 1) 0%,
+    rgb(217, 245, 247) 58%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  height: 8vh;
+  border-bottom: 1px solid black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  margin: 0 auto;
 }
 
 footer {
-	border-top: 1px solid black;
-	background: linear-gradient(90deg, rgba(246, 246, 246, 1) 0%, rgb(217, 245, 247) 58%, rgba(255, 255, 255, 1) 100%);
-	width: 100%;
-	position: fixed;
-	bottom: 0;
-	left: 0;
+  border-top: 1px solid black;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 246, 246, 1) 0%,
+    rgb(217, 245, 247) 58%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 h1 {
-	text-shadow: -1px 0 rgb(1, 102, 6), 0 1.25px rgb(1, 102, 6), 1.25px 0 rgb(1, 102, 6), 0 -1px rgb(1, 102, 6);
-	letter-spacing: 10px;
-	font-size: 2.5em;
+  text-shadow: -1px 0 rgb(1, 102, 6), 0 1.25px rgb(1, 102, 6),
+    1.25px 0 rgb(1, 102, 6), 0 -1px rgb(1, 102, 6);
+  letter-spacing: 10px;
+  font-size: 2.5em;
 }
 
 h2 {
-	font-family: 'Open Sans';
-	color: rgb(1, 102, 6);
+  font-family: "Open Sans";
+  color: rgb(1, 102, 6);
 }
 
 ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 a,
 a:visited {
-	text-decoration: none;
-	color: rgb(1, 102, 6);
+  text-decoration: none;
+  color: rgb(1, 102, 6);
 }
 
-input[type=text],
+input[type="text"],
 select,
 password {
-	display: inline-block;
-	border: 1px solid rgba(68, 68, 68, 0.75);
-	border-radius: 2px;
-	box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid rgba(68, 68, 68, 0.75);
+  border-radius: 2px;
+  box-sizing: border-box;
 }
 
-input[type=submit] {
-	background-color: rgb(1, 102, 6);
-	color: white;
-	border-radius: 2px;
-	cursor: pointer;
+input[type="submit"] {
+  background-color: rgb(1, 102, 6);
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .container {
-	box-shadow: 0 0 25px 0 #eee;
-	height: 80vh;
-	margin: 40px auto;
-	background-color: rgba(238, 238, 238, .5);
-	padding: 10px 25px;
+  box-shadow: 0 0 25px 0 #eee;
+  height: 80vh;
+  margin: 40px auto;
+  background-color: rgba(238, 238, 238, 0.5);
+  padding: 10px 25px;
 }
 
 /* SHARED */
 
 .black-border-box {
-	border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .margin-center {
-	margin: 0 auto;
-}
-
-.centered,
-.nav-links {
-	text-align: center;
+  margin: 0 auto;
 }
 
 .nav-links {
-	margin-top: 10px;
+  margin-top: 10px;
 }
 
 .nav-links li {
-	padding: 20px;
-	display: inline;
+  padding: 20px;
+  display: inline;
 }
 
 .flash-alert {
-	color: red;
-	text-align: center
+  color: red;
+  text-align: center;
 }
 /* SIGN UP PAGE/USERS#INDEX */
+.main-form {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://monoawards.com/upload/images/1542574125dcb6blenzen_klaus_lost.jpg");
+}
+
 .main-index {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .info {
-	width: 25vw;
+  width: 25vw;
 }
 
 /* USER#SHOW */
 .main-page-grid {
-	border: 1px solid black;
-	text-align: center;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .main {
-	display: inline-block;
-	height: auto;
+  display: inline-block;
+  height: auto;
 }
 .check-in-box {
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: 1fr;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .unique-check-in {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: auto;
-	width: 30vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  width: 30vw;
 }
 
 /* SPOTS */
 .spot-view {
-	padding: 10px;
-	margin: 10px;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .gold-star {
-	fill: #ffa600;
+  fill: #ffa600;
 }
 .show-image {
-	width: 35vw;
+  width: 35vw;
   height: auto;
 }
 .image-box {
-	width: 200px;
-	height: 200px;
+  width: 200px;
+  height: 200px;
 }
 .spot-description {
-	width: 50%;
+  width: 50%;
 }
 
 /* SPOTS#INDEX */
 .spot-index-view {
-	padding: 10px;
-	margin: 10px;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 /* COMMENTS DISPLAY */
 .comment-display {
-	height: 30vh;
-	padding: 10px;
-	overflow: scroll;
+  height: 30vh;
+  padding: 10px;
+  overflow: scroll;
 }
 .comment-box {
-	padding: 0 25px;
+  padding: 0 25px;
 }
 .image-box {
-	width: 200px;
-	height: 200px;
+  width: 200px;
+  height: 200px;
 }
 /* LOCATIONS */
 .location-index {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .location-show {
-	padding: 10px;
-	display: flex;
+  padding: 10px;
+  display: flex;
 }

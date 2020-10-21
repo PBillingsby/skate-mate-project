@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   include UsersHelper
   before_action :user_auth, only: [:show, :edit]
+  before_action :geocode_address, only: [:show]
   def index
     @user = User.new
     current_user ? current_user_path : nil# Redirect to current user path method

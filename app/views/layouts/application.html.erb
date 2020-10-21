@@ -4,23 +4,22 @@
     <title>SkateMate</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'main'%>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   </head>
 
   <body>
     <%=render 'layouts/nav'%>
-    <div class="container">
-    
-      <h1 class="centered">SKATE-MATE</h1>
-      <div class="flash-alert" class="centered">
-      <%flash.each do |type, msg|%>
-        <%=msg%>
-      <%end%>
-    </div>
+    <div class="container pt-5">
+      <div class="flash-alert" class="text-center">
+       <%flash.each do |type, msg|%>
+          <%=msg%>
+        <%end%>
+      </div>
       <%= yield %>
     </div>
-    <footer class="centered">Skate-Mate 2020.</footer>
+    <footer class="text-center">Skate-Mate 2020.</footer>
   </body>
 </html>
