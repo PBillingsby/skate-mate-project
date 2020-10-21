@@ -1,6 +1,7 @@
 <%if current_user%>
-  <header>
-    <ul class="nav-links text-center">
+  <header class="text-center">
+    <h1>SKATE-MATE</h1>
+    <ul class="nav-links">
       <li><%=link_to "Home", user_path(current_user)%></li>
       <li><%=link_to "Spots", spots_path%></li>
       <li><%=link_to "Cities", locations_path%></li>
