@@ -4,7 +4,7 @@
     <p class="spot-description mx-auto"><%= @spot.description %></p><br>
     <span>
       Rating:
-      <%if @spot.rating %>
+      <% if @spot.rating %>
         <% @spot.rating.times do   %>
         <%=  octicon "star", class: "gold-star"  %>
         <% end  %>
