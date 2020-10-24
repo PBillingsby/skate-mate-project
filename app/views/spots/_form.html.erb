@@ -1,3 +1,6 @@
+<% if @spot.location %>
+  <h4 class="text-center pt-3">Add new <%= @spot.location.city %> spot</h4>
+<% end %>
 <div class="form">
   <div class="form-group">
   <%= f.label :name %><br>
@@ -19,8 +22,8 @@
   <span class="glyphicon glyphicon-star-empty" onclick: "window.alert('I work!');" aria-hidden="true"></span>
 <% end %> -->
   <div class="form-group">
-    <%= f.label 'Add Image' %>
+    <%= f.label 'Add Image' %><br>
     <%=f.file_field :image, :class => "d-inline-block text-center"%>
   </div>
-<%=f.submit "Add Spot", :class => "mb-3"%>
+  <%=f.submit "Add Spot", :class => "mb-3"%>
 </div>

@@ -1,24 +1,24 @@
 <div class="black-border-box">
   <div class="text-center">
-    <h2><u>Search spots by city</u></h2>
-    <%=form_tag(spots_path, method: "get") do%>
-      <%= collection_select(:spot, :location_id, Location.all.order("city ASC"), :id, :city, { selected: "", disabled: "", prompt: "All Spots" }) %>
-      <%=submit_tag "Search"%>
-    <%end%><br>
-    <%=link_to "Highest Rated Spots", highest_rated_path, action: "index"%>
+    <h2>Search spots by city</h2>
+    <%= form_tag(spots_path, method: "get") do %>
+      <%=  collection_select(:spot, :location_id, Location.all.order("city ASC"), :id, :city, { selected: "", disabled: "", prompt: "All Spots" })  %>
+      <%= submit_tag "Search" %>
+    <% end %><br>
+    <%= link_to "Highest Rated Spots", highest_rated_path, action: "index" %>
   </div><br><hr>
   <div class="spot-index-view">
-    <%@spots.each do |spot|%>
+    <% @spots.each do |spot| %>
       <div>
-        <div class="text-center"><h3><u><%=link_to spot.name, spot%></u></h3>
-        <h4><%=spot.address%> - <%=spot.location.city%>, <%=spot.location.country%></h4></div>
+        <div class="text-center"><h3><%= link_to spot.name, spot %></h3>
+        <p><%= spot.address %> - <%= spot.location.city %>, <%= spot.location.country %></p></div>
       </div>
-    <%end%>
+    <% end %>
   </div>
-  <%if @spots.empty?%>
+  <% if @spots.empty? %>
     <div class="text-center">
-      <p>No spots in <%=@index_location.city if @index_location%> yet</p>
-      <%= link_to 'Add spots', new_spot_path%>
+      <p>No spots in <%= @index_location.city if @index_location %> yet</p>
+      <%=  link_to 'Add spots', new_spot_path %>
     </div>
-  <%end%>
+  <% end %>
 </div>

@@ -1,8 +1,8 @@
 <div class="spot-view">
-  <%user_spots.each do |spot|%>
+  <% user_spots.each do |spot| %>
     <div>
-      <h3><u><%=link_to spot.name, spot%></u></h3>
-      <%=spot.location.city%>, <%=spot.location.country%>
+      <h3><%= link_to spot.name, spot %></h3>
+      <%= spot.location.city %>, <%= spot.location.country %>
     </div>
-  <%end%>
+  <% end %>
 </div>
