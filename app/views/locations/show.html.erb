@@ -11,9 +11,10 @@
     <%end%>
     <strong><h3><u>Users in your area</u></strong></h3>
     <ul><%@location.check_ins.uniq {|check| check.user}.map do |check_in|%>
-      <li><h3>User: <%=check_in.user.username%></h3></li>
-      <li><%=link_to "#{check_in.user.username}' spots", user_spots_path(check_in.user.id)%>
-    <%end%>
+      <li>
+        <h3><%=link_to "#{check_in.user.username}", user_spots_path(check_in.user.id)%></h3>
+      </li>
+    <%end%></ul>
   </div>
   <hr>
   <div class="mx-auto">
