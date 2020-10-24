@@ -1,7 +1,6 @@
 <div class='spot-view mx-auto'>
-  <div class="text-center">  
-    <h2><%=@spot.name%></h2>
-    <h4><b><%=@spot.address%>, <%=@spot.location.city%>, <%=@spot.location.country%>.</b></h4>
+  <div class="text-center pt-5">  
+    <h4><%=@spot.address%>, <%=@spot.location.city%>, <%=@spot.location.country%>.</h4>
     <p class="spot-description mx-auto"><%=@spot.description%></p><br>
     <span>
       Rating:
@@ -18,6 +17,7 @@
     <%end%>
   </div>
   <div>
+    <h1 class="text-center"><%=@spot.name%></h1>
     <%if @spot.image.attached?%>
       <%=image_tag(@spot.image, :class => 'show-image')%>
     <%end%>

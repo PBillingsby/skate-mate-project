@@ -93,6 +93,10 @@ input[type="submit"] {
 
 .nav-links {
   margin-top: 10px;
+  margin: auto;
+  padding: 0;
+  overflow: hidden;
+  width: 60%;
 }
 
 .nav-links li {
