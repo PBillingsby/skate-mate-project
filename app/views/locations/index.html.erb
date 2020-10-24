@@ -1,20 +1,25 @@
 <div class="black-border-box text-center">  
   <h2>Cities</h2>
   <h4>Search cities by country</h4>
-  <%=render 'search'%><br>
-  <%if !@locations.present?%>
+  <%= render 'search' %><br>
+  <% if !@locations.present? %>
     <div class="mx-auto">
-      <p>No spots in <%=params[:country]%></p>
-      <p><%=link_to "Go Back", locations_path%></p>
+      <p>No spots in <%= params[:country] %></p>
+      <p><%= link_to "Go Back", locations_path %></p>
     </div>
-  <%else%>
+  <% else %>
     <div class="location-index">
-      <%@locations.each do |loc|%>
-      <div>
-        <strong><%=link_to loc.city, loc%>, <%=loc.country%>.</strong><br>
-        <div>Spot count: <%=loc.spots.count%></div><br>
-      </div>
-      <%end%>
-    <%end%>
+      <% @locations.each do |loc| %>
+        <div>
+          <strong><%= link_to loc.city, loc %>, <%= loc.country %>.</strong><br>
+          <div>
+            <%= t('locations.index.spot_count_html', 
+              count: loc.spots.count,
+              link: link_to('here', new_location_spot_path(loc))
+            ) %>
+          </div><br>
+        </div>
+      <% end %>
+    <% end %>
     </div>
 </div>

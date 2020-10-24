@@ -3,6 +3,9 @@ class SpotsController < ApplicationController
   include SpotsHelper  
   def new
     @spot = Spot.new
+    if params[:location_id]
+      @spot.location = Location.find(params[:location_id])
+    end
   end
 
   def create

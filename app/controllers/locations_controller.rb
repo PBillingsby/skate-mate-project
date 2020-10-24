@@ -1,4 +1,7 @@
 class LocationsController < ApplicationController
+  def new
+    byebug
+  end
   def index
     if params[:country]
       @locations = Location.where('country = ?', params[:country])

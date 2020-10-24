@@ -1,3 +1,6 @@
+<% if @spot.location %>
+  <h4 class="text-center pt-3">Add new <%= @spot.location.city %> spot</h4>
+<% end %>
 <div class="form">
   <div class="form-group">
   <%= f.label :name %><br>
