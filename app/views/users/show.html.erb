@@ -2,7 +2,7 @@
   <div class="main">
     <h2 class="text-dark">Welcome, <%= current_user.username %>.</h2>
     <sup><%= link_to "Edit", edit_user_path(current_user) %></sup><br>
-    <p>You are currently located in <%=user_location%>.</p>
+    <p>You are currently located in <%= user_location %>.</p>
 
     <h3 class="text-dark">Cities you've skated in</h3>
       <% unique_user_check_ins %>
@@ -13,7 +13,7 @@
       </div>
   </div>
   <div>
-    <h2>Your Spots</h2>
+    <h2 class="text-dark">Your Spots</h2>
     <% if user_spots %>
       <%= check_in %> <!--user helpers for user spots iterator-->
     <% end %>

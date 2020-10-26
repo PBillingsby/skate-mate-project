@@ -17,7 +17,7 @@
   </div>
   <% if @spots.empty? %>
     <div class="text-center">
-      <p>No spots in <%= @index_location.city if @index_location %> yet</p>
+      <p>No spots <%= @index_location.city if @index_location %>  <%= "by #{@user.username}" if @user %></p>
       <%=  link_to 'Add spots', new_spot_path %>
     </div>
   <% end %>

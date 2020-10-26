@@ -22,7 +22,8 @@ class SpotsController < ApplicationController
 
     if !params[:location_id].blank?
       @spots = Spot.where(location_id: params[:location_id])
-    elsif params[:user_id] 
+    elsif params[:user_id]
+      @user = User.find(params[:user_id])
       @spots = Spot.where(user_id: params[:user_id])
     else
       spot_search # search spots by selection of locations
