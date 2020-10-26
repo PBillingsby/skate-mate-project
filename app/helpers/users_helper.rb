@@ -21,8 +21,9 @@ module UsersHelper
   end
 
   def geocode_address
+    # FIGURE OUT WHY DUPLICATE LOCATIONS ARE MADE FROM SAME VALUES
     location = Geocoder.search([request.location.latitude, request.location.longitude])
-    user_location = current_user.locations.find_or_create_by(city: location.first.city, state: location.first.state, country: location.first.country)
-    CheckIn.create(user_id: current_user, location_id: user_location.id)
+    user_location = Location.find_or_create_by(city: location.first.city, state: location.first.state, country: location.first.country)
+    CheckIn.create(user_id: current_user.id, location_id: user_location.id)
   end
 end

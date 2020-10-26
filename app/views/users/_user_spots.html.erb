@@ -1,6 +1,6 @@
 <div class="spot-view">
   <% user_spots.each do |spot| %>
-    <div>
+    <div class="mx-auto">
       <h3><%= link_to spot.name, spot %></h3>
       <%= spot.location.city %>, <%= spot.location.country %>
     </div>
