@@ -14,6 +14,7 @@
     <% if current_user.id != @spot.user_id %>
       <p>Add Your Rating</p>
       <%= form_for @spot, :method => :put do |f| %>
+        <%= f.number_field 'rating', :max => 5, :step => 0.1 %>
         <%= f.submit 'Add rating' %>
       <% end %>
     <% end %>

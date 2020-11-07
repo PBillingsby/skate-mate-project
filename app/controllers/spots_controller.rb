@@ -19,7 +19,6 @@ class SpotsController < ApplicationController
     end
   end
   def index
-
     if !params[:location_id].blank?
       @spots = Spot.where(location_id: params[:location_id])
     elsif params[:user_id]
@@ -45,8 +44,11 @@ class SpotsController < ApplicationController
   end
 
   def update
-    byebug
     @spot = Spot.find(params[:id])
+    if params[:spot][:rating]
+      @spot.update(update_count: @spot.update_count + 1)
+      @spot.update(rating: (params[:spot][:rating].to_f + @spot.rating) / @spot.update_count)
+    end
     if @spot.update(spot_params)
       flash[:alert] = "Spot updated."
       redirect_to @spot
@@ -63,6 +65,6 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :address, :description, :rating, :image, :user_id, :location_id, location_attributes: [:city])
+    params.require(:spot).permit(:name, :address, :description, :rating, :image, :user_id, :location_id, :update_count, location_attributes: [:city])
   end
 end
