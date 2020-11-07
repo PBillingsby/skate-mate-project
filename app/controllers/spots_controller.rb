@@ -45,6 +45,7 @@ class SpotsController < ApplicationController
   end
 
   def update
+    byebug
     @spot = Spot.find(params[:id])
     if @spot.update(spot_params)
       flash[:alert] = "Spot updated."
