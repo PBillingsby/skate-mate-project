@@ -2,6 +2,7 @@
   <h4 class="text-center pt-3">Add new <%= @spot.location.city %> spot</h4>
 <% end %>
 <div class="form">
+  <%=f.hidden_field :update_count, :value => 1 %>
   <div class="form-group">
   <%= f.label :name %><br>
   <%=f.text_field :name, placeholder: "Spot Name"%>

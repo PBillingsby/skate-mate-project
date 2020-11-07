@@ -5,11 +5,19 @@
     <span>
       Rating:
       <% if @spot.rating %>
-        <% @spot.rating.times do   %>
+        <% @spot.rating.to_i.times do   %>
         <%=  octicon "star", class: "gold-star"  %>
         <% end  %>
       <% end %>
+      <%= @spot.rating %> / 5
     </span>
+    <% if current_user.id != @spot.user_id %>
+      <p>Add Your Rating</p>
+      <%= form_for @spot, :method => :put do |f| %>
+        <%= f.number_field 'rating', :max => 5, :step => 0.1 %>
+        <%= f.submit 'Add rating' %>
+      <% end %>
+    <% end %>
     <p>Added by: <%=  link_to @spot.user.username, user_spots_path(@spot.user) %></p>
     <% if @spot.user == current_user %>
       <%= link_to "Delete", :spot, data: {confirm:'Are you sure you want to delete this spot?'}, method: :delete, :class => 'text-danger' %>

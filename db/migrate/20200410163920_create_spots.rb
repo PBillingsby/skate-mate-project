@@ -4,9 +4,10 @@ class CreateSpots < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :address
       t.text :description
-      t.integer :rating
+      t.float :rating
       t.integer :location_id
       t.integer :user_id
+      t.integer :update_count
     end
   end
 end

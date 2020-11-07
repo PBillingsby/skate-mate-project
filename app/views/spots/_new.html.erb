@@ -2,6 +2,7 @@
   <%=form_for @spot do |f|%>
     <%=render 'layouts/shared_errors', form_object:@spot%>
     <%=f.hidden_field :user_id, :value => current_user.id %>
+    <%=f.hidden_field :update_count, :value => 1 %>
     <%=f.fields_for :location, @location do |location_attributes| %>
         <%= location_attributes.text_field :city, placeholder: :city %><br>
     <%end%>

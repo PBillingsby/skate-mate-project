@@ -62,9 +62,10 @@ ActiveRecord::Schema.define(version: 2020_10_21_191647) do
     t.string "name"
     t.string "address"
     t.text "description"
-    t.integer "rating"
+    t.float "rating"
     t.integer "location_id"
     t.integer "user_id"
+    t.integer "update_count"
   end
 
   create_table "users", force: :cascade do |t|
