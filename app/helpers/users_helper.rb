@@ -12,6 +12,10 @@ module UsersHelper
     end
   end
 
+  def find_users
+    found_users = @user.check_ins.last.location.users.uniq
+  end
+
   def check_in
     current_user.spots.present? ? render('users/user_spots') : ("You have no spots. Click <a href='/spots/new'>here</a> to add one.".html_safe)
   end
