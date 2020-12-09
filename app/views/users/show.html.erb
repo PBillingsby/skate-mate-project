@@ -23,7 +23,18 @@
       <%= check_in %> <!--user helpers for user spots iterator-->
     <% end %>
   </div><br>
-  <div>
-    <%= random_spot %>  
-  </div>
+  <% if random_spot %>
+    <div>
+      <h2 class="text-dark">Random Spot</h2>
+      <div class="card w-50 mx-auto mb-3 pb-2 pt-2 bg-light">
+        <h4><%= random_spot.name %></h4>
+        <% if random_spot.image.attached? %>
+          <%= image_tag(random_spot.image, :class => 'card-img-top w-50 mx-auto') %>
+        <% end %>
+        <p><%= random_spot.address %> </p>
+        <p><%= random_spot.location.city %>, <%= random_spot.location.country %></p>
+        <%= link_to 'View Spot', spot_path(random_spot.id) %>
+      </div>
+    </div>
+  <% end %>
 </div>
