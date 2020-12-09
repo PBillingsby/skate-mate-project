@@ -29,7 +29,7 @@ gem 'geocoder'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'listen', '>= 3.0.5', '< 3.2'
-
+gem 'omniauth-rails_csrf_protection', '~> 0.1'
 gem 'octicons'
 gem 'octicons_helper', '~> 9.6'
 
