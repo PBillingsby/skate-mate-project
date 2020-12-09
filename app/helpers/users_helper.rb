@@ -12,6 +12,10 @@ module UsersHelper
     end
   end
 
+  def random_spot
+    return Spot.all.sample.attributes
+  end
+
   def find_users
     found_users = @user.check_ins.last.location.users.uniq
   end
