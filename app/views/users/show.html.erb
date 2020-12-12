@@ -18,7 +18,8 @@
 
   </div>
   <div>
-    <span class="d-inline-flex"><h2 class="text-dark">Your Spots</h2><i class="fas fa-question-circle" data-toggle="tooltip" title="Some tooltip text!"></i></span>
+    <%# Revisit to fix tool-tip titles to handle html values %>
+    <span class="d-inline-flex"><h2 class="text-dark">Your Spots</h2><i class="fas fa-question-circle" data-toggle="tooltip" data-html="true" title="All of your spots will appear here.<br><br>If you don't have any spots, add some by clicking the link below."></i></span><br>
     <% if user_spots %>
       <%= check_in %> <!--user helpers for user spots iterator-->
     <% end %>
