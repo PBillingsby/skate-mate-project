@@ -1,16 +1,16 @@
-<%=render 'layouts/shared_errors', form_object:@spot if @spot%>
+<%= render 'layouts/shared_errors', form_object:@spot if @spot %>
 <div class="black-border-box text-center">  
-  <%=form_for Spot.new do |f|%>
-    <%=f.hidden_field :user_id, :value => current_user.id %>
-    <%=f.hidden_field :location_id, :value => params[:location_id]%>
-    <%if !params[:location_id]%>
-      <%=f.fields_for :location, Location.new do |location_attributes| %>
+  <%= form_for Spot.new do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :location_id, :value => params[:location_id] %>
+    <% if !params[:location_id] %>
+      <%= f.fields_for :location, Location.new do |location_attributes| %>
         <div class="form-group">
           <%= location_attributes.label :city %><br>
-          <%=location_attributes.text_field :city, placeholder: :city%><br>
+          <%= location_attributes.text_field :city, placeholder: :city %><br>
         </div>
-      <%end%>
-    <%end%>
-    <%=render 'spots/form', f:f%>
-  <%end%>
+      <% end %>
+    <% end %>
+    <%= render 'spots/form', f:f %>
+  <% end %>
 </div>

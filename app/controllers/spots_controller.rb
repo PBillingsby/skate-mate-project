@@ -62,8 +62,7 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     @spot.delete
     flash.alert = "#{@spot.name} has been deleted."
-    byebug
-    redirect_to current_user
+    redirect_to location_path(@spot.location_id)
   end
 
   def spot_params
