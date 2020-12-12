@@ -3,8 +3,20 @@
     <h4>Skateboarding has been a great source of exercise since its birth in the mid 1940s, and its rise in popularity in the early 1960s.</h4>
     <h4>Since then, skateboarding has grown on a global scale, promoting health and fitness, socializing and focus. With skateboarding being considered enough to join the ranks of sports in the <strong>Olympics</strong>, skateboarders world wide get to benefit from more government acknowledgement leading to more skateparks and facilities being built for skateboarders.</h4>
     <h4><strong><u>Skate-Mate</u></strong> is designed to help skateboarders keep track of where they skate, discover new places and network with other skaters, all while promoting travel and good health and fitness.</h4>
+    <% if random_spot %>
+      <h2 class="text-dark text-center pt-5">Random Spot</h2>
+      <div class="card text-center shadow-lg border-light rounded w-50 mx-auto mb-3 pb-2 pt-2">
+        <h4><%= random_spot.name %></h4>
+        <% if random_spot.image.attached? %>
+          <%= image_tag(random_spot.image, :class => 'card-img-top w-50 mx-auto') %>
+        <% end %>
+        <p><%= random_spot.address %> </p>
+        <p><%= random_spot.location.city %>, <%= random_spot.location.country %></p>
+        <%= link_to 'View Spot', spot_path(random_spot.id) %>
+      </div>
+    <% end %>
   </div>
-  <div class="text-center p-3 main-form">
+  <div class="text-center p-3 mt-4 h-50 rounded shadow-lg main-form">
     <ul>
       <%= render 'form' %>
     </ul>

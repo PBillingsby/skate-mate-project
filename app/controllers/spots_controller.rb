@@ -47,6 +47,7 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     if params[:spot][:rating]
       @spot.update(update_count: @spot.update_count + 1)
+      # Fix this to handle correct rating
       @spot.update(rating: (params[:spot][:rating].to_f + @spot.rating) / @spot.update_count)
     end
     if @spot.update(spot_params)
