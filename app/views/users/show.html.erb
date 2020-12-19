@@ -14,9 +14,9 @@
       <h3 class="text-dark">Users in your area</h3>
       <% find_users.map do |user| %>
         <% if user != current_user %>
-        <span class="d-inline-flex"><%= link_to user.username, user_spots_path(user.id) %> - Spots: <%= user.spots.count %></span><br>
+          <span class="d-inline-flex"><%= link_to user.username, user_spots_path(user.id) %> - Spots: <%= user.spots.count %></span><br>
         <% else %>
-          <p>No users in <%= loc.location.city %></p>
+          <p>No users currently in <%= unique_user_check_ins.last.location.city %></p>
         <% end %>
       <% end %>
 
