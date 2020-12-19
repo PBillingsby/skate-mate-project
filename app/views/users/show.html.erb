@@ -13,7 +13,7 @@
       </div>
       <h3 class="text-dark">Users in your area</h3>
       <% find_users.map do |user| %>
-        <span class="d-inline-flex"><%= link_to user.username, user_spots_path(user.id) %> - <%= t('users.show.spot_count', count: user.spots.count) %></span><br>
+        <span class="d-inline-flex"><%= link_to user.username, user_spots_path(user.id) %> - Spots: <%= user.spots.count %></span><br>
       <% end %>
 
   </div>

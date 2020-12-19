@@ -12,12 +12,8 @@
       <% @locations.each do |loc| %>
         <div>
           <strong><%= link_to loc.city, loc %>, <%= loc.country %>.</strong><br>
-          <div>
-            <%= t('locations.index.spot_count_html', 
-              count: loc.spots.count,
-              link: link_to('here', new_location_spot_path(loc))
-            ) %>
-          </div><br>
+          <p>Spots: <%= loc.spots.count %><p>
+          <%= link_to("Add #{loc.city} spots here", new_location_spot_path(loc)) %><br>
         </div>
       <% end %>
     </div>
