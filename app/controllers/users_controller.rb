@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    byebug
     @user = current_user
     @current_user_check_in = current_user.check_ins.last
     @location = @user.locations.build
