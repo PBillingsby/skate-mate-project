@@ -12,12 +12,14 @@
         <% end %></ul><br>
       </div>
       <h3 class="text-dark">Users in your area</h3>
-      <% find_users.map do |user| %>
-        <% if user != current_user %>
-          <span class="d-inline-flex"><%= link_to user.username, user_spots_path(user.id) %> - Spots: <%= user.spots.count %></span><br>
-        <% else %>
-          <p>No users currently in <%= unique_user_check_ins.last.location.city %></p>
+      <% if !find_users.blank? %>
+        <% find_users.map do |user| %>
+          <% if user != current_user %>
+            <span class="d-inline-flex"><%= link_to user.username, user_spots_path(user.id) %> - Spots: <%= user.spots.count %></span><br>
+          <% end %>
         <% end %>
+      <% else %>
+        <p>There are no users in your area</p>
       <% end %>
 
   </div>

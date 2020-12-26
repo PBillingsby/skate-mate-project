@@ -12,6 +12,7 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
     spot_location_set # Sets from new or existing location
     if @spot.save
+      @spot.create_rating(rating: params["spot"]["rating"].to_i, rating_count: 1)
       flash[:alert] = "#{@spot.name} added."
       redirect_to spot_path(@spot)
     else
@@ -46,9 +47,8 @@ class SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:id])
     if params[:spot][:rating]
-      @spot.update(update_count: @spot.update_count + 1)
-      # Fix this to handle correct rating
-      @spot.update(rating: (params[:spot][:rating].to_f + @spot.rating) / @spot.update_count)
+      @spot.rating.update(rating_count: @spot.rating.rating_count + 1)
+      @spot.rating.update(rating: (params[:spot][:rating].to_i + @spot.rating.rating) / @spot.rating.rating_count)
     end
     if @spot.update(spot_params)
       flash[:alert] = "Spot updated."
@@ -66,6 +66,6 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :address, :description, :rating, :image, :user_id, :location_id, :update_count, location_attributes: [:city])
+    params.require(:spot).permit(:name, :address, :description, :image, :user_id, :location_id, :update_count, location_attributes: [:city])
   end
 end

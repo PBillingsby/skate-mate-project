@@ -4,6 +4,7 @@ class Spot < ApplicationRecord
   has_many :users
   has_many :comments
   has_one_attached :image
+  has_one :rating
 
   validates :name, presence: true
   validates :address, presence: true

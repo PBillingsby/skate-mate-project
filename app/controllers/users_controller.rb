@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :geocode_address, only: [:show]
   def index
     @user = User.new
-    current_user ? current_user_path : nil# Redirect to current user path method
+    current_user ? current_user_path : nil # Redirect to current user path method
   end
 
   def create
